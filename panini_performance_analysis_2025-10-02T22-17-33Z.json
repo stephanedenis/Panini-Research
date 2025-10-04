@@ -1,0 +1,237 @@
+{
+  "meta": {
+    "timestamp": "2025-10-02T22:17:33.031992+00:00",
+    "analyzer_version": "1.0.0",
+    "framework": "PaniniFS Performance Analyzer",
+    "issue_reference": "#11 - Validateurs PaniniFS Performance"
+  },
+  "system_baseline": {
+    "cpu_cores": 16,
+    "memory_gb": 62.74974822998047,
+    "disk_write_mbps": 910.6174554928355,
+    "disk_read_mbps": 1049.1005502751375,
+    "timestamp": "2025-10-02T22:17:32.944260+00:00"
+  },
+  "compression_benchmarks": [
+    {
+      "test_name": "compression_benchmark_.json",
+      "file_count": 5,
+      "total_size_mb": 0.02831745147705078,
+      "processing_time": 0.006761074066162109,
+      "throughput_mbps": 4.188306650680584,
+      "files_per_second": 739.527470202412,
+      "compression_ratio": 0.5341820900030398,
+      "memory_usage_mb": 1.75,
+      "cpu_usage_percent": 144.6,
+      "io_operations": 15,
+      "success_rate": 1.0
+    },
+    {
+      "test_name": "compression_benchmark_.txt",
+      "file_count": 9,
+      "total_size_mb": 0.27372074127197266,
+      "processing_time": 0.019235610961914062,
+      "throughput_mbps": 14.22989588497769,
+      "files_per_second": 467.8822012890431,
+      "compression_ratio": 0.828591941486118,
+      "memory_usage_mb": 0.3984375,
+      "cpu_usage_percent": 103.1,
+      "io_operations": 27,
+      "success_rate": 0.8888888888888888
+    },
+    {
+      "test_name": "compression_benchmark_.md",
+      "file_count": 4,
+      "total_size_mb": 0.011054039001464844,
+      "processing_time": 0.0010600090026855469,
+      "throughput_mbps": 10.428250112460638,
+      "files_per_second": 3773.552856500225,
+      "compression_ratio": 0.5086494734536242,
+      "memory_usage_mb": 0.00390625,
+      "cpu_usage_percent": 0.0,
+      "io_operations": 12,
+      "success_rate": 1.0
+    },
+    {
+      "test_name": "compression_benchmark_.py",
+      "file_count": 3,
+      "total_size_mb": 0.027130126953125,
+      "processing_time": 0.001728057861328125,
+      "throughput_mbps": 15.699779249448124,
+      "files_per_second": 1736.0529801324503,
+      "compression_ratio": 0.3194426757949114,
+      "memory_usage_mb": 0.0,
+      "cpu_usage_percent": 0.0,
+      "io_operations": 9,
+      "success_rate": 1.0
+    },
+    {
+      "test_name": "compression_benchmark_.sh",
+      "file_count": 3,
+      "total_size_mb": 0.004825592041015625,
+      "processing_time": 0.0007221698760986328,
+      "throughput_mbps": 6.682073291515351,
+      "files_per_second": 4154.1472433146255,
+      "compression_ratio": 0.49031316518237117,
+      "memory_usage_mb": 0.0,
+      "cpu_usage_percent": 0.0,
+      "io_operations": 9,
+      "success_rate": 1.0
+    },
+    {
+      "test_name": "compression_benchmark_.log",
+      "file_count": 3,
+      "total_size_mb": 0.03996086120605469,
+      "processing_time": 0.0013394355773925781,
+      "throughput_mbps": 29.834104663581346,
+      "files_per_second": 2239.749377002492,
+      "compression_ratio": 0.18176750226368452,
+      "memory_usage_mb": 0.0,
+      "cpu_usage_percent": 0.0,
+      "io_operations": 9,
+      "success_rate": 1.0
+    },
+    {
+      "test_name": "compression_benchmark_.bin",
+      "file_count": 4,
+      "total_size_mb": 0.012939453125,
+      "processing_time": 0.0006570816040039062,
+      "throughput_mbps": 19.692307692307693,
+      "files_per_second": 6087.523947750363,
+      "compression_ratio": 0.534326171875,
+      "memory_usage_mb": 0.0,
+      "cpu_usage_percent": 0.0,
+      "io_operations": 12,
+      "success_rate": 1.0
+    }
+  ],
+  "scalability_analysis": [
+    {
+      "file_count": 100,
+      "avg_file_size_kb": 50,
+      "total_processing_time": 0.20002,
+      "memory_peak_mb": 0.12,
+      "throughput_degradation": 0.009999000099991662,
+      "linear_scaling_score": 0.9999000099990001
+    },
+    {
+      "file_count": 1000,
+      "avg_file_size_kb": 50,
+      "total_processing_time": 2.002,
+      "memory_peak_mb": 1.2,
+      "throughput_degradation": 0.09990009990008542,
+      "linear_scaling_score": 0.9990009990009991
+    },
+    {
+      "file_count": 10000,
+      "avg_file_size_kb": 50,
+      "total_processing_time": 20.2,
+      "memory_peak_mb": 12.0,
+      "throughput_degradation": 0.990099009900991,
+      "linear_scaling_score": 0.9900990099009901
+    },
+    {
+      "file_count": 100000,
+      "avg_file_size_kb": 50,
+      "total_processing_time": 220.00000000000003,
+      "memory_peak_mb": 120.0,
+      "throughput_degradation": 9.090909090909093,
+      "linear_scaling_score": 0.9090909090909091
+    },
+    {
+      "file_count": 1000000,
+      "avg_file_size_kb": 50,
+      "total_processing_time": 4000.0,
+      "memory_peak_mb": 1200.0,
+      "throughput_degradation": 50.0,
+      "linear_scaling_score": 0.5
+    }
+  ],
+  "filesystem_comparison": {
+    "panini_fs": {
+      "avg_throughput_mbps": 14.39353107785306,
+      "compression_ratio": 0.48532471715124986,
+      "integrity_checks": true,
+      "semantic_analysis": true
+    },
+    "traditional_fs": {
+      "ext4": {
+        "avg_throughput_mbps": 150,
+        "compression_ratio": 1.0,
+        "integrity_checks": false,
+        "semantic_analysis": false
+      },
+      "ntfs": {
+        "avg_throughput_mbps": 120,
+        "compression_ratio": 0.8,
+        "integrity_checks": false,
+        "semantic_analysis": false
+      },
+      "zfs": {
+        "avg_throughput_mbps": 100,
+        "compression_ratio": 0.6,
+        "integrity_checks": true,
+        "semantic_analysis": false
+      },
+      "btrfs": {
+        "avg_throughput_mbps": 90,
+        "compression_ratio": 0.7,
+        "integrity_checks": true,
+        "semantic_analysis": false
+      }
+    },
+    "comparative_analysis": {
+      "ext4": {
+        "throughput_ratio": 0.09595687385235374,
+        "compression_advantage": 0.5146752828487502,
+        "integrity_advantage": true,
+        "semantic_advantage": true
+      },
+      "ntfs": {
+        "throughput_ratio": 0.11994609231544216,
+        "compression_advantage": 0.3146752828487502,
+        "integrity_advantage": true,
+        "semantic_advantage": true
+      },
+      "zfs": {
+        "throughput_ratio": 0.1439353107785306,
+        "compression_advantage": 0.11467528284875012,
+        "integrity_advantage": false,
+        "semantic_advantage": true
+      },
+      "btrfs": {
+        "throughput_ratio": 0.15992812308725624,
+        "compression_advantage": 0.2146752828487501,
+        "integrity_advantage": false,
+        "semantic_advantage": true
+      }
+    }
+  },
+  "optimization_recommendations": [
+    "Optimiser débit formats lents: compression_benchmark_.json, compression_benchmark_.txt, compression_benchmark_.md, compression_benchmark_.py, compression_benchmark_.sh, compression_benchmark_.log, compression_benchmark_.bin",
+    "Améliorer compression: compression_benchmark_.txt",
+    "Optimiser scalabilité pour gros volumes (>100K fichiers)",
+    "Implémenter streaming pour réduire empreinte mémoire",
+    "Implémenter parallélisation avancée (multi-threading)",
+    "Ajouter cache intelligent pour fichiers fréquents",
+    "Optimiser algorithmes compression par format",
+    "Implémenter compression adaptive selon contenu",
+    "Ajouter préfetching prédictif pour gros lots"
+  ],
+  "summary_metrics": {
+    "performance": {
+      "avg_throughput_mbps": 14.39353107785306,
+      "max_throughput_mbps": 29.834104663581346,
+      "min_throughput_mbps": 4.188306650680584,
+      "avg_compression_ratio": 0.48532471715124986,
+      "best_compression_ratio": 0.18176750226368452,
+      "overall_success_rate": 0.9841269841269841
+    },
+    "scalability": {
+      "avg_scaling_score": 0.8796181855983797,
+      "worst_scaling_score": 0.5,
+      "max_tested_files": 1000000,
+      "projected_million_files_time": 4000.0
+    }
+  }
+}

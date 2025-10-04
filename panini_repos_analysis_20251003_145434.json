@@ -1,0 +1,172 @@
+{
+  "timestamp": "2025-10-03T14:54:34.241768",
+  "repos_root": "/home/stephane/GitHub/PaniniFS-Research/repos",
+  "repositories": {
+    "panini-data-models": {
+      "name": "panini-data-models",
+      "path": "repos/panini-data-models",
+      "is_git_repo": true,
+      "git_status": {
+        "has_commits": true,
+        "last_commit": "33ac302 Initial commit (2025-10-03 14:35:38 -0400)",
+        "branch": "master",
+        "uncommitted_changes": true,
+        "commit_count": 1
+      },
+      "content_analysis": {
+        "has_readme": true,
+        "config_files": [
+          ".git/config"
+        ],
+        "json_files": [
+          "models/digested/demo_model.json"
+        ],
+        "data_files": [],
+        "structure_complete": true,
+        "missing_dirs": []
+      },
+      "files_count": 28,
+      "directories": [
+        "models",
+        "metadata",
+        "hashes",
+        "indexes"
+      ],
+      "knowledge_content": {
+        "digested_models": 1,
+        "semantic_models": 0,
+        "metadata_files": 0,
+        "hash_files": 0,
+        "latest_model": "models/digested/demo_model.json"
+      },
+      "errors": []
+    },
+    "panini-public-knowledge": {
+      "name": "panini-public-knowledge",
+      "path": "repos/panini-public-knowledge",
+      "is_git_repo": true,
+      "git_status": {
+        "has_commits": true,
+        "last_commit": "b77b835 Initial commit: panini-public-knowledge (2025-10-03 14:50:42 -0400)",
+        "branch": "master",
+        "uncommitted_changes": true,
+        "commit_count": 1
+      },
+      "content_analysis": {
+        "has_readme": true,
+        "config_files": [
+          ".git/config"
+        ],
+        "json_files": [
+          "encyclopedia/concepts/demo_sync.json"
+        ],
+        "data_files": [],
+        "structure_complete": true,
+        "missing_dirs": []
+      },
+      "files_count": 28,
+      "directories": [
+        "encyclopedia",
+        "graphs",
+        "knowledge",
+        "exports"
+      ],
+      "knowledge_content": {
+        "concepts_files": 1,
+        "relations_files": 0,
+        "insights_files": 0,
+        "latest_content": "encyclopedia/concepts/demo_sync.json",
+        "access_level": "public"
+      },
+      "errors": []
+    },
+    "panini-private-knowledge": {
+      "name": "panini-private-knowledge",
+      "path": "repos/panini-private-knowledge",
+      "is_git_repo": true,
+      "git_status": {
+        "has_commits": true,
+        "last_commit": "807ca88 Initial commit: panini-private-knowledge (2025-10-03 14:50:42 -0400)",
+        "branch": "master",
+        "uncommitted_changes": true,
+        "commit_count": 1
+      },
+      "content_analysis": {
+        "has_readme": true,
+        "config_files": [
+          ".git/config"
+        ],
+        "json_files": [
+          "encyclopedia/concepts/demo_sync.json"
+        ],
+        "data_files": [],
+        "structure_complete": true,
+        "missing_dirs": []
+      },
+      "files_count": 28,
+      "directories": [
+        "encyclopedia",
+        "graphs",
+        "knowledge",
+        "exports"
+      ],
+      "knowledge_content": {
+        "concepts_files": 1,
+        "relations_files": 0,
+        "insights_files": 0,
+        "latest_content": "encyclopedia/concepts/demo_sync.json",
+        "access_level": "private"
+      },
+      "errors": []
+    },
+    "panini-team-knowledge": {
+      "name": "panini-team-knowledge",
+      "path": "repos/panini-team-knowledge",
+      "is_git_repo": true,
+      "git_status": {
+        "has_commits": true,
+        "last_commit": "54c4966 Initial commit: panini-team-knowledge (2025-10-03 14:50:43 -0400)",
+        "branch": "master",
+        "uncommitted_changes": true,
+        "commit_count": 1
+      },
+      "content_analysis": {
+        "has_readme": true,
+        "config_files": [
+          ".git/config"
+        ],
+        "json_files": [
+          "encyclopedia/concepts/demo_sync.json"
+        ],
+        "data_files": [],
+        "structure_complete": true,
+        "missing_dirs": []
+      },
+      "files_count": 28,
+      "directories": [
+        "encyclopedia",
+        "graphs",
+        "knowledge",
+        "exports"
+      ],
+      "knowledge_content": {
+        "concepts_files": 1,
+        "relations_files": 0,
+        "insights_files": 0,
+        "latest_content": "encyclopedia/concepts/demo_sync.json",
+        "access_level": "team"
+      },
+      "errors": []
+    }
+  },
+  "summary": {
+    "total_repositories": 4,
+    "git_repositories": 4,
+    "repositories_with_content": 4,
+    "total_commits": 4,
+    "total_files": 112,
+    "knowledge_repositories": 3,
+    "data_repositories": 1,
+    "sync_status": "synchronized"
+  }
+}

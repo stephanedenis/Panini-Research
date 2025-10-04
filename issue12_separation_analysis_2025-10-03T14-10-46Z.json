@@ -1,0 +1,565 @@
+{
+  "meta": {
+    "timestamp": "2025-10-03T14:10:46.709308+00:00",
+    "analyzer_version": "1.0.0",
+    "issue_reference": "#12 - Séparation Contenant/Contenu",
+    "analysis_type": "multi_format_separation"
+  },
+  "summary": {
+    "content_groups_analyzed": 3,
+    "total_format_instances": 7,
+    "unique_formats": [
+      "txt",
+      "md",
+      "pdf",
+      "json",
+      "yaml",
+      "wav"
+    ],
+    "format_distribution": {
+      "txt": 2,
+      "md": 1,
+      "pdf": 1,
+      "json": 1,
+      "yaml": 1,
+      "wav": 1
+    }
+  },
+  "separation_analyses": [
+    {
+      "content_id": "dhatu_theory",
+      "available_formats": [
+        "txt",
+        "md",
+        "pdf"
+      ],
+      "filesystem_containers": [
+        {
+          "file_path": "corpus_multiformat_issue12/dhatu_theory.txt",
+          "file_size": 783,
+          "permissions": "644",
+          "timestamps": {
+            "accessed": "2025-10-03T12:24:39.883305+00:00",
+            "modified": "2025-10-03T14:10:46.699608+00:00",
+            "created": "2025-10-03T14:10:46.699608+00:00"
+          },
+          "inode_info": {
+            "inode": 11234715,
+            "device": 44,
+            "links": 1
+          },
+          "compression_state": "plain",
+          "filesystem_metadata": {
+            "device": 44,
+            "inode": 11234715,
+            "links": 1,
+            "access_time": "2025-10-03T12:24:39.883305+00:00",
+            "modify_time": "2025-10-03T14:10:46.699608+00:00",
+            "change_time": "2025-10-03T14:10:46.699608+00:00"
+          }
+        },
+        {
+          "file_path": "corpus_multiformat_issue12/dhatu_theory.md",
+          "file_size": 783,
+          "permissions": "644",
+          "timestamps": {
+            "accessed": "2025-10-03T12:24:39.883305+00:00",
+            "modified": "2025-10-03T14:10:46.699808+00:00",
+            "created": "2025-10-03T14:10:46.699808+00:00"
+          },
+          "inode_info": {
+            "inode": 11234716,
+            "device": 44,
+            "links": 1
+          },
+          "compression_state": "plain",
+          "filesystem_metadata": {
+            "device": 44,
+            "inode": 11234716,
+            "links": 1,
+            "access_time": "2025-10-03T12:24:39.883305+00:00",
+            "modify_time": "2025-10-03T14:10:46.699808+00:00",
+            "change_time": "2025-10-03T14:10:46.699808+00:00"
+          }
+        },
+        {
+          "file_path": "corpus_multiformat_issue12/dhatu_theory.pdf",
+          "file_size": 854,
+          "permissions": "644",
+          "timestamps": {
+            "accessed": "2025-10-03T12:24:39.884305+00:00",
+            "modified": "2025-10-03T14:10:46.699996+00:00",
+            "created": "2025-10-03T14:10:46.699996+00:00"
+          },
+          "inode_info": {
+            "inode": 11234717,
+            "device": 44,
+            "links": 1
+          },
+          "compression_state": "plain",
+          "filesystem_metadata": {
+            "device": 44,
+            "inode": 11234717,
+            "links": 1,
+            "access_time": "2025-10-03T12:24:39.884305+00:00",
+            "modify_time": "2025-10-03T14:10:46.699996+00:00",
+            "change_time": "2025-10-03T14:10:46.699996+00:00"
+          }
+        }
+      ],
+      "format_envelopes": [
+        {
+          "format_name": "txt",
+          "mime_type": "text/plain",
+          "container_structure": {
+            "total_lines": 22,
+            "empty_lines": 8,
+            "max_line_length": 191,
+            "line_endings": "\\n"
+          },
+          "presentation_metadata": {},
+          "format_features": [],
+          "encoding_info": {
+            "encoding": "utf-8",
+            "bom": false,
+            "encoding_confidence": 1.0
+          },
+          "structural_hash": "3238d59d21eb0a4c01f10744a50c63f9629c841db93ec7c164bbe377b987b7f5"
+        },
+        {
+          "format_name": "md",
+          "mime_type": "text/markdown",
+          "container_structure": {
+            "total_lines": 22,
+            "empty_lines": 8,
+            "max_line_length": 191,
+            "line_endings": "\\n"
+          },
+          "presentation_metadata": {},
+          "format_features": [
+            "markdown_headers",
+            "markdown_lists",
+            "markdown_links",
+            "code_blocks"
+          ],
+          "encoding_info": {
+            "encoding": "utf-8",
+            "bom": false,
+            "encoding_confidence": 1.0
+          },
+          "structural_hash": "94904f86d82dc3a784dcf3afcce11ada5360f2cf3162d2254ef88f73b91dd41b"
+        },
+        {
+          "format_name": "pdf",
+          "mime_type": "application/pdf",
+          "container_structure": {
+            "pdf_version": "1.4",
+            "estimated_pages": 1,
+            "has_metadata": false,
+            "compressed_streams": false
+          },
+          "presentation_metadata": {},
+          "format_features": [
+            "pdf_structure",
+            "page_tree",
+            "object_streams",
+            "font_embedding"
+          ],
+          "encoding_info": {},
+          "structural_hash": "dd252e1425b1f6228cd831f5c20d513de5a527bf2b52326996dc36ca68934374"
+        }
+      ],
+      "content_signature": {
+        "content_hash": "a7513a3a464a7ec5e3241c13d2eb9adab3e2475d8be7af3581f2481868b9cf5d",
+        "semantic_hash": "6496f5dc396f0b932bdfdad67ec5ea5bb070552e0ed0f0a71ab9d56a901f46c0",
+        "language": "en",
+        "content_type": "text",
+        "extracted_text": "# Théorie des Dhātu - Fondements Linguistiques\n\n## Introduction\n\nLes dhātu (racines verbales) constituent les unités fondamentales de la théorie linguistique de Pāṇini. Cette approche révolutionnaire permet de comprendre l'évolution sémantique des langues.\n\n## Principes de Base\n\n1. **Atomicité sémantique** : Chaque dhātu porte un sens fondamental\n2. **Compositionalité** : Les mots dérivent par transformation systématique\n3. **Universalité** : Principes applicables à toutes les langues\n\n## Applications Modernes\n\nLa théorie dhātu trouve des applications dans :\n- Compression linguistique (PaniniFS)\n- Analyse sémantique automatique\n- Traduction machine\n- Étymologie computationnelle\n\nLes implications pour la théorie de l'information sont considérables.\n",
+        "word_count": 99,
+        "character_count": 758,
+        "concepts": [
+          "théorie",
+          "dhātu",
+          "linguistique",
+          "sémantique",
+          "principes",
+          "applications",
+          "fondements",
+          "linguistiques",
+          "introduction",
+          "constituent"
+        ],
+        "metadata": {
+          "extraction_method": "txt_extractor",
+          "extraction_timestamp": "2025-10-03T14:10:46.706611+00:00"
+        }
+      },
+      "cross_format_invariants": {
+        "semantic_content_identical": false,
+        "semantic_variation": 2,
+        "common_concepts": [
+          "théorie",
+          "dhātu",
+          "linguistique",
+          "sémantique",
+          "principes",
+          "applications",
+          "fondements",
+          "linguistiques",
+          "introduction",
+          "constituent",
+          "content",
+          "simulation"
+        ],
+        "concept_consistency": 1.0,
+        "cross_format_features": [],
+        "compression_analysis": {
+          "format_efficiency": {
+            "txt": 0.9168618266978923,
+            "md": 0.9168618266978923,
+            "pdf": 1.0
+          },
+          "best_format": "txt",
+          "worst_format": "pdf"
+        }
+      },
+      "optimization_recommendations": [
+        "Format le plus efficace: txt",
+        "Éviter format: pdf (moins efficace)",
+        "Format txt: Excellente compression text",
+        "Format md: Excellente compression text",
+        "Format pdf: Compression modérée, métadonnées riches",
+        "PaniniFS: Séparer compression contenu/structure",
+        "PaniniFS: Optimiser selon type contenu détecté",
+        "PaniniFS: Cache invariants cross-format"
+      ],
+      "separation_timestamp": "2025-10-03T14:10:46.707533+00:00"
+    },
+    {
+      "content_id": "panini_config",
+      "available_formats": [
+        "json",
+        "yaml"
+      ],
+      "filesystem_containers": [
+        {
+          "file_path": "corpus_multiformat_issue12/panini_config.json",
+          "file_size": 472,
+          "permissions": "644",
+          "timestamps": {
+            "accessed": "2025-10-03T12:24:39.884305+00:00",
+            "modified": "2025-10-03T14:10:46.700260+00:00",
+            "created": "2025-10-03T14:10:46.700260+00:00"
+          },
+          "inode_info": {
+            "inode": 11234718,
+            "device": 44,
+            "links": 1
+          },
+          "compression_state": "plain",
+          "filesystem_metadata": {
+            "device": 44,
+            "inode": 11234718,
+            "links": 1,
+            "access_time": "2025-10-03T12:24:39.884305+00:00",
+            "modify_time": "2025-10-03T14:10:46.700260+00:00",
+            "change_time": "2025-10-03T14:10:46.700260+00:00"
+          }
+        },
+        {
+          "file_path": "corpus_multiformat_issue12/panini_config.yaml",
+          "file_size": 360,
+          "permissions": "644",
+          "timestamps": {
+            "accessed": "2025-10-03T12:24:39.885305+00:00",
+            "modified": "2025-10-03T14:10:46.700428+00:00",
+            "created": "2025-10-03T14:10:46.700428+00:00"
+          },
+          "inode_info": {
+            "inode": 11234719,
+            "device": 44,
+            "links": 1
+          },
+          "compression_state": "plain",
+          "filesystem_metadata": {
+            "device": 44,
+            "inode": 11234719,
+            "links": 1,
+            "access_time": "2025-10-03T12:24:39.885305+00:00",
+            "modify_time": "2025-10-03T14:10:46.700428+00:00",
+            "change_time": "2025-10-03T14:10:46.700428+00:00"
+          }
+        }
+      ],
+      "format_envelopes": [
+        {
+          "format_name": "json",
+          "mime_type": "application/json",
+          "container_structure": {},
+          "presentation_metadata": {},
+          "format_features": [],
+          "encoding_info": {},
+          "structural_hash": "ae50cc73e15fd99abaf8059be3c78fe306475ba61f4e207dfe2432297ca2116b"
+        },
+        {
+          "format_name": "yaml",
+          "mime_type": "application/yaml",
+          "container_structure": {},
+          "presentation_metadata": {},
+          "format_features": [],
+          "encoding_info": {},
+          "structural_hash": "ae50cc73e15fd99abaf8059be3c78fe306475ba61f4e207dfe2432297ca2116b"
+        }
+      ],
+      "content_signature": {
+        "content_hash": "fac11135d122f51163c71d48ff558e22c94231259b4f234a5749c870310b3a76",
+        "semantic_hash": "d2055df7b83c9451701f9b7f3a61858e65be56849098398250df5a19a05beb5c",
+        "language": "en",
+        "content_type": "structured_data",
+        "extracted_text": "{\"panini_fs\": {\"compression\": {\"algorithm\": \"universal_dhatu\", \"level\": 9, \"preserve_semantics\": true}, \"performance\": {\"cache_size\": \"512MB\", \"memory_limit\": \"2GB\", \"threads\": 8}, \"validation\": {\"format_detection\": \"auto\", \"integrity_check\": true, \"supported_formats\": [\"txt\", \"pdf\", \"mp3\", \"mp4\", \"jpg\"]}, \"version\": \"1.0.0\"}}",
+        "word_count": 28,
+        "character_count": 328,
+        "concepts": [],
+        "metadata": {
+          "extraction_method": "json_extractor",
+          "extraction_timestamp": "2025-10-03T14:10:46.707983+00:00"
+        }
+      },
+      "cross_format_invariants": {
+        "semantic_content_identical": false,
+        "semantic_variation": 2,
+        "common_concepts": [],
+        "concept_consistency": 0.0,
+        "cross_format_features": [],
+        "compression_analysis": {
+          "format_efficiency": {
+            "json": 1.0,
+            "yaml": 0.7627118644067796
+          },
+          "best_format": "yaml",
+          "worst_format": "json"
+        }
+      },
+      "optimization_recommendations": [
+        "Format le plus efficace: yaml",
+        "Éviter format: json (moins efficace)",
+        "Format json: Excellente compression text",
+        "PaniniFS: Séparer compression contenu/structure",
+        "PaniniFS: Optimiser selon type contenu détecté",
+        "PaniniFS: Cache invariants cross-format"
+      ],
+      "separation_timestamp": "2025-10-03T14:10:46.708335+00:00"
+    },
+    {
+      "content_id": "presentation",
+      "available_formats": [
+        "txt",
+        "wav"
+      ],
+      "filesystem_containers": [
+        {
+          "file_path": "corpus_multiformat_issue12/presentation_transcript.txt",
+          "file_size": 776,
+          "permissions": "644",
+          "timestamps": {
+            "accessed": "2025-10-03T12:24:39.885305+00:00",
+            "modified": "2025-10-03T14:10:46.700575+00:00",
+            "created": "2025-10-03T14:10:46.700575+00:00"
+          },
+          "inode_info": {
+            "inode": 11234720,
+            "device": 44,
+            "links": 1
+          },
+          "compression_state": "plain",
+          "filesystem_metadata": {
+            "device": 44,
+            "inode": 11234720,
+            "links": 1,
+            "access_time": "2025-10-03T12:24:39.885305+00:00",
+            "modify_time": "2025-10-03T14:10:46.700575+00:00",
+            "change_time": "2025-10-03T14:10:46.700575+00:00"
+          }
+        },
+        {
+          "file_path": "corpus_multiformat_issue12/presentation_audio.wav",
+          "file_size": 820,
+          "permissions": "644",
+          "timestamps": {
+            "accessed": "2025-10-03T12:24:39.885305+00:00",
+            "modified": "2025-10-03T14:10:46.700720+00:00",
+            "created": "2025-10-03T14:10:46.700720+00:00"
+          },
+          "inode_info": {
+            "inode": 11234721,
+            "device": 44,
+            "links": 1
+          },
+          "compression_state": "plain",
+          "filesystem_metadata": {
+            "device": 44,
+            "inode": 11234721,
+            "links": 1,
+            "access_time": "2025-10-03T12:24:39.885305+00:00",
+            "modify_time": "2025-10-03T14:10:46.700720+00:00",
+            "change_time": "2025-10-03T14:10:46.700720+00:00"
+          }
+        }
+      ],
+      "format_envelopes": [
+        {
+          "format_name": "txt",
+          "mime_type": "text/plain",
+          "container_structure": {
+            "total_lines": 12,
+            "empty_lines": 6,
+            "max_line_length": 184,
+            "line_endings": "\\n"
+          },
+          "presentation_metadata": {},
+          "format_features": [],
+          "encoding_info": {
+            "encoding": "utf-8",
+            "bom": false,
+            "encoding_confidence": 1.0
+          },
+          "structural_hash": "765f4d33005cf75651b04b0fc8b662c511476fb05992fcd5fafe02492423fb50"
+        },
+        {
+          "format_name": "wav",
+          "mime_type": "audio/x-wav",
+          "container_structure": {
+            "estimated_duration": 1,
+            "has_id3": false,
+            "estimated_bitrate": 128
+          },
+          "presentation_metadata": {},
+          "format_features": [
+            "audio_metadata",
+            "uncompressed_audio",
+            "no_metadata"
+          ],
+          "encoding_info": {},
+          "structural_hash": "a03681ca767258c476bd8365db768710e33540cdd743935c23e337b4f11ae736"
+        }
+      ],
+      "content_signature": {
+        "content_hash": "42d8d0a9cf3426218eff6e009828cbd8ff495ac55d00227a9c822718f0290208",
+        "semantic_hash": "6d39c6ceb9e8c905769fe898677e3f492e0e0259310293d576194db5f6e8d044",
+        "language": "en",
+        "content_type": "text",
+        "extracted_text": "[TRANSCRIPTION AUDIO - PaniniFS Explanation]\n\nBonjour et bienvenue dans cette présentation de PaniniFS, le système de fichiers révolutionnaire basé sur la théorie linguistique de Pāṇini.\n\nPaniniFS apporte une approche totalement nouvelle à la compression de données en exploitant les patterns sémantiques universels découverts par les linguistes il y a plus de 2000 ans.\n\nContrairement aux systèmes traditionnels qui compriment uniquement les patterns syntaxiques, PaniniFS analyse le contenu sémantique pour atteindre des ratios de compression jamais vus.\n\nLes résultats préliminaires montrent une amélioration de 300% par rapport aux filesystems classiques, tout en préservant une intégrité parfaite des données.\n\n[FIN TRANSCRIPTION - Durée: 2min 30s]\n",
+        "word_count": 103,
+        "character_count": 754,
+        "concepts": [
+          "paninifs",
+          "compression",
+          "patterns",
+          "audio",
+          "bonjour",
+          "bienvenue",
+          "cette",
+          "présentation",
+          "système",
+          "fichiers"
+        ],
+        "metadata": {
+          "extraction_method": "txt_extractor",
+          "extraction_timestamp": "2025-10-03T14:10:46.708909+00:00"
+        }
+      },
+      "cross_format_invariants": {
+        "semantic_content_identical": false,
+        "semantic_variation": 2,
+        "common_concepts": [
+          "paninifs",
+          "compression",
+          "patterns",
+          "audio",
+          "bonjour",
+          "bienvenue",
+          "cette",
+          "présentation",
+          "système",
+          "fichiers",
+          "transcription",
+          "simulation",
+          "bytes"
+        ],
+        "concept_consistency": 1.0,
+        "cross_format_features": [],
+        "compression_analysis": {
+          "format_efficiency": {
+            "txt": 0.9463414634146341,
+            "wav": 1.0
+          },
+          "best_format": "txt",
+          "worst_format": "wav"
+        }
+      },
+      "optimization_recommendations": [
+        "Format le plus efficace: txt",
+        "Éviter format: wav (moins efficace)",
+        "Format txt: Excellente compression text",
+        "PaniniFS: Séparer compression contenu/structure",
+        "PaniniFS: Optimiser selon type contenu détecté",
+        "PaniniFS: Cache invariants cross-format"
+      ],
+      "separation_timestamp": "2025-10-03T14:10:46.709288+00:00"
+    }
+  ],
+  "global_patterns": {
+    "format_efficiency_ranking": [
+      "yaml",
+      "json",
+      "txt",
+      "md",
+      "wav",
+      "pdf"
+    ],
+    "common_invariants": {
+      "semantic_content_identical": false,
+      "semantic_variation": 2.0,
+      "common_concepts": [],
+      "concept_consistency": 0.6666666666666666,
+      "cross_format_features": []
+    },
+    "optimization_priorities": [
+      "Compression niveau contenu (text normalization)",
+      "Déduplication métadonnées structure similaires",
+      "Cache invariants cross-format",
+      "Index séparé contenu/présentation",
+      "Compression adaptative selon format source"
+    ]
+  },
+  "recommendations": {
+    "panini_fs_architecture": [
+      "Implémenter séparation 3 niveaux en parallèle",
+      "Cache invariants cross-format pour éviter re-extraction",
+      "Optimisation compression selon type contenu détecté",
+      "Index séparé pour métadonnées structure vs contenu"
+    ],
+    "format_specific": {
+      "txt": [
+        "Excellente compression ratio",
+        "Normalisation whitespace optimale",
+        "Détection encoding robuste"
+      ],
+      "pdf": [
+        "Extraction contenu sans métadonnées présentation",
+        "Compression structure PDF séparément",
+        "Cache parsing objects PDF"
+      ],
+      "mp3": [
+        "Focus métadonnées ID3 vs audio data",
+        "Transcription pour contenu sémantique",
+        "Éviter re-compression audio"
+      ],
+      "jpg": [
+        "Extraction EXIF vs image data",
+        "Description contenu pour recherche",
+        "Préservation qualité originale"
+      ]
+    }
+  }
+}
