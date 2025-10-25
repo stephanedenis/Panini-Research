@@ -45,10 +45,10 @@
   "extensions": [],
   "patterns_found": [
     "TERMINATOR",
-    "LOGICAL_SCREEN_DESCRIPTOR",
     "PALETTE_DATA",
+    "MAGIC_NUMBER",
+    "LOGICAL_SCREEN_DESCRIPTOR",
     "LZW_COMPRESSED_DATA",
-    "IMAGE_DESCRIPTOR",
-    "MAGIC_NUMBER"
+    "IMAGE_DESCRIPTOR"
   ]
 }

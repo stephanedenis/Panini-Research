@@ -1,145 +1,191 @@
 {
-  "source_file": "/home/stephane/GitHub/Panini/research/test_sample.png",
-  "file_size": 303,
-  "format": "PNG",
-  "grammar_version": "ISO/IEC 15948:2004",
+  "source_file": "/home/stephane/GitHub/Panini/research/test_sample.gif",
+  "file_size": 3223,
+  "format": "GIF",
+  "grammar_version": "1.0",
   "elements": [
     {
       "pattern": "MAGIC_NUMBER",
       "offset": 0,
-      "size": 8,
-      "value": "89504e470d0a1a0a",
+      "size": 6,
+      "value": "474946383761",
       "expected": [
-        "89504e470d0a1a0a"
+        "474946383761",
+        "474946383961"
       ],
       "valid": true,
-      "interpretation": "signature",
-      "name": "signature"
+      "interpretation": "header",
+      "name": "header"
+    },
+    {
+      "pattern": "LOGICAL_SCREEN_DESCRIPTOR",
+      "offset": 6,
+      "size": 7,
+      "canvas": {
+        "width": 100,
+        "height": 100
+      },
+      "flags": {
+        "global_color_table": true,
+        "color_resolution": 1,
+        "sort_flag": false,
+        "global_color_table_size": 256,
+        "packed_value": "0x87"
+      },
+      "background_color_index": 0,
+      "pixel_aspect_ratio": 0,
+      "raw_data": "64006400870000",
+      "name": "logical_screen_descriptor"
+    },
+    {
+      "pattern": "PALETTE_DATA",
+      "offset": 13,
+      "size": 768,
+      "num_colors": 256,
+      "bytes_per_color": 3,
+      "colors": [
+        {
+          "r": 0,
+          "g": 255,
+          "b": 0
+        },
+        {
+          "r": 1,
+          "g": 254,
+          "b": 2
+        },
+        {
+          "r": 2,
+          "g": 253,
+          "b": 4
+        },
+        {
+          "r": 3,
+          "g": 252,
+          "b": 6
+        },
+        {
+          "r": 4,
+          "g": 251,
+          "b": 8
+        },
+        {
+          "r": 5,
+          "g": 250,
+          "b": 10
+        },
+        {
+          "r": 6,
+          "g": 249,
+          "b": 12
+        },
+        {
+          "r": 7,
+          "g": 248,
+          "b": 14
+        },
+        {
+          "r": 8,
+          "g": 247,
+          "b": 16
+        },
+        {
+          "r": 9,
+          "g": 246,
+          "b": 18
+        }
+      ],
+      "full_data": "00ff0001fe0202fd0403fc0604fb0805fa0a06f90c07f80e08f71009f6120af5140bf4160cf3180df21a0ef11c0ff01e10ef2011ee2212ed2413ec2614eb2815ea2a16e92c17e82e18e73019e6321ae5341be4361ce3381de23a1ee13c1fe03e20df4021de4222dd4423dc4624db4825da4a26d94c27d84e28d75029d6522ad5542bd4562cd3582dd25a2ed15c2fd05e30cf6031ce6232cd6433cc6634cb6835ca6a36c96c37c86e38c77039c6723ac5743bc4763cc3783dc27a3ec17c3fc07e40bf8041be8242bd8443bc8644bb8845ba8a46b98c47b88e48b79049b6924ab5944bb4964cb3984db29a4eb19c4fb09e50afa051aea252ada453aca654aba855aaaa56a9ac57a8ae58a7b059a6b25aa5b45ba4b65ca3b85da2ba5ea1bc5fa0be609fc0619ec2629dc4639cc6649bc8659aca6699cc6798ce6897d06996d26a95d46b94d66c93d86d92da6e91dc6f90de708fe0718ee2728de4738ce6748be8758aea7689ec7788ee7887f07986f27a85f47b84f67c83f87d82fa7e81fc7f80fe807f00817e02827d04837c06847b08857a0a86790c87780e8877108976128a75148b74168c73188d721a8e711c8f701e906f20916e22926d24936c26946b28956a2a96692c97682e9867309966329a65349b64369c63389d623a9e613c9f603ea05f40a15e42a25d44a35c46a45b48a55a4aa6594ca7584ea85750a95652aa5554ab5456ac5358ad525aae515caf505eb04f60b14e62b24d64b34c66b44b68b54a6ab6496cb7486eb84770b94672ba4574bb4476bc4378bd427abe417cbf407ec03f80c13e82c23d84c33c86c43b88c53a8ac6398cc7388ec83790c93692ca3594cb3496cc3398cd329ace319ccf309ed02fa0d12ea2d22da4d32ca6d42ba8d52aaad629acd728aed827b0d926b2da25b4db24b6dc23b8dd22bade21bcdf20bee01fc0e11ec2e21dc4e31cc6e41bc8e51acae619cce718cee817d0e916d2ea15d4eb14d6ec13d8ed12daee11dcef10def00fe0f10ee2f20de4f30ce6f40be8f50aeaf609ecf708eef807f0f906f2fa05f4fb04f6fc03f8fd02fafe01fcff00fe",
+      "name": "global_color_table"
     },
     {
       "pattern": "SEQUENTIAL_STRUCTURE",
-      "name": "chunks",
-      "count": 3,
+      "name": "data_stream",
+      "count": 2,
       "elements": [
         {
-          "pattern": "TYPED_CHUNK",
-          "offset": 8,
-          "size": 25,
-          "type": "IHDR",
-          "structure": {
-            "length": {
-              "pattern": "LENGTH_PREFIXED_DATA",
-              "offset": 8,
-              "size": 4,
-              "length_value": 13,
-              "endianness": "big",
-              "field": "length"
+          "pattern": "GIF_DATA_BLOCK",
+          "type": "IMAGE",
+          "offset": 781,
+          "size": 2441,
+          "image_descriptor": {
+            "pattern": "IMAGE_DESCRIPTOR",
+            "offset": 782,
+            "size": 9,
+            "position": {
+              "left": 0,
+              "top": 0
             },
-            "type": {
-              "pattern": "TYPE_FIELD",
-              "offset": 12,
-              "size": 4,
-              "value": "IHDR",
-              "encoding": "ASCII"
+            "dimensions": {
+              "width": 100,
+              "height": 100
             },
-            "data": {
-              "pattern": "DATA_FIELD",
-              "offset": 16,
-              "size": 13,
-              "full_data": "00000064000000640802000000",
-              "preview": "00000064000000640802000000"
+            "flags": {
+              "local_color_table": false,
+              "interlace": true,
+              "sort_flag": false,
+              "local_color_table_size": 0,
+              "packed_value": "0x40"
             },
-            "crc": {
-              "pattern": "CRC_CHECKSUM",
-              "offset": 29,
-              "size": 4,
-              "algorithm": "CRC-32",
-              "stored": "ff800203",
-              "calculated": "ff800203",
-              "valid": true,
-              "field": "crc"
-            }
+            "raw_data": "000000006400640040"
+          },
+          "compressed_data": {
+            "pattern": "LZW_COMPRESSED_DATA",
+            "offset": 791,
+            "size": 2431,
+            "lzw_min_code_size": 8,
+            "num_sub_blocks": 10,
+            "total_data_bytes": 2419,
+            "sub_blocks": [
+              {
+                "size": 255,
+                "data": "00010410308040010307102450b0804103070f204490308142050b173064d0b08143070f1f40841031824409132750a450b182450b172f60c4903183460d1b3770e4d0b183470f1f3f800411328448112347902451b2844913274fa0449132854a152b57b064d1b2854b172f5fc084113346214387102552b4885123478f204592348952254b973065d2b48953274f9f408512358a542953a750a552b58a552b57af60c5922553c6cc193469d4ac515bf162c68d1d3f861c59f264ca952d5fc69c59f366ce9d3d7f061d5af468d2a54d9f469d5af56ad6ad5dbf861d3b86b265cc9ad9b471f3064e1c3973dc868e4b9aeee9bbaaf5b6ee0b1bf0ecc1b60de7"
+              },
+              {
+                "size": 255,
+                "data": "4ecc9bf1efc7c22517af7c39f31ae5cc9d43a753c7ce1d3c79f4ec915bba2e6abcabede59a5fb105461b61b71da69b62bd35061c64c34dc61e72ef2dd7dc7373d0671f7efaf1d1871f7f0012882083d8955a5eacf1f5da5fb209565b61b821b6db62be39165c64c419d75e7216ca97617df7e5b78787208a48222185187208228928b288762a12e89d8b088a272383e6d908a17a3a5208df85f301c9e1901f8638e220482ac9a4938c34e2c823904422c92452b6786078312e585e8d0fa697e384ee7de9a386417658a6916826b964938bb4f9669c735252892597609289269b5089a782e4d1e8207a384a785ca03d6248e898449a79a4a26b36ea269c724e"
+              },
+              {
+                "size": 255,
+                "data": "2229a59662ca49279e7c024a28a28c62a59e9e9e776384eb8dca637ca68a2964aa88a6b9289baf422aeba4955ebac9adb9eeda2b29a598720a2aa9a8b20a967c824a6c97a4221be686cb1e7aa6b3ad3a0a6ba4d4d67a2daebaf23a0ab7de822b2e2badb8f20a2cb1c8328b967e8aba6385eafec8aea145becb2aa3f24a3b6bb5b6e2abedbedd7e1bee2a000b4cb0c1b4d462cb2db8e4a2cb2e5c027a2c980e174a66c4abaa4971b4b15e6c2fb6f96edbb1bf20073c70c1b3947c72ca2bf3d28b2fbf00138c30c3188490590d3d14d1449db5051a5ca3cd659a89004239607776820723a7333628ec967f5a86d6d56b79261dd7fc59077676298ecda2816627"
+              },
+              {
+                "size": 255,
+                "data": "385eda59f6196ab10b7fc9d6676f8956f7d7ffe12d20777b7ff7a2df57eef9e9b02d1bcb30cc84d25d1de3d8a1f8f88a054a5e659e9daa8df0e0e8be3ca8b210ff6177e3a26f47fa94779efd37b997b3adb097a5ae2b33b3122b1976de9097aea9ee9507bbfab92e6ffefac333ab9aa8cdd0be1925d97c4ffe6bea819b9b79e1c1c78caabb353febeaa339538b7bdfdf035e2ee66d93dff0a9edd27cbdfa15b74fabb53c3b1dda78b7b684110e78f7835df59a35b1eccd6b5affcb58b6f4c5af53344f7582839ee604952cea112f7df1c219bd2278af09faac5f1f0bd92bc247bfdfa58b730afce0fe42c8be1162ac843de3180aff25b49115cd64b7f0dd01"
+              },
+              {
+                "size": 255,
+                "data": "5f38bde1a16f8637ab21046fc8b38d5510682af4a1d150a6b25d288d6904915a421652b5b460ed707353dce7fc13ba00d9ae4edd13e0ee2c5740d695616a5c7c1b67c0b835317a8d8c2732e3f622b73cca010b83e2ab1f66ce62b539caad8ed4b9e375f228b6e4bdcf7ba8935fef0cd8ba0a79316e5a4b5c22fbb3c8e38d0e8da6dbd41a9d97c1f121f0429844dc74bac6c9bbd56e8fcacb9d1fc1373f2156928361cae42a1787474f9e917ba164de1f5968cbe8e1d27c79d0242b6757c646deae6c901c201b9f674a2276d0889b64262391f7cc348af282c4a4a431cb87bfd8894891aed4a3de6209bf4812909a82b4a6f0cea73f24f5d271bfe4a32ce3f7"
+              },
+              {
+                "size": 255,
+                "data": "ce52c6d375d7a4a7f5e09588667213947de4e734fde94280ce337f036da0ab5eb9ce47aa119cb514e706c919c32312d48171fa243013eace8506b2a1d20b28441988bdf53d50528e84e645879951376e34811ef4a844fb67434be9b39dd224e54987e850649ab378fc13e11277d6096f0a939693b4a9fd6098d37aee54a93a03a0c64201d45102b285444de9438f0ac224beb45e5a3521c79e2ac9366a70aa4514284b93aac4ac4a30874f4c4550bf5acc9b52d588566d294f979a56bcfe2c85ad80aa5bab59d4722e10a9343c2b099b48c1c3f25064b1102a586fc9d1aa4654b05845eb5d9d68d9a0619664b588ea5b4f19d79542d6ac16132d0e49bb43d3"
+              },
+              {
+                "size": 255,
+                "data": "0e0db547cbc550398b53c07e96ae9265e2564fe8b1cbdef687b94d5a2fa4ca5a9592158920f59f70d59a57e34a118848b3e2d29a160c941ed3b132fca84b633bd9e1eab0b8b6bd6e72b5cb34a7418d18c51848410eb245425e326baaf41c3a69a7ce983a75966d85e764e60b47fbc20dbf61cc26e8b629d29f46d3abe1b4297da926c72f1e5299bcec243e6169d16fd254b5a6ac6f170f4c470c8f51c314f56f3001dccfddba2c8e85b4b02ef5db4afe3a13a1fb2ca966fb5ab8111b72c676acb1411bccce076314c4ff64588c5399e0652ed8971c96a987152be0b00a8ac417dee589d379e391e678af115ead3c659cdf206b13ca1595325b5bbcd971de0f"
+              },
+              {
+                "size": 255,
+                "data": "c18874f23d53dccd152b74c71a856b07b34ce3336f38cdffbd335ff3dcdc799659c173ee6f9d490ae69a8ab9b1b08b7386b97c502f77f5c88b4df27763a8e5fd0e399f459e2995196ae5ce02d6cc4ffeb38a190d61473356ac465da09c51ac681c5ffac399f6aea9e53aa22ddbb8d20e16758049cddbbff2fa48426630a83bbc6693b6d9afad7d6e9a524d675b1b19d7552e76b41f0b425a7739d8531eb68ba1ed5c6e43f7d74466368b9dcde342c73abc3b55769403ade34133579eefd629681da1ea457fb9d548d6756f8f0dddf1d6dad2d71ef5b8f53c56738b97a7c00e75b8d9dc6e7c8357dfc0b5d8b2d5bc6e3cdf1bd29e9d6b64c90b683bd73bccaf"
+              },
+              {
+                "size": 255,
+                "data": "de74c85f1bdd9efafbd60a7f36c3f31dd88c4bb756081736c5096df18ed67ce43707a0c49bedf147c3fae23f876dd025c87141a35cd3bb766d595b4ed8d19abcd1012ff5c0a55ef0c1da75b6bcfa37a6b3ed666373fde1a12d2f75132e6e99bb1be9bf057a4f0b4bdb89b39be720f7adc8953ef7d156b65f1db7b7d155ae77968f77e96027aebf4eee6aa86f5dda57adab6c29abf814023cd75a373be4f71d5ca652b7b421c336b1cbbe6d78739ebcd3356c6da3d8f68ae79de06897bcda558fde2816ecee1f3fbacfe3cef7aa27febc50ec21d16821f894477df336effbefab9bdee19bacf102d7bcc323df79baffbdf6c2c72dca30afed729b3ef9bea73c"
+              },
+              {
+                "size": 124,
+                "data": "f0117b5ae4525117a32777c3bf2ff7f09b97f9b6d77e7679e1f69eaf7cea8757bef8e19f7df3cf7f6978a77bf7d77569977ab4857de53745ffd75e83777cd3777a88b77fa0d77f0a584557c45dc2e078d2c77ebdf77512b87a14885d16b85dee350cc49079a58771ede781ef3781092882cad55e4f6382c5600c0101"
+              }
+            ],
+            "complete": true
           }
         },
         {
-          "pattern": "TYPED_CHUNK",
-          "offset": 33,
-          "size": 258,
-          "type": "IDAT",
-          "structure": {
-            "length": {
-              "pattern": "LENGTH_PREFIXED_DATA",
-              "offset": 33,
-              "size": 4,
-              "length_value": 246,
-              "endianness": "big",
-              "field": "length"
-            },
-            "type": {
-              "pattern": "TYPE_FIELD",
-              "offset": 37,
-              "size": 4,
-              "value": "IDAT",
-              "encoding": "ASCII"
-            },
-            "data": {
-              "pattern": "DATA_FIELD",
-              "offset": 41,
-              "size": 246,
-              "full_data": "789cedd0b10dc3400c0441faddb81b7fc90d088236d64cc084b8643f73fed69eef9e755cdfbbd731afdaaee131b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b1823ffb7e6546",
-              "preview": "789cedd0b10dc3400c0441faddb81b7fc90d088236d64cc084b8643f73fed69e..."
-            },
-            "crc": {
-              "pattern": "CRC_CHECKSUM",
-              "offset": 287,
-              "size": 4,
-              "algorithm": "CRC-32",
-              "stored": "62b32183",
-              "calculated": "62b32183",
-              "valid": true,
-              "field": "crc"
-            }
-          }
-        },
-        {
-          "pattern": "TYPED_CHUNK",
-          "offset": 291,
-          "size": 12,
-          "type": "IEND",
-          "structure": {
-            "length": {
-              "pattern": "LENGTH_PREFIXED_DATA",
-              "offset": 291,
-              "size": 4,
-              "length_value": 0,
-              "endianness": "big",
-              "field": "length"
-            },
-            "type": {
-              "pattern": "TYPE_FIELD",
-              "offset": 295,
-              "size": 4,
-              "value": "IEND",
-              "encoding": "ASCII"
-            },
-            "data": {
-              "pattern": "DATA_FIELD",
-              "offset": 299,
-              "size": 0,
-              "full_data": "",
-              "preview": ""
-            },
-            "crc": {
-              "pattern": "CRC_CHECKSUM",
-              "offset": 299,
-              "size": 4,
-              "algorithm": "CRC-32",
-              "stored": "ae426082",
-              "calculated": "ae426082",
-              "valid": true,
-              "field": "crc"
-            }
-          }
+          "pattern": "TERMINATOR",
+          "offset": 3222,
+          "size": 1,
+          "value": "3b"
         }
       ]
     }
