@@ -214,6 +214,115 @@ class TypedChunkProcessor(PatternProcessor):
         }
 
 
+class SegmentStructureProcessor(PatternProcessor):
+    """Traite le pattern SEGMENT_STRUCTURE (JPEG, MPEG, etc.)"""
+    
+    def process(self, marker: bytes) -> Optional[Dict[str, Any]]:
+        """Décompose un segment type JPEG: Marker (2B) + Length (2B BE) + Data"""
+        
+        if self.offset >= self.size:
+            return None
+        
+        segment_start = self.offset - 2  # Marker déjà lu
+        
+        # Markers spéciaux sans length/data
+        if marker in [b'\xFF\xD8', b'\xFF\xD9']:  # SOI, EOI
+            return {
+                "pattern": "SEGMENT_STRUCTURE",
+                "offset": segment_start,
+                "size": 2,
+                "marker": marker.hex().upper(),
+                "marker_type": self._marker_name(marker),
+                "has_data": False
+            }
+        
+        # SOS : cas spécial avec données compressées jusqu'à EOI
+        if marker == b'\xFF\xDA':  # SOS
+            # Lire la longueur du header SOS
+            length_bytes = self.read_bytes(2)
+            header_length = struct.unpack('>H', length_bytes)[0]
+            header_data = self.read_bytes(header_length - 2)
+            
+            # Les données compressées vont jusqu'au prochain marker (EOI)
+            compressed_start = self.offset
+            compressed_data = []
+            
+            while self.offset < self.size - 1:
+                byte = self.data[self.offset]
+                next_byte = self.data[self.offset + 1]
+                
+                # Détecter le marker FF D9 (EOI)
+                if byte == 0xFF and next_byte == 0xD9:
+                    break
+                
+                compressed_data.append(byte)
+                self.offset += 1
+            
+            compressed_bytes = bytes(compressed_data)
+            
+            return {
+                "pattern": "SEGMENT_STRUCTURE",
+                "offset": segment_start,
+                "size": 2 + 2 + header_length - 2 + len(compressed_bytes),
+                "marker": marker.hex().upper(),
+                "marker_type": "SOS",
+                "header_length": header_length,
+                "header_data": header_data.hex(),
+                "compressed_data": {
+                    "offset": compressed_start,
+                    "size": len(compressed_bytes),
+                    "full_data": compressed_bytes.hex(),
+                    "preview": compressed_bytes[:32].hex() + ("..." if len(compressed_bytes) > 32 else "")
+                },
+                "has_data": True
+            }
+        
+        # Lire la longueur (16-bit big-endian)
+        length_bytes = self.read_bytes(2)
+        length = struct.unpack('>H', length_bytes)[0]  # Inclut les 2 bytes de longueur
+        data_length = length - 2
+        
+        # Lire les données
+        data_start = self.offset
+        data_bytes = self.read_bytes(data_length) if data_length > 0 else b''
+        
+        return {
+            "pattern": "SEGMENT_STRUCTURE",
+            "offset": segment_start,
+            "size": 2 + 2 + data_length,
+            "marker": marker.hex().upper(),
+            "marker_type": self._marker_name(marker),
+            "length": {
+                "value": length,
+                "format": "big_endian_16bit",
+                "includes_self": True
+            },
+            "data": {
+                "offset": data_start,
+                "size": data_length,
+                "full_data": data_bytes.hex(),
+                "preview": data_bytes[:32].hex() + ("..." if data_length > 32 else "")
+            },
+            "has_data": True
+        }
+    
+    def _marker_name(self, marker: bytes) -> str:
+        """Retourne le nom du marker JPEG"""
+        markers = {
+            b'\xFF\xD8': 'SOI',
+            b'\xFF\xD9': 'EOI',
+            b'\xFF\xC0': 'SOF0',
+            b'\xFF\xC4': 'DHT',
+            b'\xFF\xDB': 'DQT',
+            b'\xFF\xDA': 'SOS',
+            b'\xFF\xE0': 'APP0',
+            b'\xFF\xE1': 'APP1',
+            b'\xFF\xE2': 'APP2',
+            b'\xFF\xFE': 'COM'
+        }
+        return markers.get(marker, f'UNKNOWN_{marker.hex().upper()}')
+
+
 # ============================================================================
 # GENERIC DECOMPOSER ENGINE
 # ============================================================================
@@ -262,6 +371,12 @@ class GenericDecomposer:
                 element_result = self._process_element(element_spec)
                 if element_result:
                     self.decomposition['elements'].append(element_result)
+        
+        elif root.get('pattern') == 'SEQUENTIAL_SEGMENTS':
+            # Format type JPEG: SOI + segments + EOI
+            result = self._process_sequential_segments(root)
+            if result:
+                self.decomposition['elements'] = result
         
         return self.decomposition
     
@@ -323,6 +438,60 @@ class GenericDecomposer:
             "count": len(elements),
             "elements": elements
         }
+    
+    def _process_sequential_segments(self, root: Dict[str, Any]) -> List[Dict[str, Any]]:
+        """Traite une structure de segments JPEG-like"""
+        
+        segments = []
+        
+        # 1. Traiter le start_marker (SOI)
+        start_marker_spec = root.get('start_marker', {})
+        if start_marker_spec.get('pattern') == 'MAGIC_NUMBER':
+            expected_marker = bytes.fromhex(start_marker_spec.get('value', ''))
+            marker = self.binary_data[self.offset:self.offset + 2]
+            
+            if marker == expected_marker:
+                segments.append({
+                    "pattern": "MAGIC_NUMBER",
+                    "offset": self.offset,
+                    "size": 2,
+                    "marker": marker.hex().upper(),
+                    "marker_type": "SOI",
+                    "valid": True
+                })
+                self.offset += 2
+        
+        # 2. Traiter les segments
+        end_marker = bytes.fromhex(root.get('end_marker', {}).get('value', 'FFD9'))
+        
+        while self.offset < len(self.binary_data):
+            # Lire le marker
+            marker = self.binary_data[self.offset:self.offset + 2]
+            
+            # Si c'est le marqueur de fin, on arrête
+            if marker == end_marker:
+                segments.append({
+                    "pattern": "TERMINATOR",
+                    "offset": self.offset,
+                    "size": 2,
+                    "marker": marker.hex().upper(),
+                    "marker_type": "EOI",
+                    "valid": True
+                })
+                self.offset += 2
+                break
+            
+            # Traiter le segment
+            self.offset += 2
+            processor = SegmentStructureProcessor(self.binary_data, self.offset)
+            segment = processor.process(marker)
+            if segment:
+                self.offset = processor.offset
+                segments.append(segment)
+            else:
+                break
+        
+        return segments
 
 
 # ============================================================================

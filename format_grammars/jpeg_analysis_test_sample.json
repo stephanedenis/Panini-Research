@@ -1,0 +1,225 @@
+{
+  "analysis": {
+    "file": "test_sample.jpg",
+    "timestamp": "2025-10-25T13:45:05.319644",
+    "file_size": 1186,
+    "segment_count": 11,
+    "segments_by_type": {
+      "SOI": 1,
+      "APP0": 1,
+      "DQT": 2,
+      "SOF0": 1,
+      "DHT": 4,
+      "SOS": 1,
+      "EOI": 1
+    },
+    "universal_patterns_used": [
+      "MAGIC_NUMBER",
+      "SEGMENT_STRUCTURE",
+      "SEQUENTIAL_SEGMENTS",
+      "TERMINATOR",
+      "BIG_ENDIAN_LENGTH"
+    ]
+  },
+  "segments": [
+    {
+      "marker": "FFD8",
+      "marker_name": "SOI",
+      "offset": 0
+    },
+    {
+      "marker": "FFE0",
+      "marker_name": "APP0",
+      "offset": 2,
+      "length": 16,
+      "data": "4a46494600010100000100010000"
+    },
+    {
+      "marker": "FFDB",
+      "marker_name": "DQT",
+      "offset": 20,
+      "length": 67,
+      "data_preview": "000503040404030504040405050506070c08070707070f0b0b090c110f1212110f111113161c1713141a1511111821181a1d1d1f1f1f13172224221e241c1e1f",
+      "data_length": 65
+    },
+    {
+      "marker": "FFDB",
+      "marker_name": "DQT",
+      "offset": 89,
+      "length": 67,
+      "data_preview": "010505050706070e08080e1e1411141e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e",
+      "data_length": 65
+    },
+    {
+      "marker": "FFC0",
+      "marker_name": "SOF0",
+      "offset": 158,
+      "length": 17,
+      "data": "080064006403012200021101031101"
+    },
+    {
+      "marker": "FFC4",
+      "marker_name": "DHT",
+      "offset": 177,
+      "length": 31,
+      "data": "0000010501010101010100000000000000000102030405060708090a0b"
+    },
+    {
+      "marker": "FFC4",
+      "marker_name": "DHT",
+      "offset": 210,
+      "length": 181,
+      "data_preview": "100002010303020403050504040000017d01020300041105122131410613516107227114328191a1082342b1c11552d1f02433627282090a161718191a252627",
+      "data_length": 179
+    },
+    {
+      "marker": "FFC4",
+      "marker_name": "DHT",
+      "offset": 393,
+      "length": 31,
+      "data": "0100030101010101010101010000000000000102030405060708090a0b"
+    },
+    {
+      "marker": "FFC4",
+      "marker_name": "DHT",
+      "offset": 426,
+      "length": 181,
+      "data_preview": "1100020102040403040705040400010277000102031104052131061241510761711322328108144291a1b1c109233352f0156272d10a162434e125f11718191a",
+      "data_length": 179
+    },
+    {
+      "marker": "FFDA",
+      "marker_name": "SOS",
+      "offset": 609,
+      "length": 573,
+      "data_preview": "e6f6d1b6a6db46dafdd3eb87e33f5421db46da9b6d1b68fae07d50876d1b6a6db46da3eb81f5421db46da9b6d1b68fae07d50876d1b6a6db46da3eb81f5421db",
+      "data_length": 561
+    },
+    {
+      "marker": "FFD9",
+      "marker_name": "EOI",
+      "offset": 1184
+    }
+  ],
+  "universal_patterns": {
+    "MAGIC_NUMBER": {
+      "category": "structural",
+      "description": "File signature marker (SOI)",
+      "jpeg_usage": "FF D8 marker at file start",
+      "validation": "Always FF D8",
+      "applicable_to": [
+        "JPEG",
+        "JFIF",
+        "EXIF",
+        "Motion JPEG"
+      ]
+    },
+    "SEGMENT_STRUCTURE": {
+      "category": "composition",
+      "description": "Marker + Length + Data pattern",
+      "jpeg_usage": "Most JPEG segments follow this structure",
+      "components": {
+        "marker": "2 bytes (FF XX)",
+        "length": "2 bytes big-endian (includes length field)",
+        "data": "Variable length payload"
+      },
+      "exceptions": "SOI/EOI have no length/data",
+      "applicable_to": [
+        "JPEG",
+        "TIFF",
+        "RIFF chunks"
+      ]
+    },
+    "SEQUENTIAL_SEGMENTS": {
+      "category": "composition",
+      "description": "Sequential chain of segments",
+      "jpeg_usage": "File is sequence of segments from SOI to EOI",
+      "terminator": "EOI marker (FF D9)",
+      "applicable_to": [
+        "JPEG",
+        "PNG chunks",
+        "IFF chunks"
+      ]
+    },
+    "TERMINATOR": {
+      "category": "structural",
+      "description": "End-of-file marker",
+      "jpeg_usage": "EOI (FF D9) marks end of image",
+      "validation": "Must be last bytes",
+      "applicable_to": [
+        "JPEG",
+        "Some RIFF variants"
+      ]
+    },
+    "BIG_ENDIAN_LENGTH": {
+      "category": "structural",
+      "description": "Length encoded as big-endian 16-bit integer",
+      "jpeg_usage": "All segment lengths in JPEG",
+      "note": "Includes the 2 bytes of length field itself",
+      "applicable_to": [
+        "JPEG",
+        "Some network protocols",
+        "Some binary formats"
+      ]
+    }
+  },
+  "grammar": {
+    "format": "JPEG",
+    "version": "1.0",
+    "composition": {
+      "root": {
+        "pattern": "SEQUENTIAL_SEGMENTS",
+        "start_marker": {
+          "pattern": "MAGIC_NUMBER",
+          "value": "FFD8"
+        },
+        "segments": {
+          "pattern": "SEGMENT_STRUCTURE",
+          "repeatable": true,
+          "components": {
+            "marker": {
+              "type": "bytes",
+              "length": 2,
+              "format": "big_endian",
+              "constraint": "First byte must be FF"
+            },
+            "length": {
+              "type": "integer",
+              "size": 2,
+              "format": "big_endian",
+              "note": "Includes own 2 bytes"
+            },
+            "data": {
+              "type": "bytes",
+              "length_ref": "length - 2"
+            }
+          },
+          "exceptions": {
+            "SOI": "marker only, no length/data",
+            "EOI": "marker only, no length/data",
+            "SOS": "header + compressed data until EOI"
+          }
+        },
+        "end_marker": {
+          "pattern": "TERMINATOR",
+          "value": "FFD9"
+        }
+      }
+    },
+    "segment_types": {
+      "SOI": "FFD8",
+      "EOI": "FFD9",
+      "SOF0": "FFC0",
+      "SOF1": "FFC1",
+      "SOF2": "FFC2",
+      "DHT": "FFC4",
+      "DQT": "FFDB",
+      "DRI": "FFDD",
+      "SOS": "FFDA",
+      "APP0": "FFE0",
+      "APP1": "FFE1",
+      "APP2": "FFE2",
+      "COM": "FFFE"
+    }
+  }
+}

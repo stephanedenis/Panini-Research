@@ -90,5 +90,65 @@
         "Matroska"
       ]
     }
+  },
+  "MAGIC_NUMBER": {
+    "category": "structural",
+    "description": "File signature marker (SOI)",
+    "jpeg_usage": "FF D8 marker at file start",
+    "validation": "Always FF D8",
+    "applicable_to": [
+      "JPEG",
+      "JFIF",
+      "EXIF",
+      "Motion JPEG"
+    ]
+  },
+  "SEGMENT_STRUCTURE": {
+    "category": "composition",
+    "description": "Marker + Length + Data pattern",
+    "jpeg_usage": "Most JPEG segments follow this structure",
+    "components": {
+      "marker": "2 bytes (FF XX)",
+      "length": "2 bytes big-endian (includes length field)",
+      "data": "Variable length payload"
+    },
+    "exceptions": "SOI/EOI have no length/data",
+    "applicable_to": [
+      "JPEG",
+      "TIFF",
+      "RIFF chunks"
+    ]
+  },
+  "SEQUENTIAL_SEGMENTS": {
+    "category": "composition",
+    "description": "Sequential chain of segments",
+    "jpeg_usage": "File is sequence of segments from SOI to EOI",
+    "terminator": "EOI marker (FF D9)",
+    "applicable_to": [
+      "JPEG",
+      "PNG chunks",
+      "IFF chunks"
+    ]
+  },
+  "TERMINATOR": {
+    "category": "structural",
+    "description": "End-of-file marker",
+    "jpeg_usage": "EOI (FF D9) marks end of image",
+    "validation": "Must be last bytes",
+    "applicable_to": [
+      "JPEG",
+      "Some RIFF variants"
+    ]
+  },
+  "BIG_ENDIAN_LENGTH": {
+    "category": "structural",
+    "description": "Length encoded as big-endian 16-bit integer",
+    "jpeg_usage": "All segment lengths in JPEG",
+    "note": "Includes the 2 bytes of length field itself",
+    "applicable_to": [
+      "JPEG",
+      "Some network protocols",
+      "Some binary formats"
+    ]
   }
 }

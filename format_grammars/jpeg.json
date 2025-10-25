@@ -1,0 +1,59 @@
+{
+  "format": "JPEG",
+  "version": "1.0",
+  "composition": {
+    "root": {
+      "pattern": "SEQUENTIAL_SEGMENTS",
+      "start_marker": {
+        "pattern": "MAGIC_NUMBER",
+        "value": "FFD8"
+      },
+      "segments": {
+        "pattern": "SEGMENT_STRUCTURE",
+        "repeatable": true,
+        "components": {
+          "marker": {
+            "type": "bytes",
+            "length": 2,
+            "format": "big_endian",
+            "constraint": "First byte must be FF"
+          },
+          "length": {
+            "type": "integer",
+            "size": 2,
+            "format": "big_endian",
+            "note": "Includes own 2 bytes"
+          },
+          "data": {
+            "type": "bytes",
+            "length_ref": "length - 2"
+          }
+        },
+        "exceptions": {
+          "SOI": "marker only, no length/data",
+          "EOI": "marker only, no length/data",
+          "SOS": "header + compressed data until EOI"
+        }
+      },
+      "end_marker": {
+        "pattern": "TERMINATOR",
+        "value": "FFD9"
+      }
+    }
+  },
+  "segment_types": {
+    "SOI": "FFD8",
+    "EOI": "FFD9",
+    "SOF0": "FFC0",
+    "SOF1": "FFC1",
+    "SOF2": "FFC2",
+    "DHT": "FFC4",
+    "DQT": "FFDB",
+    "DRI": "FFDD",
+    "SOS": "FFDA",
+    "APP0": "FFE0",
+    "APP1": "FFE1",
+    "APP2": "FFE2",
+    "COM": "FFFE"
+  }
+}

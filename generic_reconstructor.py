@@ -49,7 +49,8 @@ class MagicNumberReconstructor(PatternReconstructor):
     """Reconstruit le pattern MAGIC_NUMBER"""
     
     def reconstruct(self, element: Dict[str, Any]) -> bytes:
-        value = element.get('value', '')
+        # Pour JPEG, le field s'appelle 'marker', pour PNG c'est 'value'
+        value = element.get('value') or element.get('marker', '')
         return bytes.fromhex(value)
 
 
@@ -133,6 +134,67 @@ class TypedChunkReconstructor(PatternReconstructor):
         return bytes(chunk_buffer)
 
 
+class SegmentStructureReconstructor(PatternReconstructor):
+    """Reconstruit le pattern SEGMENT_STRUCTURE (JPEG)"""
+    
+    def reconstruct(self, element: Dict[str, Any]) -> bytes:
+        """Reconstruit un segment JPEG: Marker (2B) + Length (2B BE) + Data"""
+        segment_buffer = bytearray()
+        
+        # 1. Marker (2 bytes)
+        marker_hex = element.get('marker', '')
+        marker = bytes.fromhex(marker_hex)
+        segment_buffer.extend(marker)
+        
+        # Markers sans data (SOI, EOI)
+        if not element.get('has_data', True):
+            return bytes(segment_buffer)
+        
+        # Cas spécial SOS avec données compressées
+        if element.get('marker_type') == 'SOS':
+            # Header
+            header_length = element.get('header_length', 0)
+            header_hex = element.get('header_data', '')
+            
+            # Length field
+            segment_buffer.extend(struct.pack('>H', header_length))
+            
+            # Header data
+            if header_hex:
+                segment_buffer.extend(bytes.fromhex(header_hex))
+            
+            # Compressed data
+            compressed_info = element.get('compressed_data', {})
+            compressed_hex = compressed_info.get('full_data', '')
+            if compressed_hex:
+                segment_buffer.extend(bytes.fromhex(compressed_hex))
+            
+            return bytes(segment_buffer)
+        
+        # Segments normaux avec length + data
+        length_info = element.get('length', {})
+        length_value = length_info.get('value', 0)
+        
+        # 2. Length (2 bytes big-endian)
+        segment_buffer.extend(struct.pack('>H', length_value))
+        
+        # 3. Data
+        data_info = element.get('data', {})
+        if 'full_data' in data_info:
+            data_hex = data_info['full_data']
+        else:
+            data_preview = data_info.get('preview', '')
+            if data_preview.endswith('...'):
+                data_hex = data_preview[:-3]
+            else:
+                data_hex = data_preview
+        
+        if data_hex:
+            segment_buffer.extend(bytes.fromhex(data_hex))
+        
+        return bytes(segment_buffer)
+
+
 # ============================================================================
 # GENERIC RECONSTRUCTOR ENGINE
 # ============================================================================
@@ -174,6 +236,11 @@ class GenericReconstructor:
             reconstructor = MagicNumberReconstructor()
             return reconstructor.reconstruct(element)
         
+        elif pattern == 'TERMINATOR':
+            # Terminateurs (EOI JPEG, etc.)
+            marker_hex = element.get('marker', '')
+            return bytes.fromhex(marker_hex) if marker_hex else None
+        
         elif pattern == 'SEQUENTIAL_STRUCTURE':
             # Reconstruire tous les éléments de la séquence
             buffer = bytearray()
@@ -185,6 +252,10 @@ class GenericReconstructor:
         
         elif pattern == 'TYPED_CHUNK':
             reconstructor = TypedChunkReconstructor()
+            return reconstructor.reconstruct(element)
+        
+        elif pattern == 'SEGMENT_STRUCTURE':
+            reconstructor = SegmentStructureReconstructor()
             return reconstructor.reconstruct(element)
         
         else:
