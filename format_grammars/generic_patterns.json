@@ -146,6 +146,116 @@
         "PDF (LZW)"
       ],
       "universality": 3
+    },
+    "RIFF_HEADER": {
+      "name": "RIFF_HEADER",
+      "description": "RIFF file header (signature + size + form type)",
+      "structure": [
+        "MAGIC_NUMBER",
+        "LENGTH_PREFIXED_DATA",
+        "RIFF_FORM_TYPE"
+      ],
+      "reusable": true,
+      "formats": [
+        "WebP",
+        "WAV",
+        "AVI",
+        "MIDI"
+      ],
+      "size": "fixed_12_bytes"
+    },
+    "RIFF_FORM_TYPE": {
+      "name": "RIFF_FORM_TYPE",
+      "description": "RIFF form type identifier (FOURCC)",
+      "example": "WEBP, WAVE, AVI, RMID",
+      "reusable": true,
+      "formats": [
+        "WebP",
+        "WAV",
+        "AVI",
+        "MIDI"
+      ],
+      "size": "fixed_4_bytes"
+    },
+    "RIFF_CHUNK": {
+      "name": "RIFF_CHUNK",
+      "description": "RIFF chunk (FourCC + size + data + optional padding)",
+      "structure": [
+        "FOURCC",
+        "LENGTH_PREFIXED_DATA",
+        "OPTIONAL_PADDING"
+      ],
+      "reusable": true,
+      "formats": [
+        "WebP",
+        "WAV",
+        "AVI",
+        "MIDI"
+      ],
+      "alignment": "word_aligned"
+    },
+    "VP8_BITSTREAM": {
+      "name": "VP8_BITSTREAM",
+      "description": "VP8 lossy video bitstream",
+      "structure": [
+        "FRAME_TAG",
+        "START_CODE",
+        "WIDTH_HEIGHT",
+        "COMPRESSED_DATA"
+      ],
+      "reusable": false,
+      "formats": [
+        "WebP",
+        "WebM",
+        "MP4"
+      ],
+      "compression": "VP8"
+    },
+    "VP8L_BITSTREAM": {
+      "name": "VP8L_BITSTREAM",
+      "description": "VP8L lossless image bitstream",
+      "structure": [
+        "SIGNATURE",
+        "WIDTH_HEIGHT_ALPHA",
+        "COMPRESSED_DATA"
+      ],
+      "reusable": false,
+      "formats": [
+        "WebP"
+      ],
+      "compression": "VP8L"
+    },
+    "VP8X_HEADER": {
+      "name": "VP8X_HEADER",
+      "description": "VP8X extended features header",
+      "structure": [
+        "FLAGS",
+        "CANVAS_SIZE"
+      ],
+      "reusable": false,
+      "formats": [
+        "WebP"
+      ],
+      "features": [
+        "ICC",
+        "ALPHA",
+        "EXIF",
+        "XMP",
+        "ANIMATION"
+      ]
+    },
+    "PADDING_ALIGNMENT": {
+      "name": "PADDING_ALIGNMENT",
+      "description": "Padding byte for word alignment",
+      "reusable": true,
+      "formats": [
+        "WebP",
+        "WAV",
+        "AVI",
+        "MIDI",
+        "IFF"
+      ],
+      "size": "1_byte_if_odd"
     }
   },
   "MAGIC_NUMBER": {

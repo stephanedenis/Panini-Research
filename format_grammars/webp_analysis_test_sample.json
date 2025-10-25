@@ -1,0 +1,38 @@
+{
+  "file": "test_sample.webp",
+  "size": 184,
+  "format": "WebP",
+  "riff_header": {
+    "offset": 0,
+    "signature": "RIFF",
+    "file_size": 176,
+    "size_match": true
+  },
+  "form_type": "WEBP",
+  "chunks": [
+    {
+      "offset": 12,
+      "fourcc": "VP8 ",
+      "size": 164,
+      "data_preview": "1007009d012a320032003e8d3c9647a523a22131f55b68a011894019820d9f63",
+      "type": "VP8_LOSSY",
+      "details": {
+        "key_frame": true,
+        "version": 0,
+        "show_frame": 1,
+        "first_part_size": 56,
+        "start_code": "9d012a",
+        "width": 50,
+        "height": 50
+      }
+    }
+  ],
+  "patterns_found": [
+    "LENGTH_PREFIXED_DATA",
+    "MAGIC_NUMBER",
+    "RIFF_CHUNK",
+    "RIFF_FORM_TYPE",
+    "RIFF_HEADER",
+    "VP8_BITSTREAM"
+  ]
+}

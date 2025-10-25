@@ -360,6 +360,56 @@ class GIFDataBlockReconstructor(PatternReconstructor):
         return bytes(buffer)
 
 
+class RiffHeaderReconstructor(PatternReconstructor):
+    """Reconstruct RIFF header."""
+    
+    def reconstruct(self, element: Dict[str, Any]) -> bytes:
+        buffer = bytearray()
+        
+        # RIFF signature (4 bytes)
+        signature = element.get('signature', 'RIFF')
+        buffer.extend(signature.encode('ascii'))
+        
+        # File size (4 bytes, little-endian)
+        file_size = element.get('file_size', 0)
+        buffer.extend(struct.pack('<I', file_size))
+        
+        # Form type (4 bytes)
+        form_type = element.get('form_type', 'WEBP')
+        buffer.extend(form_type.encode('ascii'))
+        
+        return bytes(buffer)
+
+
+class RiffChunkReconstructor(PatternReconstructor):
+    """Reconstruct RIFF chunk."""
+    
+    def reconstruct(self, element: Dict[str, Any]) -> bytes:
+        buffer = bytearray()
+        
+        # FourCC (4 bytes)
+        fourcc = element.get('fourcc', '    ')
+        buffer.extend(fourcc.encode('ascii'))
+        
+        # Chunk data (from full_data hex)
+        chunk_data_hex = element.get('full_data', '')
+        chunk_data = bytes.fromhex(chunk_data_hex)
+        
+        # Chunk size (4 bytes, little-endian)
+        chunk_size = len(chunk_data)
+        buffer.extend(struct.pack('<I', chunk_size))
+        
+        # Data
+        buffer.extend(chunk_data)
+        
+        # Padding (if odd size)
+        if 'padding' in element and chunk_size % 2 == 1:
+            padding_hex = element['padding']
+            buffer.extend(bytes.fromhex(padding_hex))
+        
+        return bytes(buffer)
+
+
 # ============================================================================
 # GENERIC RECONSTRUCTOR ENGINE
 # ============================================================================
@@ -419,6 +469,14 @@ class GenericReconstructor:
         
         elif pattern == 'GIF_DATA_BLOCK':
             reconstructor = GIFDataBlockReconstructor()
+            return reconstructor.reconstruct(element)
+        
+        elif pattern == 'RIFF_HEADER':
+            reconstructor = RiffHeaderReconstructor()
+            return reconstructor.reconstruct(element)
+        
+        elif pattern == 'RIFF_CHUNK':
+            reconstructor = RiffChunkReconstructor()
             return reconstructor.reconstruct(element)
         
         elif pattern == 'TERMINATOR':

@@ -1,16 +1,11 @@
 {
-  "total_elements": 6,
+  "total_elements": 3,
   "patterns_used": {
-    "MAGIC_NUMBER": 1,
-    "LOGICAL_SCREEN_DESCRIPTOR": 1,
-    "PALETTE_DATA": 1,
+    "RIFF_HEADER": 1,
     "SEQUENTIAL_STRUCTURE": 1,
-    "GIF_DATA_BLOCK": 1,
-    "TERMINATOR": 1
+    "RIFF_CHUNK": 1
   },
-  "validation_status": {
-    "MAGIC_NUMBER_header": true
-  },
+  "validation_status": {},
   "integrity_checks": [],
   "overall_status": "VALID"
 }

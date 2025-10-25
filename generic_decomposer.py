@@ -602,6 +602,180 @@ class GIFDataBlockProcessor(PatternProcessor):
         }
 
 
+class RiffHeaderProcessor(PatternProcessor):
+    """Process RIFF header (RIFF + size + form type)."""
+    
+    def process(self, element: Dict[str, Any]) -> Dict[str, Any]:
+        start_offset = self.offset
+        
+        # RIFF signature (4 bytes)
+        signature = self.read_bytes(4).decode('ascii', errors='ignore')
+        if signature != 'RIFF':
+            raise ValueError(f"Invalid RIFF signature: {signature}")
+        
+        # File size (4 bytes, little-endian, excludes signature + size)
+        file_size = struct.unpack('<I', self.read_bytes(4))[0]
+        
+        # Form type (4 bytes)
+        form_type = self.read_bytes(4).decode('ascii', errors='ignore')
+        
+        return {
+            "pattern": "RIFF_HEADER",
+            "offset": start_offset,
+            "size": 12,
+            "signature": signature,
+            "file_size": file_size,
+            "form_type": form_type,
+            "validation": {
+                "signature_ok": signature == 'RIFF',
+                "expected_total_size": file_size + 8
+            }
+        }
+
+
+class RiffChunkProcessor(PatternProcessor):
+    """Process RIFF chunk (FourCC + size + data + optional padding)."""
+    
+    def process(self, element: Dict[str, Any]) -> Dict[str, Any]:
+        start_offset = self.offset
+        
+        # FourCC (4 bytes)
+        fourcc = self.read_bytes(4).decode('ascii', errors='ignore')
+        
+        # Chunk size (4 bytes, little-endian)
+        chunk_size = struct.unpack('<I', self.read_bytes(4))[0]
+        
+        # Data (chunk_size bytes)
+        chunk_data = self.read_bytes(chunk_size)
+        
+        result = {
+            "pattern": "RIFF_CHUNK",
+            "offset": start_offset,
+            "fourcc": fourcc,
+            "chunk_size": chunk_size,
+            "data_preview": chunk_data[:32].hex() if len(chunk_data) > 32 else chunk_data.hex(),
+            "full_data": chunk_data.hex()
+        }
+        
+        # Analyze specific chunk types for WebP
+        if fourcc == 'VP8 ':
+            result['chunk_type'] = 'VP8_LOSSY'
+            result['details'] = self._analyze_vp8(chunk_data)
+        elif fourcc == 'VP8L':
+            result['chunk_type'] = 'VP8_LOSSLESS'
+            result['details'] = self._analyze_vp8l(chunk_data)
+        elif fourcc == 'VP8X':
+            result['chunk_type'] = 'VP8_EXTENDED'
+            result['details'] = self._analyze_vp8x(chunk_data)
+        elif fourcc == 'ALPH':
+            result['chunk_type'] = 'ALPHA_CHANNEL'
+        elif fourcc == 'ANIM':
+            result['chunk_type'] = 'ANIMATION'
+        elif fourcc == 'ANMF':
+            result['chunk_type'] = 'ANIMATION_FRAME'
+        elif fourcc == 'ICCP':
+            result['chunk_type'] = 'ICC_PROFILE'
+        elif fourcc == 'EXIF':
+            result['chunk_type'] = 'EXIF_METADATA'
+        elif fourcc == 'XMP ':
+            result['chunk_type'] = 'XMP_METADATA'
+        else:
+            result['chunk_type'] = 'GENERIC'
+        
+        # RIFF chunks must be word-aligned (pad byte if odd size)
+        if chunk_size % 2 == 1:
+            # Skip padding byte if present
+            if self.offset < len(self.data):
+                pad_byte = self.read_bytes(1)
+                result['padding'] = pad_byte.hex()
+        
+        result['size'] = self.offset - start_offset
+        
+        return result
+    
+    def _analyze_vp8(self, data: bytes) -> Dict[str, Any]:
+        """Analyze VP8 lossy bitstream."""
+        if len(data) < 10:
+            return {'error': 'Chunk too small'}
+        
+        # Frame tag (3 bytes)
+        frame_tag = struct.unpack('<I', data[:3] + b'\x00')[0]
+        key_frame = (frame_tag & 0x01) == 0
+        version = (frame_tag >> 1) & 0x07
+        show_frame = (frame_tag >> 4) & 0x01
+        first_part_size = (frame_tag >> 5) & 0x7FFFF
+        
+        # Start code (3 bytes): 0x9d 0x01 0x2a
+        start_code = data[3:6]
+        
+        # Width and height (2 bytes each, little-endian)
+        width = struct.unpack('<H', data[6:8])[0] & 0x3FFF
+        height = struct.unpack('<H', data[8:10])[0] & 0x3FFF
+        
+        return {
+            'key_frame': key_frame,
+            'version': version,
+            'show_frame': show_frame,
+            'first_part_size': first_part_size,
+            'start_code': start_code.hex(),
+            'width': width,
+            'height': height
+        }
+    
+    def _analyze_vp8l(self, data: bytes) -> Dict[str, Any]:
+        """Analyze VP8L lossless bitstream."""
+        if len(data) < 5:
+            return {'error': 'Chunk too small'}
+        
+        # Signature byte: 0x2f
+        signature = data[0]
+        if signature != 0x2f:
+            return {'error': f'Invalid VP8L signature: 0x{signature:02x}'}
+        
+        # Width and height encoded in 14 bits each
+        size_bits = struct.unpack('<I', data[1:5])[0]
+        width = (size_bits & 0x3FFF) + 1
+        height = ((size_bits >> 14) & 0x3FFF) + 1
+        alpha_used = (size_bits >> 28) & 0x01
+        version = (size_bits >> 29) & 0x07
+        
+        return {
+            'signature': f'0x{signature:02x}',
+            'width': width,
+            'height': height,
+            'alpha_used': bool(alpha_used),
+            'version': version
+        }
+    
+    def _analyze_vp8x(self, data: bytes) -> Dict[str, Any]:
+        """Analyze VP8X extended header."""
+        if len(data) < 10:
+            return {'error': 'Chunk too small'}
+        
+        # Flags byte
+        flags = data[0]
+        has_icc = bool(flags & 0x20)
+        has_alpha = bool(flags & 0x10)
+        has_exif = bool(flags & 0x08)
+        has_xmp = bool(flags & 0x04)
+        has_animation = bool(flags & 0x02)
+        
+        # Canvas size (3 bytes each, little-endian, +1)
+        canvas_width = struct.unpack('<I', data[4:7] + b'\x00')[0] + 1
+        canvas_height = struct.unpack('<I', data[7:10] + b'\x00')[0] + 1
+        
+        return {
+            'flags': f'0x{flags:02x}',
+            'has_icc': has_icc,
+            'has_alpha': has_alpha,
+            'has_exif': has_exif,
+            'has_xmp': has_xmp,
+            'has_animation': has_animation,
+            'canvas_width': canvas_width,
+            'canvas_height': canvas_height
+        }
+
+
 # ============================================================================
 # GENERIC DECOMPOSER ENGINE
 # ============================================================================
@@ -716,6 +890,20 @@ class GenericDecomposer:
                 result['name'] = name
             return result
         
+        elif pattern == 'RIFF_HEADER':
+            processor = RiffHeaderProcessor(self.binary_data, self.offset)
+            result = processor.process(spec)
+            self.offset = processor.offset
+            result['name'] = name
+            return result
+        
+        elif pattern == 'RIFF_CHUNK':
+            processor = RiffChunkProcessor(self.binary_data, self.offset)
+            result = processor.process(spec)
+            self.offset = processor.offset
+            result['name'] = name
+            return result
+        
         elif pattern == 'SEQUENTIAL_STRUCTURE':
             # Structure séquentielle (ex: chunks PNG)
             return self._process_sequential_structure(spec)
@@ -781,6 +969,22 @@ class GenericDecomposer:
                 
                 self.offset = processor.offset
                 elements.append(block_result)
+            
+            elif element_pattern == 'RIFF_CHUNK':
+                processor = RiffChunkProcessor(
+                    self.binary_data, self.offset
+                )
+                chunk_result = processor.process(element_spec)
+                
+                if chunk_result is None:
+                    break
+                
+                self.offset = processor.offset
+                elements.append(chunk_result)
+                
+                # Check EOF terminator
+                if terminator.get('type') == 'eof' and self.offset >= len(self.binary_data):
+                    break
             
             else:
                 print(f"⚠️  Unsupported pattern: {element_pattern}")
