@@ -1,0 +1,18 @@
+{
+  "total_elements": 17,
+  "patterns_used": {
+    "MAGIC_NUMBER": 1,
+    "SEQUENTIAL_STRUCTURE": 1,
+    "TYPED_CHUNK": 3,
+    "LENGTH_PREFIXED_DATA": 3,
+    "TYPE_FIELD": 3,
+    "DATA_FIELD": 3,
+    "CRC_CHECKSUM": 3
+  },
+  "validation_status": {
+    "MAGIC_NUMBER_signature": true,
+    "CRC_CHECKSUM_unknown": true
+  },
+  "integrity_checks": [],
+  "overall_status": "VALID"
+}

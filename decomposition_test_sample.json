@@ -1,0 +1,145 @@
+{
+  "source_file": "test_sample.png",
+  "file_size": 303,
+  "format": "PNG",
+  "grammar_version": "ISO/IEC 15948:2004",
+  "elements": [
+    {
+      "pattern": "MAGIC_NUMBER",
+      "offset": 0,
+      "size": 8,
+      "value": "89504e470d0a1a0a",
+      "expected": "89504e470d0a1a0a",
+      "valid": true,
+      "interpretation": "signature",
+      "name": "signature"
+    },
+    {
+      "pattern": "SEQUENTIAL_STRUCTURE",
+      "name": "chunks",
+      "count": 3,
+      "elements": [
+        {
+          "pattern": "TYPED_CHUNK",
+          "offset": 8,
+          "size": 25,
+          "type": "IHDR",
+          "structure": {
+            "length": {
+              "pattern": "LENGTH_PREFIXED_DATA",
+              "offset": 8,
+              "size": 4,
+              "length_value": 13,
+              "endianness": "big",
+              "field": "length"
+            },
+            "type": {
+              "pattern": "TYPE_FIELD",
+              "offset": 12,
+              "size": 4,
+              "value": "IHDR",
+              "encoding": "ASCII"
+            },
+            "data": {
+              "pattern": "DATA_FIELD",
+              "offset": 16,
+              "size": 13,
+              "full_data": "00000064000000640802000000",
+              "preview": "00000064000000640802000000"
+            },
+            "crc": {
+              "pattern": "CRC_CHECKSUM",
+              "offset": 29,
+              "size": 4,
+              "algorithm": "CRC-32",
+              "stored": "ff800203",
+              "calculated": "ff800203",
+              "valid": true,
+              "field": "crc"
+            }
+          }
+        },
+        {
+          "pattern": "TYPED_CHUNK",
+          "offset": 33,
+          "size": 258,
+          "type": "IDAT",
+          "structure": {
+            "length": {
+              "pattern": "LENGTH_PREFIXED_DATA",
+              "offset": 33,
+              "size": 4,
+              "length_value": 246,
+              "endianness": "big",
+              "field": "length"
+            },
+            "type": {
+              "pattern": "TYPE_FIELD",
+              "offset": 37,
+              "size": 4,
+              "value": "IDAT",
+              "encoding": "ASCII"
+            },
+            "data": {
+              "pattern": "DATA_FIELD",
+              "offset": 41,
+              "size": 246,
+              "full_data": "789cedd0b10dc3400c0441faddb81b7fc90d088236d64cc084b8643f73fed69eef9e755cdfbbd731afdaaee131b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b102b1823ffb7e6546",
+              "preview": "789cedd0b10dc3400c0441faddb81b7fc90d088236d64cc084b8643f73fed69e..."
+            },
+            "crc": {
+              "pattern": "CRC_CHECKSUM",
+              "offset": 287,
+              "size": 4,
+              "algorithm": "CRC-32",
+              "stored": "62b32183",
+              "calculated": "62b32183",
+              "valid": true,
+              "field": "crc"
+            }
+          }
+        },
+        {
+          "pattern": "TYPED_CHUNK",
+          "offset": 291,
+          "size": 12,
+          "type": "IEND",
+          "structure": {
+            "length": {
+              "pattern": "LENGTH_PREFIXED_DATA",
+              "offset": 291,
+              "size": 4,
+              "length_value": 0,
+              "endianness": "big",
+              "field": "length"
+            },
+            "type": {
+              "pattern": "TYPE_FIELD",
+              "offset": 295,
+              "size": 4,
+              "value": "IEND",
+              "encoding": "ASCII"
+            },
+            "data": {
+              "pattern": "DATA_FIELD",
+              "offset": 299,
+              "size": 0,
+              "full_data": "",
+              "preview": ""
+            },
+            "crc": {
+              "pattern": "CRC_CHECKSUM",
+              "offset": 299,
+              "size": 4,
+              "algorithm": "CRC-32",
+              "stored": "ae426082",
+              "calculated": "ae426082",
+              "valid": true,
+              "field": "crc"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

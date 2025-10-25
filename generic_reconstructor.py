@@ -1,0 +1,308 @@
+#!/usr/bin/env python3
+"""
+🔧 Generic Binary Reconstructor - PaniniFS Core Engine
+
+Moteur générique de reconstruction basé sur grammaires universelles.
+Lit une décomposition JSON + grammaire et reconstruit le fichier binaire byte-perfect.
+
+Philosophie:
+- RECONSTRUCTION PARFAITE (bit-perfect)
+- Recalcule TOUS les checksums (CRC, etc.)
+- Réutilise les patterns génériques
+- Validation de la reconstruction
+
+Usage:
+    python generic_reconstructor.py <decomposition_file> <grammar_file> <output_file>
+    
+Example:
+    python generic_reconstructor.py decomposition_test_sample.json format_grammars/png.json reconstructed.png
+"""
+
+import struct
+import zlib
+import json
+import sys
+from pathlib import Path
+from typing import Dict, List, Any, Optional
+
+
+# ============================================================================
+# PATTERN RECONSTRUCTORS - Reconstruit chaque type de pattern universel
+# ============================================================================
+
+class PatternReconstructor:
+    """Classe de base pour reconstruire un pattern universel"""
+    
+    def __init__(self):
+        self.buffer = bytearray()
+    
+    def write_bytes(self, data: bytes):
+        """Ajoute des bytes au buffer"""
+        self.buffer.extend(data)
+    
+    def get_bytes(self) -> bytes:
+        """Retourne les bytes reconstruits"""
+        return bytes(self.buffer)
+
+
+class MagicNumberReconstructor(PatternReconstructor):
+    """Reconstruit le pattern MAGIC_NUMBER"""
+    
+    def reconstruct(self, element: Dict[str, Any]) -> bytes:
+        value = element.get('value', '')
+        return bytes.fromhex(value)
+
+
+class LengthPrefixedDataReconstructor(PatternReconstructor):
+    """Reconstruit le pattern LENGTH_PREFIXED_DATA"""
+    
+    def reconstruct(self, element: Dict[str, Any], data_length: int) -> bytes:
+        """Reconstruit le champ de taille"""
+        endianness = element.get('endianness', 'big')
+        
+        # Pour PNG, c'est toujours uint32 big-endian
+        if endianness == 'big':
+            return struct.pack('>I', data_length)
+        else:
+            return struct.pack('<I', data_length)
+
+
+class CRCChecksumReconstructor(PatternReconstructor):
+    """Reconstruit et recalcule le pattern CRC_CHECKSUM"""
+    
+    def reconstruct(self, element: Dict[str, Any], data_to_check: bytes) -> bytes:
+        """Recalcule le CRC sur les données"""
+        algorithm = element.get('algorithm', 'CRC-32')
+        
+        if algorithm == 'CRC-32':
+            crc = zlib.crc32(data_to_check)
+            return struct.pack('>I', crc)
+        else:
+            raise ValueError(f"Unsupported CRC algorithm: {algorithm}")
+
+
+class TypedChunkReconstructor(PatternReconstructor):
+    """Reconstruit le pattern TYPED_CHUNK"""
+    
+    def reconstruct(self, element: Dict[str, Any]) -> bytes:
+        """Reconstruit un chunk complet (length + type + data + crc)"""
+        structure = element.get('structure', {})
+        
+        # Extraire les composants
+        chunk_type = element.get('type', '').encode('ascii')
+        
+        # Récupérer les données
+        data_info = structure.get('data', {})
+        
+        # Utiliser full_data si disponible, sinon preview
+        if 'full_data' in data_info:
+            data_hex = data_info['full_data']
+        else:
+            data_preview = data_info.get('preview', '')
+            if data_preview.endswith('...'):
+                data_hex = data_preview[:-3]
+            else:
+                data_hex = data_preview
+        
+        data = bytes.fromhex(data_hex)
+        
+        # Vérifier la taille
+        length_info = structure.get('length', {})
+        expected_length = length_info.get('length_value', len(data))
+        
+        if len(data) != expected_length:
+            print(f"⚠️  Data length mismatch: {len(data)} vs {expected_length}")
+        
+        # Construire le chunk
+        chunk_buffer = bytearray()
+        
+        # 1. Length (4 bytes big-endian)
+        chunk_buffer.extend(struct.pack('>I', len(data)))
+        
+        # 2. Type (4 bytes ASCII)
+        chunk_buffer.extend(chunk_type)
+        
+        # 3. Data
+        chunk_buffer.extend(data)
+        
+        # 4. CRC (recalculé sur type + data)
+        crc_data = chunk_type + data
+        crc = zlib.crc32(crc_data)
+        chunk_buffer.extend(struct.pack('>I', crc))
+        
+        return bytes(chunk_buffer)
+
+
+# ============================================================================
+# GENERIC RECONSTRUCTOR ENGINE
+# ============================================================================
+
+class GenericReconstructor:
+    """
+    Moteur générique de reconstruction basé sur grammaires.
+    Fonctionne pour N'IMPORTE QUEL format avec une grammaire + décomposition.
+    """
+    
+    def __init__(self, decomposition_file: Path, grammar_file: Path):
+        # Charger la décomposition
+        self.decomposition = json.loads(decomposition_file.read_text())
+        
+        # Charger la grammaire
+        grammar_content = json.loads(grammar_file.read_text())
+        self.grammar = grammar_content.get('grammar', grammar_content)
+        
+        self.buffer = bytearray()
+    
+    def reconstruct(self) -> bytes:
+        """Reconstruit le fichier binaire complet"""
+        
+        elements = self.decomposition.get('elements', [])
+        
+        for element in elements:
+            reconstructed = self._reconstruct_element(element)
+            if reconstructed:
+                self.buffer.extend(reconstructed)
+        
+        return bytes(self.buffer)
+    
+    def _reconstruct_element(self, element: Dict[str, Any]) -> Optional[bytes]:
+        """Reconstruit un élément selon son pattern"""
+        
+        pattern = element.get('pattern')
+        
+        if pattern == 'MAGIC_NUMBER':
+            reconstructor = MagicNumberReconstructor()
+            return reconstructor.reconstruct(element)
+        
+        elif pattern == 'SEQUENTIAL_STRUCTURE':
+            # Reconstruire tous les éléments de la séquence
+            buffer = bytearray()
+            for sub_element in element.get('elements', []):
+                reconstructed = self._reconstruct_element(sub_element)
+                if reconstructed:
+                    buffer.extend(reconstructed)
+            return bytes(buffer)
+        
+        elif pattern == 'TYPED_CHUNK':
+            reconstructor = TypedChunkReconstructor()
+            return reconstructor.reconstruct(element)
+        
+        else:
+            print(f"⚠️  Unknown pattern: {pattern}")
+            return None
+
+
+# ============================================================================
+# VALIDATION
+# ============================================================================
+
+def validate_reconstruction(original: Path, reconstructed: Path) -> Dict[str, Any]:
+    """Compare le fichier original avec la reconstruction"""
+    
+    original_data = original.read_bytes()
+    reconstructed_data = reconstructed.read_bytes()
+    
+    validation = {
+        "original_size": len(original_data),
+        "reconstructed_size": len(reconstructed_data),
+        "size_match": len(original_data) == len(reconstructed_data),
+        "bit_perfect": original_data == reconstructed_data,
+        "differences": []
+    }
+    
+    if not validation['bit_perfect']:
+        # Trouver les différences
+        min_size = min(len(original_data), len(reconstructed_data))
+        for i in range(min_size):
+            if original_data[i] != reconstructed_data[i]:
+                validation['differences'].append({
+                    "offset": i,
+                    "original": f"{original_data[i]:02x}",
+                    "reconstructed": f"{reconstructed_data[i]:02x}"
+                })
+                if len(validation['differences']) >= 10:
+                    validation['differences'].append({"note": "... (more differences)"})
+                    break
+    
+    return validation
+
+
+# ============================================================================
+# MAIN
+# ============================================================================
+
+def main():
+    if len(sys.argv) < 4:
+        print("Usage: python generic_reconstructor.py <decomposition_file> <grammar_file> <output_file>")
+        print("\nGeneric binary reconstructor using universal patterns (PaniniFS)")
+        print("\nExample:")
+        print("  python generic_reconstructor.py decomposition_test.json format_grammars/png.json output.png")
+        sys.exit(1)
+    
+    decomposition_file = Path(sys.argv[1])
+    grammar_file = Path(sys.argv[2])
+    output_file = Path(sys.argv[3])
+    
+    if not decomposition_file.exists():
+        print(f"❌ Decomposition file not found: {decomposition_file}")
+        sys.exit(1)
+    
+    if not grammar_file.exists():
+        print(f"❌ Grammar file not found: {grammar_file}")
+        sys.exit(1)
+    
+    print(f"\n🔧 Generic Reconstructor - PaniniFS")
+    print("=" * 70)
+    print(f"Decomposition: {decomposition_file}")
+    print(f"Grammar: {grammar_file}")
+    print(f"Output: {output_file}")
+    
+    # Charger les infos de la décomposition
+    decomp_data = json.loads(decomposition_file.read_text())
+    source_file = decomp_data.get('source_file')
+    
+    # Reconstruire
+    print(f"\n🔨 Reconstructing...")
+    reconstructor = GenericReconstructor(decomposition_file, grammar_file)
+    reconstructed_data = reconstructor.reconstruct()
+    
+    # Sauvegarder
+    output_file.write_bytes(reconstructed_data)
+    print(f"✅ Reconstructed file saved: {output_file} ({len(reconstructed_data)} bytes)")
+    
+    # Valider si le fichier source existe
+    if source_file and Path(source_file).exists():
+        print(f"\n🔍 Validating reconstruction...")
+        validation = validate_reconstruction(Path(source_file), output_file)
+        
+        print(f"\n📊 Validation Results:")
+        print(f"   Original size: {validation['original_size']} bytes")
+        print(f"   Reconstructed size: {validation['reconstructed_size']} bytes")
+        print(f"   Size match: {'✓' if validation['size_match'] else '✗'}")
+        print(f"   Bit-perfect: {'✓' if validation['bit_perfect'] else '✗'}")
+        
+        if validation['differences']:
+            print(f"\n⚠️  Differences found:")
+            for diff in validation['differences']:
+                if 'note' in diff:
+                    print(f"   {diff['note']}")
+                else:
+                    print(f"   Offset {diff['offset']}: {diff['original']} → {diff['reconstructed']}")
+        
+        if validation['bit_perfect']:
+            print(f"\n🎉 SUCCESS: Bit-perfect reconstruction!")
+        else:
+            print(f"\n⚠️  WARNING: Reconstruction differs from original")
+        
+        # Sauvegarder le rapport de validation
+        validation_file = output_file.with_suffix('.validation.json')
+        validation_file.write_text(json.dumps(validation, indent=2))
+        print(f"✅ Validation report: {validation_file}")
+    else:
+        print(f"\n⚠️  Source file not available for validation")
+    
+    print(f"\n✨ Reconstruction complete!")
+
+
+if __name__ == "__main__":
+    main()

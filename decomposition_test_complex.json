@@ -1,0 +1,265 @@
+{
+  "source_file": "test_complex.png",
+  "file_size": 1357,
+  "format": "PNG",
+  "grammar_version": "ISO/IEC 15948:2004",
+  "elements": [
+    {
+      "pattern": "MAGIC_NUMBER",
+      "offset": 0,
+      "size": 8,
+      "value": "89504e470d0a1a0a",
+      "expected": "89504e470d0a1a0a",
+      "valid": true,
+      "interpretation": "signature",
+      "name": "signature"
+    },
+    {
+      "pattern": "SEQUENTIAL_STRUCTURE",
+      "name": "chunks",
+      "count": 6,
+      "elements": [
+        {
+          "pattern": "TYPED_CHUNK",
+          "offset": 8,
+          "size": 25,
+          "type": "IHDR",
+          "structure": {
+            "length": {
+              "pattern": "LENGTH_PREFIXED_DATA",
+              "offset": 8,
+              "size": 4,
+              "length_value": 13,
+              "endianness": "big",
+              "field": "length"
+            },
+            "type": {
+              "pattern": "TYPE_FIELD",
+              "offset": 12,
+              "size": 4,
+              "value": "IHDR",
+              "encoding": "ASCII"
+            },
+            "data": {
+              "pattern": "DATA_FIELD",
+              "offset": 16,
+              "size": 13,
+              "full_data": "000000c8000000c80802000000",
+              "preview": "000000c8000000c80802000000"
+            },
+            "crc": {
+              "pattern": "CRC_CHECKSUM",
+              "offset": 29,
+              "size": 4,
+              "algorithm": "CRC-32",
+              "stored": "223a39c9",
+              "calculated": "223a39c9",
+              "valid": true,
+              "field": "crc"
+            }
+          }
+        },
+        {
+          "pattern": "TYPED_CHUNK",
+          "offset": 33,
+          "size": 37,
+          "type": "tEXt",
+          "structure": {
+            "length": {
+              "pattern": "LENGTH_PREFIXED_DATA",
+              "offset": 33,
+              "size": 4,
+              "length_value": 25,
+              "endianness": "big",
+              "field": "length"
+            },
+            "type": {
+              "pattern": "TYPE_FIELD",
+              "offset": 37,
+              "size": 4,
+              "value": "tEXt",
+              "encoding": "ASCII"
+            },
+            "data": {
+              "pattern": "DATA_FIELD",
+              "offset": 41,
+              "size": 25,
+              "full_data": "5469746c650050616e696e694653205465737420496d616765",
+              "preview": "5469746c650050616e696e694653205465737420496d616765"
+            },
+            "crc": {
+              "pattern": "CRC_CHECKSUM",
+              "offset": 66,
+              "size": 4,
+              "algorithm": "CRC-32",
+              "stored": "bdc140ee",
+              "calculated": "bdc140ee",
+              "valid": true,
+              "field": "crc"
+            }
+          }
+        },
+        {
+          "pattern": "TYPED_CHUNK",
+          "offset": 70,
+          "size": 37,
+          "type": "tEXt",
+          "structure": {
+            "length": {
+              "pattern": "LENGTH_PREFIXED_DATA",
+              "offset": 70,
+              "size": 4,
+              "length_value": 25,
+              "endianness": "big",
+              "field": "length"
+            },
+            "type": {
+              "pattern": "TYPE_FIELD",
+              "offset": 74,
+              "size": 4,
+              "value": "tEXt",
+              "encoding": "ASCII"
+            },
+            "data": {
+              "pattern": "DATA_FIELD",
+              "offset": 78,
+              "size": 25,
+              "full_data": "417574686f720047656e65726963204465636f6d706f736572",
+              "preview": "417574686f720047656e65726963204465636f6d706f736572"
+            },
+            "crc": {
+              "pattern": "CRC_CHECKSUM",
+              "offset": 103,
+              "size": 4,
+              "algorithm": "CRC-32",
+              "stored": "f0340337",
+              "calculated": "f0340337",
+              "valid": true,
+              "field": "crc"
+            }
+          }
+        },
+        {
+          "pattern": "TYPED_CHUNK",
+          "offset": 107,
+          "size": 60,
+          "type": "tEXt",
+          "structure": {
+            "length": {
+              "pattern": "LENGTH_PREFIXED_DATA",
+              "offset": 107,
+              "size": 4,
+              "length_value": 48,
+              "endianness": "big",
+              "field": "length"
+            },
+            "type": {
+              "pattern": "TYPE_FIELD",
+              "offset": 111,
+              "size": 4,
+              "value": "tEXt",
+              "encoding": "ASCII"
+            },
+            "data": {
+              "pattern": "DATA_FIELD",
+              "offset": 115,
+              "size": 48,
+              "full_data": "4465736372697074696f6e00436f6d706c657820504e4720776974682073686170657320616e64206d65746164617461",
+              "preview": "4465736372697074696f6e00436f6d706c657820504e47207769746820736861..."
+            },
+            "crc": {
+              "pattern": "CRC_CHECKSUM",
+              "offset": 163,
+              "size": 4,
+              "algorithm": "CRC-32",
+              "stored": "face5850",
+              "calculated": "face5850",
+              "valid": true,
+              "field": "crc"
+            }
+          }
+        },
+        {
+          "pattern": "TYPED_CHUNK",
+          "offset": 167,
+          "size": 1178,
+          "type": "IDAT",
+          "structure": {
+            "length": {
+              "pattern": "LENGTH_PREFIXED_DATA",
+              "offset": 167,
+              "size": 4,
+              "length_value": 1166,
+              "endianness": "big",
+              "field": "length"
+            },
+            "type": {
+              "pattern": "TYPE_FIELD",
+              "offset": 171,
+              "size": 4,
+              "value": "IDAT",
+              "encoding": "ASCII"
+            },
+            "data": {
+              "pattern": "DATA_FIELD",
+              "offset": 175,
+              "size": 1166,
+              "full_data": "789ceddddd6ee2481485517b340f3e6feeb9389d0e9d2681046fd7df5a971120035faa2c0bf9ecc7716c70b67f5a1f0073121611c222425844088b086111212c22844584b088101611c222425844088b086111212c22844584b088101611c222e2df579ebceffb7947729dd17fe6fff063efe10dbe14d6b66deddfc1370df9aff031a6079ffaed835b45f66a58a4bd55f2ad3ede1f5c4fbf3e2f6175ea66d579b189e3f6d52e2b4c583ddaf7fdecb38ce3f72b5fd396b0faf2a38def5b8e6b3647971b3af2b650a55794e3775e39c2ea4560fbfb5ab62d6175e1f2aa4ab02d61b5d7a8aa926a4b588d35adaa44da12564b1d5455ce6f4b58cd74535539b92d61b5d15955e5ccb6844584b01ae872b92aa72d5ac2ba5ac7559573da121611c222425897ea7e1f2c27ec86c2224258d71964b92aaf2e5ac222425844088b08615d64a813acf2d26996b088101611c222425844088b086111212c22844584b088101611c2bac8711ca3dda7f2a53b69098b086111212c2284759da14eb35ebd55a9b08810d6a50659b44eb8b3b2b088101611c2ba5af7bbe139130684d540c76d9d36b742584408ab8d2e17ad33c7ec08ab99ceda3a797893b05aeaa6adf3478209abb10eda8a0c9a13567b4ddb4a8d2f1456171ab5151c8a29ac5e5cde5676d4aab03af2d6563aaf3d5d95d1bddda9ef3b79cf2333a117761cc77953ec8b29f66cdb6d012f8f1fbf62b4f8df84d5bb9bcdf1fd6f8f9ef4fee0eb932aaf86d5c365e315dcf6f1f00e8ead62ba75d1a91cab71b981086111212c22844584b088101611c222425844088b086111212c22844584b088101611c222425844088b08611121ac6f78f863737e13d6b3f67ddffed3d6b384f594aa6adb366d3d49588fbd5755b4f504613df0b1aaa2ad4784f595fb55156d7d49589ffaaaaaa2adcf09ebbec755156d7d4258773c5b55d1d63dc2fae87b55156dfd45587ff84955455b7f12d6bb9f5755b4754358bfbc5a55d1d61b616da75555b4b56dc2da4eaeaa684b58e75755966f6be9b0525595b5db5a37ac6c5565e1b6160deb8aaacaaa6dad18d675559525db5a2eacabab2aebb5b556586daa2a8bb5b550582dab2a2bb5b54a58edab2acbb4b54458bd5455d6686bfeb0faaaaa2cd0d6e461f5585599bdad99c3eab7aa32755bd386d57b5565deb6e60c6b8caacaa46d4d18d648559519db9a2dacf1aa2ad3b5355558a35655e66a6b9eb0c6aeaa4cd4d62461cd505599a5ad19c29aa7aa32455bc387355b5565fcb6c60e6bceaacae06d0d1cd6cc559591db1a35acf9ab2ac3b6356458ab5455c66c6bbcb0d6aaaa0cd8d66061ad585519adad91c25ab7aa32545bc384b57a55659cb6c6084b55ef06696b80b054f5d1086df51e96aaeeebbeadaec352d557fa6eabdfb054f558c76dedc771b43e863bbafdbcfad4e197d869588caedfad90a1098b086111212c22844584b088101611c222425844088b086111212c22844584b088101611c222425844088b086111212c22844584b088101611c222425844088b086111212c22844584b088101611c222425844088b086111212c22844584b088101611c222425844088b086111212c22844584b088101611c222e27fdef1ed38",
+              "preview": "789ceddddd6ee2481485517b340f3e6feeb9389d0e9d2681046fd7df5a971120..."
+            },
+            "crc": {
+              "pattern": "CRC_CHECKSUM",
+              "offset": 1341,
+              "size": 4,
+              "algorithm": "CRC-32",
+              "stored": "d66acd5e",
+              "calculated": "d66acd5e",
+              "valid": true,
+              "field": "crc"
+            }
+          }
+        },
+        {
+          "pattern": "TYPED_CHUNK",
+          "offset": 1345,
+          "size": 12,
+          "type": "IEND",
+          "structure": {
+            "length": {
+              "pattern": "LENGTH_PREFIXED_DATA",
+              "offset": 1345,
+              "size": 4,
+              "length_value": 0,
+              "endianness": "big",
+              "field": "length"
+            },
+            "type": {
+              "pattern": "TYPE_FIELD",
+              "offset": 1349,
+              "size": 4,
+              "value": "IEND",
+              "encoding": "ASCII"
+            },
+            "data": {
+              "pattern": "DATA_FIELD",
+              "offset": 1353,
+              "size": 0,
+              "full_data": "",
+              "preview": ""
+            },
+            "crc": {
+              "pattern": "CRC_CHECKSUM",
+              "offset": 1353,
+              "size": 4,
+              "algorithm": "CRC-32",
+              "stored": "ae426082",
+              "calculated": "ae426082",
+              "valid": true,
+              "field": "crc"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

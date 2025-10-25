@@ -1,0 +1,99 @@
+{
+  "version": "1.0.0",
+  "description": "PNG format grammar using universal patterns (PaniniFS)",
+  "grammar": {
+    "format": "PNG",
+    "version": "ISO/IEC 15948:2004",
+    "composition": {
+      "root": {
+        "pattern": "SEQUENTIAL",
+        "elements": [
+          {
+            "name": "signature",
+            "pattern": "MAGIC_NUMBER",
+            "value": "89504e470d0a1a0a",
+            "size": 8,
+            "required": true
+          },
+          {
+            "name": "chunks",
+            "pattern": "SEQUENTIAL_STRUCTURE",
+            "element": {
+              "pattern": "TYPED_CHUNK",
+              "structure": [
+                {
+                  "name": "length",
+                  "pattern": "LENGTH_PREFIXED_DATA",
+                  "size": 4,
+                  "endianness": "big",
+                  "type": "uint32"
+                },
+                {
+                  "name": "type",
+                  "size": 4,
+                  "encoding": "ASCII",
+                  "constraint": "^[A-Za-z]{4}$"
+                },
+                {
+                  "name": "data",
+                  "size": "from_length",
+                  "encoding": "bytes"
+                },
+                {
+                  "name": "crc",
+                  "pattern": "CRC_CHECKSUM",
+                  "size": 4,
+                  "algorithm": "CRC-32",
+                  "covers": [
+                    "type",
+                    "data"
+                  ]
+                }
+              ]
+            },
+            "terminator": {
+              "field": "type",
+              "value": "IEND"
+            }
+          }
+        ]
+      }
+    },
+    "constraints": {
+      "chunk_order": [
+        {
+          "type": "IHDR",
+          "position": "first",
+          "required": true
+        },
+        {
+          "type": "PLTE",
+          "before": "IDAT",
+          "required": "if color_type=3"
+        },
+        {
+          "type": "IDAT",
+          "multiple": true,
+          "required": true
+        },
+        {
+          "type": "IEND",
+          "position": "last",
+          "required": true
+        }
+      ]
+    },
+    "patterns_used": [
+      "MAGIC_NUMBER",
+      "LENGTH_PREFIXED_DATA",
+      "TYPED_CHUNK",
+      "CRC_CHECKSUM",
+      "SEQUENTIAL_STRUCTURE"
+    ]
+  },
+  "usage": {
+    "decomposer": "Use this grammar with generic_decomposer.py",
+    "reconstructor": "Use this grammar with generic_reconstructor.py",
+    "validator": "Validate PNG files against this grammar"
+  }
+}

@@ -1,0 +1,281 @@
+{
+  "file": "test_sample.png",
+  "size": 303,
+  "format": "PNG",
+  "patterns_detected": [
+    {
+      "pattern": "MAGIC_NUMBER",
+      "offset": 0,
+      "size": 8,
+      "value": "89504e470d0a1a0a",
+      "universal_pattern": {
+        "name": "MAGIC_NUMBER",
+        "category": "structural",
+        "description": "Signature fixe identifiant le format de fichier",
+        "parameters": {
+          "size": "variable",
+          "position": "file_start",
+          "encoding": "bytes"
+        },
+        "applicable_to": [
+          "PNG",
+          "JPEG",
+          "GIF",
+          "PDF",
+          "ELF",
+          "ZIP",
+          "GZIP"
+        ]
+      }
+    },
+    {
+      "pattern": "LENGTH_PREFIXED_DATA",
+      "count": 3,
+      "universal": {
+        "name": "LENGTH_PREFIXED_DATA",
+        "category": "structural",
+        "description": "Bloc de donn\u00e9es pr\u00e9c\u00e9d\u00e9 de sa taille",
+        "parameters": {
+          "length_size": "1-8 bytes",
+          "endianness": "big|little",
+          "length_includes_self": "boolean"
+        },
+        "applicable_to": [
+          "PNG",
+          "IFF",
+          "RIFF",
+          "EBML",
+          "Matroska",
+          "TLV"
+        ]
+      }
+    },
+    {
+      "pattern": "TYPED_CHUNK",
+      "count": 3,
+      "universal": {
+        "name": "TYPED_CHUNK",
+        "category": "composition",
+        "description": "Bloc avec type + taille + donn\u00e9es + validation",
+        "parameters": {
+          "type_size": "usually 4 bytes",
+          "type_encoding": "ASCII|binary",
+          "has_checksum": "boolean"
+        },
+        "applicable_to": [
+          "PNG",
+          "IFF",
+          "RIFF",
+          "WAV",
+          "AVI"
+        ]
+      }
+    },
+    {
+      "pattern": "CRC_CHECKSUM",
+      "count": 3,
+      "universal": {
+        "name": "CRC_CHECKSUM",
+        "category": "validation",
+        "description": "Somme de contr\u00f4le CRC pour validation d'int\u00e9grit\u00e9",
+        "parameters": {
+          "algorithm": "CRC-32|CRC-16|etc",
+          "polynomial": "varies",
+          "covers": "specified data range"
+        },
+        "applicable_to": [
+          "PNG",
+          "ZIP",
+          "GZIP",
+          "Ethernet",
+          "USB"
+        ]
+      }
+    }
+  ],
+  "grammar": {
+    "format": "PNG",
+    "version": "ISO/IEC 15948:2004",
+    "composition": {
+      "root": {
+        "pattern": "SEQUENTIAL",
+        "elements": [
+          {
+            "name": "signature",
+            "pattern": "MAGIC_NUMBER",
+            "value": "89504e470d0a1a0a",
+            "size": 8,
+            "required": true
+          },
+          {
+            "name": "chunks",
+            "pattern": "SEQUENTIAL_STRUCTURE",
+            "element": {
+              "pattern": "TYPED_CHUNK",
+              "structure": [
+                {
+                  "name": "length",
+                  "pattern": "LENGTH_PREFIXED_DATA",
+                  "size": 4,
+                  "endianness": "big",
+                  "type": "uint32"
+                },
+                {
+                  "name": "type",
+                  "size": 4,
+                  "encoding": "ASCII",
+                  "constraint": "^[A-Za-z]{4}$"
+                },
+                {
+                  "name": "data",
+                  "size": "from_length",
+                  "encoding": "bytes"
+                },
+                {
+                  "name": "crc",
+                  "pattern": "CRC_CHECKSUM",
+                  "size": 4,
+                  "algorithm": "CRC-32",
+                  "covers": [
+                    "type",
+                    "data"
+                  ]
+                }
+              ]
+            },
+            "terminator": {
+              "field": "type",
+              "value": "IEND"
+            }
+          }
+        ]
+      }
+    },
+    "constraints": {
+      "chunk_order": [
+        {
+          "type": "IHDR",
+          "position": "first",
+          "required": true
+        },
+        {
+          "type": "PLTE",
+          "before": "IDAT",
+          "required": "if color_type=3"
+        },
+        {
+          "type": "IDAT",
+          "multiple": true,
+          "required": true
+        },
+        {
+          "type": "IEND",
+          "position": "last",
+          "required": true
+        }
+      ]
+    },
+    "patterns_used": [
+      "MAGIC_NUMBER",
+      "LENGTH_PREFIXED_DATA",
+      "TYPED_CHUNK",
+      "CRC_CHECKSUM",
+      "SEQUENTIAL_STRUCTURE"
+    ]
+  },
+  "structure": {
+    "signature": {
+      "pattern": "MAGIC_NUMBER",
+      "bytes": "89504e470d0a1a0a",
+      "size": 8
+    },
+    "body": {
+      "pattern": "SEQUENTIAL_STRUCTURE",
+      "terminator": "IEND chunk",
+      "chunks": [
+        {
+          "type": "IHDR",
+          "length": 13,
+          "offset": 8,
+          "data_hex": "00000064000000640802000000",
+          "crc_stored": "ff800203",
+          "crc_calculated": "ff800203",
+          "crc_valid": true,
+          "critical": true,
+          "patterns": [
+            {
+              "name": "LENGTH_PREFIXED_DATA",
+              "field": "length"
+            },
+            {
+              "name": "TYPED_CHUNK",
+              "field": "type+data"
+            },
+            {
+              "name": "CRC_CHECKSUM",
+              "field": "crc"
+            }
+          ],
+          "interpretation": {
+            "width": 100,
+            "height": 100,
+            "bit_depth": 8,
+            "color_type": "Truecolor",
+            "compression": 0,
+            "filter": 0,
+            "interlace": 0
+          }
+        },
+        {
+          "type": "IDAT",
+          "length": 246,
+          "offset": 33,
+          "data_hex": "789cedd0b10dc3400c0441faddb81b7fc90d088236d64cc084b8643f73fed69e...",
+          "crc_stored": "62b32183",
+          "crc_calculated": "62b32183",
+          "crc_valid": true,
+          "critical": true,
+          "patterns": [
+            {
+              "name": "LENGTH_PREFIXED_DATA",
+              "field": "length"
+            },
+            {
+              "name": "TYPED_CHUNK",
+              "field": "type+data"
+            },
+            {
+              "name": "CRC_CHECKSUM",
+              "field": "crc"
+            }
+          ]
+        },
+        {
+          "type": "IEND",
+          "length": 0,
+          "offset": 291,
+          "data_hex": "",
+          "crc_stored": "ae426082",
+          "crc_calculated": "ae426082",
+          "crc_valid": true,
+          "critical": true,
+          "patterns": [
+            {
+              "name": "LENGTH_PREFIXED_DATA",
+              "field": "length"
+            },
+            {
+              "name": "TYPED_CHUNK",
+              "field": "type+data"
+            },
+            {
+              "name": "CRC_CHECKSUM",
+              "field": "crc"
+            }
+          ],
+          "interpretation": "End of PNG datastream"
+        }
+      ]
+    }
+  }
+}

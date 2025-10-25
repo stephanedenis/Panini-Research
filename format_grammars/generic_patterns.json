@@ -1,0 +1,94 @@
+{
+  "version": "1.0.0",
+  "description": "Universal patterns for binary format decomposition (PaniniFS)",
+  "patterns": {
+    "MAGIC_NUMBER": {
+      "name": "MAGIC_NUMBER",
+      "category": "structural",
+      "description": "Signature fixe identifiant le format de fichier",
+      "parameters": {
+        "size": "variable",
+        "position": "file_start",
+        "encoding": "bytes"
+      },
+      "applicable_to": [
+        "PNG",
+        "JPEG",
+        "GIF",
+        "PDF",
+        "ELF",
+        "ZIP",
+        "GZIP"
+      ]
+    },
+    "LENGTH_PREFIXED_DATA": {
+      "name": "LENGTH_PREFIXED_DATA",
+      "category": "structural",
+      "description": "Bloc de donn\u00e9es pr\u00e9c\u00e9d\u00e9 de sa taille",
+      "parameters": {
+        "length_size": "1-8 bytes",
+        "endianness": "big|little",
+        "length_includes_self": "boolean"
+      },
+      "applicable_to": [
+        "PNG",
+        "IFF",
+        "RIFF",
+        "EBML",
+        "Matroska",
+        "TLV"
+      ]
+    },
+    "TYPED_CHUNK": {
+      "name": "TYPED_CHUNK",
+      "category": "composition",
+      "description": "Bloc avec type + taille + donn\u00e9es + validation",
+      "parameters": {
+        "type_size": "usually 4 bytes",
+        "type_encoding": "ASCII|binary",
+        "has_checksum": "boolean"
+      },
+      "applicable_to": [
+        "PNG",
+        "IFF",
+        "RIFF",
+        "WAV",
+        "AVI"
+      ]
+    },
+    "CRC_CHECKSUM": {
+      "name": "CRC_CHECKSUM",
+      "category": "validation",
+      "description": "Somme de contr\u00f4le CRC pour validation d'int\u00e9grit\u00e9",
+      "parameters": {
+        "algorithm": "CRC-32|CRC-16|etc",
+        "polynomial": "varies",
+        "covers": "specified data range"
+      },
+      "applicable_to": [
+        "PNG",
+        "ZIP",
+        "GZIP",
+        "Ethernet",
+        "USB"
+      ]
+    },
+    "SEQUENTIAL_STRUCTURE": {
+      "name": "SEQUENTIAL_STRUCTURE",
+      "category": "composition",
+      "description": "Suite de blocs jusqu'\u00e0 un terminateur sp\u00e9cifique",
+      "parameters": {
+        "block_pattern": "reference to pattern",
+        "terminator": "specific value",
+        "min_blocks": "integer",
+        "max_blocks": "integer|unlimited"
+      },
+      "applicable_to": [
+        "PNG",
+        "IFF",
+        "TIFF",
+        "Matroska"
+      ]
+    }
+  }
+}
