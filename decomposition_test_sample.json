@@ -9,7 +9,9 @@
       "offset": 0,
       "size": 8,
       "value": "89504e470d0a1a0a",
-      "expected": "89504e470d0a1a0a",
+      "expected": [
+        "89504e470d0a1a0a"
+      ],
       "valid": true,
       "interpretation": "signature",
       "name": "signature"

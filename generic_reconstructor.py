@@ -195,6 +195,171 @@ class SegmentStructureReconstructor(PatternReconstructor):
         return bytes(segment_buffer)
 
 
+class PaletteDataReconstructor(PatternReconstructor):
+    """Reconstruit le pattern PALETTE_DATA"""
+    
+    def reconstruct(self, element: Dict[str, Any]) -> bytes:
+        """Reconstruit une palette RGB/RGBA"""
+        # Récupérer les données hex complètes
+        full_data_hex = element.get('full_data', '')
+        if full_data_hex:
+            return bytes.fromhex(full_data_hex)
+        
+        # Fallback : reconstruire depuis les couleurs (preview only)
+        colors = element.get('colors', [])
+        bytes_per_color = element.get('bytes_per_color', 3)
+        
+        buffer = bytearray()
+        for color in colors:
+            buffer.append(color['r'])
+            buffer.append(color['g'])
+            buffer.append(color['b'])
+            if bytes_per_color == 4:
+                buffer.append(color.get('a', 255))
+        
+        return bytes(buffer)
+
+
+class LogicalScreenDescriptorReconstructor(PatternReconstructor):
+    """Reconstruit le pattern LOGICAL_SCREEN_DESCRIPTOR"""
+    
+    def reconstruct(self, element: Dict[str, Any]) -> bytes:
+        """Reconstruit le Logical Screen Descriptor GIF (7 bytes)"""
+        raw_data_hex = element.get('raw_data', '')
+        if raw_data_hex:
+            return bytes.fromhex(raw_data_hex)
+        
+        # Fallback : reconstruire depuis les champs
+        canvas = element.get('canvas', {})
+        width = canvas.get('width', 0)
+        height = canvas.get('height', 0)
+        
+        flags = element.get('flags', {})
+        packed_hex = flags.get('packed_value', '0x00')
+        packed = int(packed_hex, 16)
+        
+        bg_color = element.get('background_color_index', 0)
+        aspect = element.get('pixel_aspect_ratio', 0)
+        
+        buffer = struct.pack('<H', width)
+        buffer += struct.pack('<H', height)
+        buffer += bytes([packed, bg_color, aspect])
+        
+        return buffer
+
+
+class ImageDescriptorReconstructor(PatternReconstructor):
+    """Reconstruit le pattern IMAGE_DESCRIPTOR"""
+    
+    def reconstruct(self, element: Dict[str, Any]) -> bytes:
+        """Reconstruit un Image Descriptor GIF (9 bytes)"""
+        raw_data_hex = element.get('raw_data', '')
+        if raw_data_hex:
+            return bytes.fromhex(raw_data_hex)
+        
+        # Fallback : reconstruire depuis les champs
+        position = element.get('position', {})
+        dimensions = element.get('dimensions', {})
+        flags = element.get('flags', {})
+        
+        left = position.get('left', 0)
+        top = position.get('top', 0)
+        width = dimensions.get('width', 0)
+        height = dimensions.get('height', 0)
+        packed_hex = flags.get('packed_value', '0x00')
+        packed = int(packed_hex, 16)
+        
+        buffer = struct.pack('<H', left)
+        buffer += struct.pack('<H', top)
+        buffer += struct.pack('<H', width)
+        buffer += struct.pack('<H', height)
+        buffer += bytes([packed])
+        
+        return buffer
+
+
+class LZWCompressedDataReconstructor(PatternReconstructor):
+    """Reconstruit le pattern LZW_COMPRESSED_DATA"""
+    
+    def reconstruct(self, element: Dict[str, Any]) -> bytes:
+        """Reconstruit des données LZW avec sub-blocks"""
+        buffer = bytearray()
+        
+        # LZW min code size
+        lzw_min = element.get('lzw_min_code_size', 8)
+        buffer.append(lzw_min)
+        
+        # Sub-blocks
+        sub_blocks = element.get('sub_blocks', [])
+        for block in sub_blocks:
+            size = block.get('size', 0)
+            data_hex = block.get('data', '')
+            
+            buffer.append(size)
+            if data_hex:
+                buffer.extend(bytes.fromhex(data_hex))
+        
+        # Block terminator
+        buffer.append(0x00)
+        
+        return bytes(buffer)
+
+
+class GIFDataBlockReconstructor(PatternReconstructor):
+    """Reconstruit le pattern GIF_DATA_BLOCK"""
+    
+    def reconstruct(self, element: Dict[str, Any]) -> bytes:
+        """Reconstruit un data block GIF (IMAGE ou EXTENSION)"""
+        buffer = bytearray()
+        
+        block_type = element.get('type')
+        
+        if block_type == 'IMAGE':
+            # Separator 0x2C
+            buffer.append(0x2C)
+            
+            # Image Descriptor
+            image_desc = element.get('image_descriptor', {})
+            reconstructor = ImageDescriptorReconstructor()
+            buffer.extend(reconstructor.reconstruct(image_desc))
+            
+            # Local color table (optionnel)
+            if 'local_color_table' in element:
+                palette_recon = PaletteDataReconstructor()
+                buffer.extend(
+                    palette_recon.reconstruct(element['local_color_table'])
+                )
+            
+            # LZW compressed data
+            lzw_data = element.get('compressed_data', {})
+            lzw_reconstructor = LZWCompressedDataReconstructor()
+            buffer.extend(lzw_reconstructor.reconstruct(lzw_data))
+        
+        elif block_type == 'EXTENSION':
+            # Extension introducer 0x21
+            buffer.append(0x21)
+            
+            # Label
+            label_hex = element.get('label', '00')
+            label = int(label_hex, 16)
+            buffer.append(label)
+            
+            # Sub-blocks
+            sub_blocks = element.get('sub_blocks', [])
+            for block in sub_blocks:
+                size = block.get('size', 0)
+                data_hex = block.get('data', '')
+                
+                buffer.append(size)
+                if data_hex:
+                    buffer.extend(bytes.fromhex(data_hex))
+            
+            # Block terminator
+            buffer.append(0x00)
+        
+        return bytes(buffer)
+
+
 # ============================================================================
 # GENERIC RECONSTRUCTOR ENGINE
 # ============================================================================
@@ -236,10 +401,30 @@ class GenericReconstructor:
             reconstructor = MagicNumberReconstructor()
             return reconstructor.reconstruct(element)
         
+        elif pattern == 'PALETTE_DATA':
+            reconstructor = PaletteDataReconstructor()
+            return reconstructor.reconstruct(element)
+        
+        elif pattern == 'LOGICAL_SCREEN_DESCRIPTOR':
+            reconstructor = LogicalScreenDescriptorReconstructor()
+            return reconstructor.reconstruct(element)
+        
+        elif pattern == 'IMAGE_DESCRIPTOR':
+            reconstructor = ImageDescriptorReconstructor()
+            return reconstructor.reconstruct(element)
+        
+        elif pattern == 'LZW_COMPRESSED_DATA':
+            reconstructor = LZWCompressedDataReconstructor()
+            return reconstructor.reconstruct(element)
+        
+        elif pattern == 'GIF_DATA_BLOCK':
+            reconstructor = GIFDataBlockReconstructor()
+            return reconstructor.reconstruct(element)
+        
         elif pattern == 'TERMINATOR':
-            # Terminateurs (EOI JPEG, etc.)
-            marker_hex = element.get('marker', '')
-            return bytes.fromhex(marker_hex) if marker_hex else None
+            # Terminateurs (EOI JPEG, GIF 0x3B, etc.)
+            value_hex = element.get('value', element.get('marker', ''))
+            return bytes.fromhex(value_hex) if value_hex else None
         
         elif pattern == 'SEQUENTIAL_STRUCTURE':
             # Reconstruire tous les éléments de la séquence

@@ -1,0 +1,120 @@
+{
+  "format": "GIF",
+  "version": "1.0",
+  "variants": [
+    "GIF87a",
+    "GIF89a"
+  ],
+  "composition": {
+    "root": {
+      "pattern": "SEQUENTIAL",
+      "elements": [
+        {
+          "name": "header",
+          "pattern": "MAGIC_NUMBER",
+          "size": 6,
+          "values": [
+            "474946383761",
+            "474946383961"
+          ],
+          "description": "GIF87a or GIF89a signature"
+        },
+        {
+          "name": "logical_screen_descriptor",
+          "pattern": "LOGICAL_SCREEN_DESCRIPTOR",
+          "size": 7,
+          "structure": [
+            {
+              "name": "width",
+              "type": "uint16_le"
+            },
+            {
+              "name": "height",
+              "type": "uint16_le"
+            },
+            {
+              "name": "packed_fields",
+              "type": "uint8"
+            },
+            {
+              "name": "bg_color_index",
+              "type": "uint8"
+            },
+            {
+              "name": "pixel_aspect_ratio",
+              "type": "uint8"
+            }
+          ]
+        },
+        {
+          "name": "global_color_table",
+          "pattern": "PALETTE_DATA",
+          "optional": true,
+          "size_formula": "3 * 2^((packed_fields & 0x07) + 1)",
+          "condition": "packed_fields & 0x80"
+        },
+        {
+          "name": "data_stream",
+          "pattern": "SEQUENTIAL_STRUCTURE",
+          "element": {
+            "pattern": "GIF_DATA_BLOCK",
+            "variants": [
+              "IMAGE",
+              "EXTENSION"
+            ]
+          },
+          "terminator": {
+            "pattern": "TERMINATOR",
+            "value": "3B"
+          }
+        }
+      ]
+    }
+  },
+  "data_blocks": {
+    "IMAGE": {
+      "separator": "2C",
+      "pattern": "IMAGE_DESCRIPTOR",
+      "structure": [
+        {
+          "name": "left",
+          "type": "uint16_le"
+        },
+        {
+          "name": "top",
+          "type": "uint16_le"
+        },
+        {
+          "name": "width",
+          "type": "uint16_le"
+        },
+        {
+          "name": "height",
+          "type": "uint16_le"
+        },
+        {
+          "name": "packed_fields",
+          "type": "uint8"
+        }
+      ],
+      "optional_local_color_table": {
+        "pattern": "PALETTE_DATA",
+        "condition": "packed_fields & 0x80"
+      },
+      "compressed_data": {
+        "pattern": "LZW_COMPRESSED_DATA",
+        "lzw_min_code_size": "uint8",
+        "sub_blocks": "terminated by 0x00"
+      }
+    },
+    "EXTENSION": {
+      "introducer": "21",
+      "labels": {
+        "F9": "GRAPHIC_CONTROL_EXTENSION",
+        "FE": "COMMENT_EXTENSION",
+        "01": "PLAIN_TEXT_EXTENSION",
+        "FF": "APPLICATION_EXTENSION"
+      }
+    }
+  }
+}

@@ -89,6 +89,63 @@
         "TIFF",
         "Matroska"
       ]
+    },
+    "PALETTE_DATA": {
+      "category": "data",
+      "description": "Indexed color palette (RGB table)",
+      "structure": "Array of RGB triplets (R, G, B bytes)",
+      "usage": "Color lookup table for indexed images",
+      "applicable_formats": [
+        "GIF",
+        "PNG (plte)",
+        "BMP",
+        "PCX"
+      ],
+      "universality": 4
+    },
+    "LOGICAL_SCREEN_DESCRIPTOR": {
+      "category": "structural",
+      "description": "Canvas/screen metadata",
+      "structure": "Width, Height, Flags, Background, AspectRatio",
+      "usage": "Defines logical screen dimensions and properties",
+      "applicable_formats": [
+        "GIF"
+      ],
+      "universality": 2
+    },
+    "IMAGE_DESCRIPTOR": {
+      "category": "structural",
+      "description": "Image position and size metadata",
+      "structure": "Left, Top, Width, Height, Flags",
+      "usage": "Defines image placement within logical screen",
+      "applicable_formats": [
+        "GIF",
+        "multi-image formats"
+      ],
+      "universality": 3
+    },
+    "GRAPHIC_CONTROL_EXTENSION": {
+      "category": "metadata",
+      "description": "Animation control (delay, transparency)",
+      "structure": "Disposal, UserInput, Transparent, Delay, TransparentIndex",
+      "usage": "Controls animation timing and transparency",
+      "applicable_formats": [
+        "GIF89a",
+        "APNG"
+      ],
+      "universality": 2
+    },
+    "LZW_COMPRESSED_DATA": {
+      "category": "data",
+      "description": "LZW-compressed image data",
+      "structure": "MinCodeSize + Sub-blocks (size + data) terminated by 0x00",
+      "usage": "Compressed raster data",
+      "applicable_formats": [
+        "GIF",
+        "TIFF (LZW)",
+        "PDF (LZW)"
+      ],
+      "universality": 3
     }
   },
   "MAGIC_NUMBER": {

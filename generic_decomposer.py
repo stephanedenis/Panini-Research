@@ -59,17 +59,25 @@ class MagicNumberProcessor(PatternProcessor):
     
     def process(self, spec: Dict[str, Any]) -> Dict[str, Any]:
         size = spec.get('size', 8)
-        expected = bytes.fromhex(spec.get('value', ''))
+        
+        # Supporter plusieurs valeurs possibles (GIF87a/GIF89a)
+        expected_values = spec.get('values', [spec.get('value', '')])
+        if isinstance(expected_values, str):
+            expected_values = [expected_values]
         
         magic = self.read_bytes(size)
+        magic_hex = magic.hex()
+        
+        # Vérifier si magic correspond à une des valeurs attendues
+        valid = any(magic_hex == val.lower() for val in expected_values)
         
         return {
             "pattern": "MAGIC_NUMBER",
             "offset": self.offset - size,
             "size": size,
-            "value": magic.hex(),
-            "expected": expected.hex(),
-            "valid": magic == expected,
+            "value": magic_hex,
+            "expected": expected_values,
+            "valid": valid,
             "interpretation": spec.get('name', 'signature')
         }
 
@@ -323,6 +331,277 @@ class SegmentStructureProcessor(PatternProcessor):
         return markers.get(marker, f'UNKNOWN_{marker.hex().upper()}')
 
 
+class PaletteDataProcessor(PatternProcessor):
+    """Traite le pattern PALETTE_DATA (GIF, PNG plte, BMP)"""
+    
+    def process(self, spec: Dict[str, Any]) -> Dict[str, Any]:
+        """Décompose une palette RGB: N entrées × 3 bytes"""
+        num_colors = spec.get('colors', 256)
+        bytes_per_color = spec.get('bytes_per_color', 3)  # RGB
+        
+        total_bytes = num_colors * bytes_per_color
+        palette_data = self.read_bytes(total_bytes)
+        
+        # Extraire les couleurs
+        colors = []
+        for i in range(0, len(palette_data), bytes_per_color):
+            if bytes_per_color == 3:  # RGB
+                r, g, b = palette_data[i:i+3]
+                colors.append({"r": r, "g": g, "b": b})
+            elif bytes_per_color == 4:  # RGBA
+                r, g, b, a = palette_data[i:i+4]
+                colors.append({"r": r, "g": g, "b": b, "a": a})
+        
+        return {
+            "pattern": "PALETTE_DATA",
+            "offset": self.offset - total_bytes,
+            "size": total_bytes,
+            "num_colors": num_colors,
+            "bytes_per_color": bytes_per_color,
+            "colors": colors[:10],  # Preview 10 premières couleurs
+            "full_data": palette_data.hex()
+        }
+
+
+class LogicalScreenDescriptorProcessor(PatternProcessor):
+    """Traite le pattern LOGICAL_SCREEN_DESCRIPTOR (GIF)"""
+    
+    def process(self, spec: Dict[str, Any]) -> Dict[str, Any]:
+        """Décompose le Logical Screen Descriptor GIF (7 bytes)"""
+        lsd_data = self.read_bytes(7)
+        
+        width = struct.unpack('<H', lsd_data[0:2])[0]
+        height = struct.unpack('<H', lsd_data[2:4])[0]
+        packed = lsd_data[4]
+        bg_color = lsd_data[5]
+        aspect = lsd_data[6]
+        
+        # Parser le packed byte
+        global_color_table = bool(packed & 0x80)
+        color_resolution = ((packed & 0x70) >> 4) + 1
+        sort_flag = bool(packed & 0x08)
+        global_color_table_size = 2 ** ((packed & 0x07) + 1)
+        
+        return {
+            "pattern": "LOGICAL_SCREEN_DESCRIPTOR",
+            "offset": self.offset - 7,
+            "size": 7,
+            "canvas": {
+                "width": width,
+                "height": height
+            },
+            "flags": {
+                "global_color_table": global_color_table,
+                "color_resolution": color_resolution,
+                "sort_flag": sort_flag,
+                "global_color_table_size": global_color_table_size,
+                "packed_value": f"0x{packed:02X}"
+            },
+            "background_color_index": bg_color,
+            "pixel_aspect_ratio": aspect,
+            "raw_data": lsd_data.hex()
+        }
+
+
+class ImageDescriptorProcessor(PatternProcessor):
+    """Traite le pattern IMAGE_DESCRIPTOR (GIF)"""
+    
+    def process(self, spec: Dict[str, Any]) -> Dict[str, Any]:
+        """Décompose un Image Descriptor GIF (10 bytes après separator)"""
+        # Le separator 0x2C est déjà lu par le parser principal
+        desc_data = self.read_bytes(9)
+        
+        left = struct.unpack('<H', desc_data[0:2])[0]
+        top = struct.unpack('<H', desc_data[2:4])[0]
+        width = struct.unpack('<H', desc_data[4:6])[0]
+        height = struct.unpack('<H', desc_data[6:8])[0]
+        packed = desc_data[8]
+        
+        # Parser le packed byte
+        local_color_table = bool(packed & 0x80)
+        interlace = bool(packed & 0x40)
+        sort_flag = bool(packed & 0x20)
+        local_color_table_size = 2 ** ((packed & 0x07) + 1) if local_color_table else 0
+        
+        return {
+            "pattern": "IMAGE_DESCRIPTOR",
+            "offset": self.offset - 9,
+            "size": 9,
+            "position": {
+                "left": left,
+                "top": top
+            },
+            "dimensions": {
+                "width": width,
+                "height": height
+            },
+            "flags": {
+                "local_color_table": local_color_table,
+                "interlace": interlace,
+                "sort_flag": sort_flag,
+                "local_color_table_size": local_color_table_size,
+                "packed_value": f"0x{packed:02X}"
+            },
+            "raw_data": desc_data.hex()
+        }
+
+
+class LZWCompressedDataProcessor(PatternProcessor):
+    """Traite le pattern LZW_COMPRESSED_DATA (GIF, TIFF)"""
+    
+    def process(self, spec: Dict[str, Any]) -> Dict[str, Any]:
+        """Décompose des données LZW en sub-blocks"""
+        # Lire LZW minimum code size
+        lzw_min_code_size = self.read_bytes(1)[0]
+        
+        # Lire les sub-blocks (TOUS pour reconstruction)
+        sub_blocks = []
+        total_data_size = 0
+        
+        while True:
+            block_size = self.read_bytes(1)[0]
+            if block_size == 0:  # Block terminator
+                break
+            
+            block_data = self.read_bytes(block_size)
+            sub_blocks.append({
+                "size": block_size,
+                "data": block_data.hex()
+            })
+            total_data_size += block_size
+        
+        return {
+            "pattern": "LZW_COMPRESSED_DATA",
+            "offset": self.offset - (1 + total_data_size + len(sub_blocks) + 1),
+            "size": 1 + total_data_size + len(sub_blocks) + 1,
+            "lzw_min_code_size": lzw_min_code_size,
+            "num_sub_blocks": len(sub_blocks),
+            "total_data_bytes": total_data_size,
+            "sub_blocks": sub_blocks,  # TOUS les blocks, pas de preview
+            "complete": True
+        }
+
+
+class GIFDataBlockProcessor(PatternProcessor):
+    """Traite le pattern GIF_DATA_BLOCK (IMAGE ou EXTENSION)"""
+    
+    def process(self, spec: Dict[str, Any]) -> Optional[Dict[str, Any]]:
+        """Décompose un data block GIF (image ou extension)"""
+        
+        if self.offset >= self.size:
+            return None
+        
+        # Regarder le premier byte pour déterminer le type
+        block_type_byte = self.peek_bytes(1)[0]
+        
+        if block_type_byte == 0x3B:  # Trailer/Terminator
+            return None  # Fin du data stream
+        
+        elif block_type_byte == 0x2C:  # Image separator
+            return self._process_image_block()
+        
+        elif block_type_byte == 0x21:  # Extension introducer
+            return self._process_extension_block()
+        
+        else:
+            print(f"⚠️  Unknown GIF data block type: 0x{block_type_byte:02X}")
+            return None
+    
+    def _process_image_block(self) -> Dict[str, Any]:
+        """Décompose un bloc IMAGE"""
+        start_offset = self.offset
+        
+        # Lire le separator
+        separator = self.read_bytes(1)[0]
+        assert separator == 0x2C
+        
+        # Image Descriptor (9 bytes)
+        desc_processor = ImageDescriptorProcessor(self.data, self.offset)
+        image_desc = desc_processor.process({})
+        self.offset = desc_processor.offset
+        
+        # Local color table (optionnel)
+        local_color_table = None
+        if image_desc['flags']['local_color_table']:
+            num_colors = image_desc['flags']['local_color_table_size']
+            palette_processor = PaletteDataProcessor(self.data, self.offset)
+            local_color_table = palette_processor.process({
+                'colors': num_colors,
+                'bytes_per_color': 3
+            })
+            self.offset = palette_processor.offset
+        
+        # LZW compressed data
+        lzw_processor = LZWCompressedDataProcessor(self.data, self.offset)
+        lzw_data = lzw_processor.process({})
+        self.offset = lzw_processor.offset
+        
+        result = {
+            "pattern": "GIF_DATA_BLOCK",
+            "type": "IMAGE",
+            "offset": start_offset,
+            "size": self.offset - start_offset,
+            "image_descriptor": image_desc,
+            "compressed_data": lzw_data
+        }
+        
+        if local_color_table:
+            result['local_color_table'] = local_color_table
+        
+        return result
+    
+    def _process_extension_block(self) -> Dict[str, Any]:
+        """Décompose un bloc EXTENSION"""
+        start_offset = self.offset
+        
+        # Lire introducer et label
+        introducer = self.read_bytes(1)[0]
+        assert introducer == 0x21
+        
+        label = self.read_bytes(1)[0]
+        
+        # Déterminer le type d'extension
+        extension_types = {
+            0xF9: 'GRAPHIC_CONTROL_EXTENSION',
+            0xFE: 'COMMENT_EXTENSION',
+            0x01: 'PLAIN_TEXT_EXTENSION',
+            0xFF: 'APPLICATION_EXTENSION'
+        }
+        
+        extension_type = extension_types.get(
+            label,
+            f'UNKNOWN_EXTENSION_0x{label:02X}'
+        )
+        
+        # Lire les sub-blocks
+        sub_blocks = []
+        total_data_size = 0
+        
+        while True:
+            block_size = self.read_bytes(1)[0]
+            if block_size == 0:  # Block terminator
+                break
+            
+            block_data = self.read_bytes(block_size)
+            sub_blocks.append({
+                "size": block_size,
+                "data": block_data.hex()
+            })
+            total_data_size += block_size
+        
+        return {
+            "pattern": "GIF_DATA_BLOCK",
+            "type": "EXTENSION",
+            "offset": start_offset,
+            "size": self.offset - start_offset,
+            "extension_type": extension_type,
+            "label": f"0x{label:02X}",
+            "num_sub_blocks": len(sub_blocks),
+            "total_data_bytes": total_data_size,
+            "sub_blocks": sub_blocks
+        }
+
+
 # ============================================================================
 # GENERIC DECOMPOSER ENGINE
 # ============================================================================
@@ -393,6 +672,50 @@ class GenericDecomposer:
             result['name'] = name
             return result
         
+        elif pattern == 'PALETTE_DATA':
+            processor = PaletteDataProcessor(self.binary_data, self.offset)
+            result = processor.process(spec)
+            self.offset = processor.offset
+            result['name'] = name
+            return result
+        
+        elif pattern == 'LOGICAL_SCREEN_DESCRIPTOR':
+            processor = LogicalScreenDescriptorProcessor(
+                self.binary_data, self.offset
+            )
+            result = processor.process(spec)
+            self.offset = processor.offset
+            result['name'] = name
+            return result
+        
+        elif pattern == 'IMAGE_DESCRIPTOR':
+            processor = ImageDescriptorProcessor(
+                self.binary_data, self.offset
+            )
+            result = processor.process(spec)
+            self.offset = processor.offset
+            result['name'] = name
+            return result
+        
+        elif pattern == 'LZW_COMPRESSED_DATA':
+            processor = LZWCompressedDataProcessor(
+                self.binary_data, self.offset
+            )
+            result = processor.process(spec)
+            self.offset = processor.offset
+            result['name'] = name
+            return result
+        
+        elif pattern == 'GIF_DATA_BLOCK':
+            processor = GIFDataBlockProcessor(
+                self.binary_data, self.offset
+            )
+            result = processor.process(spec)
+            if result:
+                self.offset = processor.offset
+                result['name'] = name
+            return result
+        
         elif pattern == 'SEQUENTIAL_STRUCTURE':
             # Structure séquentielle (ex: chunks PNG)
             return self._process_sequential_structure(spec)
@@ -408,12 +731,30 @@ class GenericDecomposer:
         terminator = spec.get('terminator', {})
         terminator_field = terminator.get('field')
         terminator_value = terminator.get('value')
+        terminator_pattern = terminator.get('pattern')
         
         elements = []
         
         while self.offset < len(self.binary_data):
+            # Vérifier le terminateur avant de traiter l'élément
+            if terminator_pattern == 'TERMINATOR':
+                expected_byte = bytes.fromhex(terminator_value)
+                next_byte = self.binary_data[self.offset:self.offset+1]
+                if next_byte == expected_byte:
+                    # Lire et retourner le terminateur
+                    elements.append({
+                        "pattern": "TERMINATOR",
+                        "offset": self.offset,
+                        "size": 1,
+                        "value": next_byte.hex()
+                    })
+                    self.offset += 1
+                    break
+            
             # Traiter un élément
-            if element_spec.get('pattern') == 'TYPED_CHUNK':
+            element_pattern = element_spec.get('pattern')
+            
+            if element_pattern == 'TYPED_CHUNK':
                 processor = TypedChunkProcessor(self.binary_data, self.offset)
                 chunk_result = processor.process(element_spec)
                 
@@ -428,8 +769,21 @@ class GenericDecomposer:
                     chunk_type = chunk_result.get('type')
                     if chunk_type == terminator_value:
                         break
+            
+            elif element_pattern == 'GIF_DATA_BLOCK':
+                processor = GIFDataBlockProcessor(
+                    self.binary_data, self.offset
+                )
+                block_result = processor.process(element_spec)
+                
+                if block_result is None:
+                    break
+                
+                self.offset = processor.offset
+                elements.append(block_result)
+            
             else:
-                print(f"⚠️  Unsupported element pattern in sequential: {element_spec.get('pattern')}")
+                print(f"⚠️  Unsupported pattern: {element_pattern}")
                 break
         
         return {

@@ -1,0 +1,54 @@
+{
+  "file": "test_sample.gif",
+  "size": 3223,
+  "version": "GIF87a",
+  "logical_screen": {
+    "width": 100,
+    "height": 100,
+    "has_global_color_table": true,
+    "color_resolution": 1,
+    "sort_flag": false,
+    "gct_size": 256,
+    "background_color_index": 0,
+    "pixel_aspect_ratio": 0
+  },
+  "global_color_table": {
+    "size": 256,
+    "bytes": 768,
+    "sample_colors": [
+      "#00FF00",
+      "#01FE02",
+      "#02FD04",
+      "#03FC06",
+      "#04FB08"
+    ],
+    "full_data_hex": "00ff0001fe0202fd0403fc0604fb0805fa0a06f90c07f80e08f71009f6120af5140bf4160cf3180df21a0ef11c0ff01e10ef2011ee2212ed2413ec2614eb2815ea2a16e92c17e82e18e73019e6321ae5341be4361ce3381de23a1ee13c1fe03e20df4021de4222dd4423dc4624db4825da4a26d94c27d84e28d75029d6522ad5542bd4562cd3582dd25a2ed15c2fd05e30cf6031ce6232cd6433cc6634cb6835ca6a36c96c37c86e38c77039c6723ac5743bc4763cc3783dc27a3ec17c3fc07e40bf8041be8242bd8443bc8644bb8845ba8a46b98c47b88e48b79049b6924ab5944bb4964cb3984db29a4eb19c4fb09e50afa051aea252ada453aca654aba855aaaa56a9ac57a8ae58a7b059a6b25aa5b45ba4b65ca3b85da2ba5ea1bc5fa0be609fc0619ec2629dc4639cc6649bc8659aca6699cc6798ce6897d06996d26a95d46b94d66c93d86d92da6e91dc6f90de708fe0718ee2728de4738ce6748be8758aea7689ec7788ee7887f07986f27a85f47b84f67c83f87d82fa7e81fc7f80fe807f00817e02827d04837c06847b08857a0a86790c87780e8877108976128a75148b74168c73188d721a8e711c8f701e906f20916e22926d24936c26946b28956a2a96692c97682e9867309966329a65349b64369c63389d623a9e613c9f603ea05f40a15e42a25d44a35c46a45b48a55a4aa6594ca7584ea85750a95652aa5554ab5456ac5358ad525aae515caf505eb04f60b14e62b24d64b34c66b44b68b54a6ab6496cb7486eb84770b94672ba4574bb4476bc4378bd427abe417cbf407ec03f80c13e82c23d84c33c86c43b88c53a8ac6398cc7388ec83790c93692ca3594cb3496cc3398cd329ace319ccf309ed02fa0d12ea2d22da4d32ca6d42ba8d52aaad629acd728aed827b0d926b2da25b4db24b6dc23b8dd22bade21bcdf20bee01fc0e11ec2e21dc4e31cc6e41bc8e51acae619cce718cee817d0e916d2ea15d4eb14d6ec13d8ed12daee11dcef10def00fe0f10ee2f20de4f30ce6f40be8f50aeaf609ecf708eef807f0f906f2fa05f4fb04f6fc03f8fd02fafe01fcff00fe"
+  },
+  "images": [
+    {
+      "offset": 781,
+      "left": 0,
+      "top": 0,
+      "width": 100,
+      "height": 100,
+      "has_local_color_table": false,
+      "interlace": true,
+      "local_color_table_size": 0,
+      "lzw_min_code_size": 8,
+      "compressed_data": {
+        "offset": 792,
+        "size": 2419,
+        "preview": "00010410308040010307102450b0804103070f204490308142050b173064d0b0"
+      }
+    }
+  ],
+  "extensions": [],
+  "patterns_found": [
+    "TERMINATOR",
+    "LOGICAL_SCREEN_DESCRIPTOR",
+    "PALETTE_DATA",
+    "LZW_COMPRESSED_DATA",
+    "IMAGE_DESCRIPTOR",
+    "MAGIC_NUMBER"
+  ]
+}

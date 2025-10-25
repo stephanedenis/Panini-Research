@@ -322,6 +322,178 @@ class TestJPEGFormat:
 
 
 # ============================================================================
+# REGRESSION TESTS - GIF Format
+# ============================================================================
+
+class TestGIFFormat:
+    """Tests de régression pour le format GIF"""
+    
+    @pytest.fixture
+    def gif_test_file(self, research_dir):
+        """Fichier GIF de test"""
+        return research_dir / "test_sample.gif"
+    
+    @pytest.fixture
+    def gif_grammar(self, grammars_dir):
+        """Grammaire GIF"""
+        return grammars_dir / "gif.json"
+    
+    def test_gif_decomposition(self, gif_test_file, gif_grammar,
+                               decomposer_script):
+        """Test décomposition GIF"""
+        decomposition = run_decomposer(gif_test_file, gif_grammar,
+                                       decomposer_script)
+        
+        # Vérifier structure de base
+        assert decomposition['format'] == 'GIF'
+        assert decomposition['file_size'] == 3223
+        
+        # Vérifier éléments principaux
+        elements = decomposition['elements']
+        assert len(elements) >= 4  # header, LSD, palette, data_stream
+        
+        # Vérifier header
+        header = elements[0]
+        assert header['pattern'] == 'MAGIC_NUMBER'
+        assert header['valid'] is True
+        assert header['value'] in ['474946383761', '474946383961']
+        
+        # Vérifier Logical Screen Descriptor
+        lsd = elements[1]
+        assert lsd['pattern'] == 'LOGICAL_SCREEN_DESCRIPTOR'
+        assert lsd['canvas']['width'] == 100
+        assert lsd['canvas']['height'] == 100
+        
+        # Vérifier palette globale
+        palette = elements[2]
+        assert palette['pattern'] == 'PALETTE_DATA'
+        assert palette['num_colors'] == 256
+        assert palette['size'] == 768  # 256 × 3 bytes RGB
+        
+        # Vérifier data stream
+        data_stream = elements[3]
+        assert data_stream['pattern'] == 'SEQUENTIAL_STRUCTURE'
+        assert len(data_stream['elements']) >= 2  # au moins 1 image + terminator
+    
+    def test_gif_reconstruction(self, gif_test_file, gif_grammar,
+                                decomposer_script, reconstructor_script):
+        """Test reconstruction bit-perfect GIF"""
+        # Décomposer
+        decomposition = run_decomposer(gif_test_file, gif_grammar,
+                                       decomposer_script)
+        
+        # Reconstruire
+        reconstructed_file = gif_test_file.parent / "reconstructed_test_sample.gif"
+        
+        # Sauver décomposition temporaire
+        decomp_file = gif_test_file.parent / "temp_decomposition.json"
+        with open(decomp_file, 'w') as f:
+            json.dump(decomposition, f, indent=2)
+        
+        _ = run_reconstructor(
+            decomp_file, gif_grammar, reconstructed_file, reconstructor_script
+        )
+        
+        # Vérifier bit-perfect
+        original_hash = calculate_sha256(gif_test_file)
+        reconstructed_hash = calculate_sha256(reconstructed_file)
+        
+        assert original_hash == reconstructed_hash, \
+            f"Hash mismatch: {original_hash} != {reconstructed_hash}"
+        
+        # Cleanup
+        reconstructed_file.unlink()
+        decomp_file.unlink()
+    
+    def test_gif_image_block(self, gif_test_file, gif_grammar,
+                             decomposer_script):
+        """Test décomposition d'un bloc IMAGE GIF"""
+        decomposition = run_decomposer(gif_test_file, gif_grammar,
+                                       decomposer_script)
+        
+        # Trouver le data stream
+        data_stream = decomposition['elements'][3]
+        
+        # Trouver le premier bloc IMAGE
+        image_block = next((e for e in data_stream['elements']
+                           if e.get('type') == 'IMAGE'), None)
+        
+        assert image_block is not None, "IMAGE block not found"
+        assert image_block['pattern'] == 'GIF_DATA_BLOCK'
+        
+        # Vérifier image descriptor
+        image_desc = image_block['image_descriptor']
+        assert image_desc['pattern'] == 'IMAGE_DESCRIPTOR'
+        assert image_desc['dimensions']['width'] == 100
+        assert image_desc['dimensions']['height'] == 100
+        
+        # Vérifier LZW compressed data
+        lzw_data = image_block['compressed_data']
+        assert lzw_data['pattern'] == 'LZW_COMPRESSED_DATA'
+        assert lzw_data['num_sub_blocks'] > 0
+        assert lzw_data['complete'] is True
+    
+    def test_gif_lzw_subblocks(self, gif_test_file, gif_grammar,
+                               decomposer_script):
+        """Test décomposition complète des sub-blocks LZW"""
+        decomposition = run_decomposer(gif_test_file, gif_grammar,
+                                       decomposer_script)
+        
+        # Extraire LZW data
+        data_stream = decomposition['elements'][3]
+        image_block = data_stream['elements'][0]
+        lzw_data = image_block['compressed_data']
+        
+        # Vérifier que TOUS les sub-blocks sont présents
+        num_blocks = lzw_data['num_sub_blocks']
+        stored_blocks = len(lzw_data['sub_blocks'])
+        
+        assert num_blocks == stored_blocks, \
+            f"Missing sub-blocks: {num_blocks} total, {stored_blocks} stored"
+        
+        # Vérifier total bytes correspond
+        total_bytes = sum(b['size'] for b in lzw_data['sub_blocks'])
+        assert total_bytes == lzw_data['total_data_bytes']
+    
+    def test_gif_patterns(self, gif_test_file, gif_grammar,
+                          decomposer_script):
+        """Test patterns GIF"""
+        stats_file = gif_test_file.parent / f"decomposition_{gif_test_file.stem}_stats.json"
+        
+        # Décomposer (génère stats automatiquement)
+        run_decomposer(gif_test_file, gif_grammar, decomposer_script)
+        
+        assert stats_file.exists(), "Stats file not generated"
+        
+        with open(stats_file) as f:
+            stats = json.load(f)
+        
+        patterns_used = stats['patterns_used']
+        
+        patterns_found = set(patterns_used.keys())
+        
+        # Au moins les patterns de base (niveau racine)
+        assert 'MAGIC_NUMBER' in patterns_found
+        assert 'PALETTE_DATA' in patterns_found
+        assert 'GIF_DATA_BLOCK' in patterns_found
+        
+        # Vérifier que les patterns imbriqués existent dans décomposition
+        decomposition_file = gif_test_file.parent / f"decomposition_{gif_test_file.stem}.json"
+        with open(decomposition_file) as f:
+            decomp = json.load(f)
+        
+        # Trouver GIF_DATA_BLOCK et vérifier patterns imbriqués
+        data_stream = decomp['elements'][3]
+        image_block = data_stream['elements'][0]
+        
+        assert image_block['pattern'] == 'GIF_DATA_BLOCK'
+        assert 'image_descriptor' in image_block
+        assert image_block['image_descriptor']['pattern'] == 'IMAGE_DESCRIPTOR'
+        assert 'compressed_data' in image_block
+        assert image_block['compressed_data']['pattern'] == 'LZW_COMPRESSED_DATA'
+
+
+# ============================================================================
 # REGRESSION TESTS - PNG + JPEG
 # ============================================================================
 
