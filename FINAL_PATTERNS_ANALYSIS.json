@@ -1,0 +1,103 @@
+{
+  "formats_count": 10,
+  "formats": [
+    "png",
+    "jpeg",
+    "gif",
+    "webp",
+    "tiff",
+    "wav",
+    "zip",
+    "mp3",
+    "mp4",
+    "pdf"
+  ],
+  "total_patterns_library": 43,
+  "unique_patterns_used": 34,
+  "total_pattern_instances": 48,
+  "reusability_ratio_percent": 29.2,
+  "format_patterns": {
+    "PNG": [],
+    "JPEG": [],
+    "GIF": [
+      "IMAGE_DESCRIPTOR",
+      "LOGICAL_SCREEN_DESCRIPTOR",
+      "LZW_COMPRESSED_DATA",
+      "MAGIC_NUMBER",
+      "PALETTE_DATA",
+      "TERMINATOR"
+    ],
+    "WEBP": [
+      "LENGTH_PREFIXED_DATA",
+      "MAGIC_NUMBER",
+      "RIFF_CHUNK",
+      "RIFF_FORM_TYPE",
+      "RIFF_HEADER",
+      "VP8_BITSTREAM"
+    ],
+    "TIFF": [
+      "BYTE_ORDER_MARKER",
+      "IFD_STRUCTURE",
+      "MAGIC_NUMBER",
+      "OFFSET_POINTER",
+      "TAG_VALUE_PAIR",
+      "TIFF_HEADER"
+    ],
+    "WAV": [
+      "DATA_CHUNK",
+      "FMT_CHUNK",
+      "MAGIC_NUMBER",
+      "RIFF_CHUNK",
+      "RIFF_FORM_TYPE",
+      "RIFF_HEADER"
+    ],
+    "ZIP": [
+      "CENTRAL_DIRECTORY_HEADER",
+      "END_OF_CENTRAL_DIR",
+      "LOCAL_FILE_HEADER",
+      "MAGIC_NUMBER",
+      "SEQUENTIAL_STRUCTURE"
+    ],
+    "MP3": [
+      "FRAME_HEADER",
+      "ID3_TAG",
+      "MAGIC_NUMBER",
+      "MPEG_FRAME",
+      "SEQUENTIAL_STRUCTURE"
+    ],
+    "MP4": [
+      "BOX_STRUCTURE",
+      "FTYP_BOX",
+      "LENGTH_PREFIXED_DATA",
+      "MAGIC_NUMBER",
+      "MDAT_BOX",
+      "SEQUENTIAL_STRUCTURE"
+    ],
+    "PDF": [
+      "CONTENT_STREAM",
+      "EOF_MARKER",
+      "MAGIC_NUMBER",
+      "PDF_HEADER",
+      "PDF_OBJECT",
+      "PDF_TRAILER",
+      "SEQUENTIAL_STRUCTURE",
+      "XREF_TABLE"
+    ]
+  },
+  "most_reusable": [
+    {
+      "pattern": "MAGIC_NUMBER",
+      "usage_count": 8
+    },
+    {
+      "pattern": "SEQUENTIAL_STRUCTURE",
+      "usage_count": 4
+    }
+  ],
+  "riff_family": {
+    "webp_patterns": 6,
+    "wav_patterns": 6,
+    "shared_patterns": 4,
+    "reuse_percent": 66.7
+  }
+}
