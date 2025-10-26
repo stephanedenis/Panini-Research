@@ -1,0 +1,10 @@
+{
+  "total_elements": 2,
+  "patterns_used": {
+    "TIFF_HEADER": 1,
+    "IFD_CHAIN": 1
+  },
+  "validation_status": {},
+  "integrity_checks": [],
+  "overall_status": "VALID"
+}

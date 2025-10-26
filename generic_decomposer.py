@@ -776,6 +776,295 @@ class RiffChunkProcessor(PatternProcessor):
         }
 
 
+class TIFFHeaderProcessor(PatternProcessor):
+    """Process TIFF header (byte order + magic + IFD offset)."""
+    
+    def process(self, element: Dict[str, Any]) -> Dict[str, Any]:
+        start_offset = self.offset
+        
+        # Byte order marker (2 bytes)
+        byte_order_marker = self.read_bytes(2)
+        
+        if byte_order_marker == b'II':
+            byte_order = '<'  # Little-endian
+            byte_order_name = 'little-endian'
+        elif byte_order_marker == b'MM':
+            byte_order = '>'  # Big-endian
+            byte_order_name = 'big-endian'
+        else:
+            raise ValueError(f"Invalid TIFF byte order: {byte_order_marker.hex()}")
+        
+        # Magic number (2 bytes): 42
+        magic = struct.unpack(f'{byte_order}H', self.read_bytes(2))[0]
+        if magic != 42:
+            raise ValueError(f"Invalid TIFF magic: {magic}")
+        
+        # First IFD offset (4 bytes)
+        first_ifd_offset = struct.unpack(f'{byte_order}I', self.read_bytes(4))[0]
+        
+        return {
+            "pattern": "TIFF_HEADER",
+            "offset": start_offset,
+            "size": 8,
+            "byte_order_marker": byte_order_marker.decode('ascii'),
+            "byte_order": byte_order_name,
+            "magic": magic,
+            "first_ifd_offset": first_ifd_offset
+        }
+
+
+class IFDStructureProcessor(PatternProcessor):
+    """Process TIFF IFD (Image File Directory) with linked list chain."""
+    
+    def __init__(self, data: bytes, offset: int, byte_order: str = '<'):
+        super().__init__(data, offset)
+        self.byte_order = byte_order
+    
+    def process(self, element: Dict[str, Any]) -> Dict[str, Any]:
+        ifds = []
+        current_offset = element.get('offset', self.offset)
+        ifd_index = 0
+        
+        while current_offset != 0 and current_offset < self.size:
+            self.offset = current_offset
+            ifd = self._process_single_ifd(ifd_index)
+            ifds.append(ifd)
+            current_offset = ifd['next_ifd_offset']
+            ifd_index += 1
+        
+        return {
+            "pattern": "IFD_CHAIN",
+            "offset": element.get('offset', 0),
+            "ifd_count": len(ifds),
+            "ifds": ifds
+        }
+    
+    def _process_single_ifd(self, index: int) -> Dict[str, Any]:
+        start_offset = self.offset
+        
+        # Number of entries (2 bytes)
+        if self.offset + 2 > self.size:
+            raise ValueError(f"Cannot read IFD num_entries at offset {self.offset} (file size: {self.size})")
+        num_entries = struct.unpack(f'{self.byte_order}H', self.read_bytes(2))[0]
+        
+        # Validate IFD fits: 2 (num_entries) + 12*n (entries) + 4 (next_offset)
+        bytes_needed = 2 + (num_entries * 12) + 4
+        if start_offset + bytes_needed > self.size:
+            raise ValueError(f"IFD at offset {start_offset} needs {bytes_needed} bytes but only {self.size - start_offset} available (file size: {self.size})")
+        
+        # Read all entries
+        entries = []
+        for _ in range(num_entries):
+            entry = self._process_ifd_entry()
+            entries.append(entry)
+        
+        # Next IFD offset (4 bytes, 0 = end)
+        next_ifd_offset = struct.unpack(f'{self.byte_order}I', self.read_bytes(4))[0]
+        
+        return {
+            "pattern": "IFD_STRUCTURE",
+            "index": index,
+            "offset": start_offset,
+            "num_entries": num_entries,
+            "entries": entries,
+            "next_ifd_offset": next_ifd_offset,
+            "size": self.offset - start_offset
+        }
+    
+    def _process_ifd_entry(self) -> Dict[str, Any]:
+        """Process single IFD entry (12 bytes: tag + type + count + value/offset)."""
+        start_offset = self.offset
+        
+        tag = struct.unpack(f'{self.byte_order}H', self.read_bytes(2))[0]
+        field_type = struct.unpack(f'{self.byte_order}H', self.read_bytes(2))[0]
+        count = struct.unpack(f'{self.byte_order}I', self.read_bytes(4))[0]
+        value_or_offset_bytes = self.read_bytes(4)
+        
+        # Decode value based on size
+        type_sizes = {1: 1, 2: 1, 3: 2, 4: 4, 5: 8, 6: 1, 7: 1, 8: 2, 9: 4, 10: 8, 11: 4, 12: 8}
+        type_size = type_sizes.get(field_type, 0)
+        total_size = count * type_size
+        
+        if total_size <= 4:
+            value = self._decode_inline_value(value_or_offset_bytes[:total_size], field_type, count)
+            value_location = 'inline'
+        else:
+            offset_val = struct.unpack(f'{self.byte_order}I', value_or_offset_bytes)[0]
+            value = f"offset_0x{offset_val:08X}"
+            value_location = 'offset'
+        
+        return {
+            "pattern": "TAG_VALUE_PAIR",
+            "offset": start_offset,
+            "tag": tag,
+            "type": field_type,
+            "count": count,
+            "value": value,
+            "value_location": value_location,
+            "size": 12
+        }
+    
+    def _decode_inline_value(self, data: bytes, field_type: int, count: int) -> Any:
+        """Decode inline value."""
+        try:
+            if field_type == 1:  # BYTE
+                return list(data[:count])
+            elif field_type == 2:  # ASCII
+                return data[:count].decode('ascii', errors='ignore').rstrip('\x00')
+            elif field_type == 3:  # SHORT
+                if count == 1:
+                    return struct.unpack(f'{self.byte_order}H', data[:2])[0]
+                return [struct.unpack(f'{self.byte_order}H', data[i:i+2])[0] for i in range(0, count*2, 2)]
+            elif field_type == 4:  # LONG
+                return struct.unpack(f'{self.byte_order}I', data[:4])[0]
+            else:
+                return f"<type_{field_type}>"
+        except:
+            return "<decode_error>"
+
+
+class PDFObjectProcessor(PatternProcessor):
+    """Process PDF objects (simplified - text-based extraction)."""
+    
+    def process(self, element: Dict[str, Any]) -> Dict[str, Any]:
+        """Extract PDF objects from text representation."""
+        import re
+        
+        text = self.data.decode('latin1', errors='ignore')
+        
+        # Find all objects (n m obj ... endobj)
+        objects = []
+        for match in re.finditer(r'(\d+)\s+(\d+)\s+obj\s+(.*?)\s+endobj', text, re.DOTALL):
+            obj_num = int(match.group(1))
+            gen_num = int(match.group(2))
+            content = match.group(3).strip()
+            
+            objects.append({
+                "pattern": "PDF_OBJECT",
+                "object_number": obj_num,
+                "generation": gen_num,
+                "offset": match.start(),
+                "size": match.end() - match.start(),
+                "content_preview": content[:100] if len(content) > 100 else content
+            })
+        
+        return {
+            "pattern": "SEQUENTIAL_STRUCTURE",
+            "object_count": len(objects),
+            "elements": objects
+        }
+
+
+class PDFHeaderProcessor(PatternProcessor):
+    """Process PDF header (%PDF-x.y)."""
+    
+    def process(self, element: Dict[str, Any]) -> Dict[str, Any]:
+        """Extract PDF version from header."""
+        text = self.data[:20].decode('latin1', errors='ignore')
+        
+        import re
+        match = re.match(r'%PDF-(\d+)\.(\d+)', text)
+        if match:
+            major = int(match.group(1))
+            minor = int(match.group(2))
+            return {
+                "pattern": "PDF_HEADER",
+                "offset": 0,
+                "size": len(match.group(0)),
+                "version": f"{major}.{minor}",
+                "major": major,
+                "minor": minor
+            }
+        
+        return {
+            "pattern": "PDF_HEADER",
+            "offset": 0,
+            "size": 0,
+            "error": "Invalid PDF header"
+        }
+
+
+class PDFTrailerProcessor(PatternProcessor):
+    """Process PDF trailer section."""
+    
+    def process(self, element: Dict[str, Any]) -> Dict[str, Any]:
+        """Extract trailer dictionary."""
+        import re
+        
+        text = self.data.decode('latin1', errors='ignore')
+        
+        # Find trailer keyword and following dictionary
+        trailer_match = re.search(r'trailer\s*<<(.*?)>>', text, re.DOTALL)
+        if not trailer_match:
+            return {
+                "pattern": "PDF_TRAILER",
+                "found": False
+            }
+        
+        trailer_dict = trailer_match.group(1).strip()
+        
+        return {
+            "pattern": "PDF_TRAILER",
+            "offset": trailer_match.start(),
+            "size": trailer_match.end() - trailer_match.start(),
+            "content_preview": trailer_dict[:200]
+        }
+
+
+class PDFEOFProcessor(PatternProcessor):
+    """Process PDF end-of-file marker."""
+    
+    def process(self, element: Dict[str, Any]) -> Dict[str, Any]:
+        """Find %%EOF marker."""
+        text = self.data[-50:].decode('latin1', errors='ignore')
+        
+        if '%%EOF' in text:
+            offset = len(self.data) - 50 + text.index('%%EOF')
+            return {
+                "pattern": "EOF_MARKER",
+                "offset": offset,
+                "size": 5,
+                "marker": "%%EOF"
+            }
+        
+        return {
+            "pattern": "EOF_MARKER",
+            "found": False
+        }
+
+
+class PDFXrefProcessor(PatternProcessor):
+    """Process PDF objects (simplified - text-based extraction)."""
+    
+    def process(self, element: Dict[str, Any]) -> Dict[str, Any]:
+        """Extract PDF objects from text representation."""
+        import re
+        
+        text = self.data.decode('latin1', errors='ignore')
+        
+        # Find all objects (n m obj ... endobj)
+        objects = []
+        for match in re.finditer(r'(\d+)\s+(\d+)\s+obj\s+(.*?)\s+endobj', text, re.DOTALL):
+            obj_num = int(match.group(1))
+            gen_num = int(match.group(2))
+            content = match.group(3).strip()
+            
+            objects.append({
+                "pattern": "PDF_OBJECT",
+                "object_number": obj_num,
+                "generation": gen_num,
+                "offset": match.start(),
+                "size": match.end() - match.start(),
+                "content_preview": content[:100] if len(content) > 100 else content
+            })
+        
+        return {
+            "pattern": "SEQUENTIAL_STRUCTURE",
+            "object_count": len(objects),
+            "elements": objects
+        }
+
+
 # ============================================================================
 # GENERIC DECOMPOSER ENGINE
 # ============================================================================
@@ -901,6 +1190,56 @@ class GenericDecomposer:
             processor = RiffChunkProcessor(self.binary_data, self.offset)
             result = processor.process(spec)
             self.offset = processor.offset
+            result['name'] = name
+            return result
+        
+        elif pattern == 'TIFF_HEADER':
+            processor = TIFFHeaderProcessor(self.binary_data, self.offset)
+            result = processor.process(spec)
+            self.offset = processor.offset
+            result['name'] = name
+            # Store byte order and first IFD offset for IFD processing
+            self.tiff_byte_order = result.get('byte_order_marker', 'II')
+            self.tiff_first_ifd_offset = result.get('first_ifd_offset', 8)
+            return result
+        
+        elif pattern == 'IFD_CHAIN':
+            # Get byte order from header
+            byte_order = '<' if getattr(self, 'tiff_byte_order', 'II') == 'II' else '>'
+            # Get first IFD offset from previous TIFF header result
+            first_ifd_offset = getattr(self, 'tiff_first_ifd_offset', 8)
+            processor = IFDStructureProcessor(self.binary_data, first_ifd_offset, byte_order)
+            result = processor.process({'offset': first_ifd_offset})
+            result['name'] = name
+            return result
+        
+        elif pattern == 'PDF_HEADER':
+            processor = PDFHeaderProcessor(self.binary_data, self.offset)
+            result = processor.process(spec)
+            result['name'] = name
+            return result
+        
+        elif pattern == 'PDF_OBJECT':
+            processor = PDFObjectProcessor(self.binary_data, self.offset)
+            result = processor.process(spec)
+            result['name'] = name
+            return result
+        
+        elif pattern == 'PDF_TRAILER':
+            processor = PDFTrailerProcessor(self.binary_data, self.offset)
+            result = processor.process(spec)
+            result['name'] = name
+            return result
+        
+        elif pattern == 'EOF_MARKER':
+            processor = PDFEOFProcessor(self.binary_data, self.offset)
+            result = processor.process(spec)
+            result['name'] = name
+            return result
+        
+        elif pattern == 'XREF_TABLE':
+            processor = PDFXrefProcessor(self.binary_data, self.offset)
+            result = processor.process(spec)
             result['name'] = name
             return result
         

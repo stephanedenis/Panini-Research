@@ -1,0 +1,76 @@
+{
+  "source_file": "test_sample.pdf",
+  "file_size": 460,
+  "format": "PDF",
+  "grammar_version": "1.0",
+  "elements": [
+    {
+      "pattern": "PDF_HEADER",
+      "offset": 0,
+      "size": 8,
+      "version": "1.4",
+      "major": 1,
+      "minor": 4,
+      "name": "header"
+    },
+    {
+      "pattern": "SEQUENTIAL_STRUCTURE",
+      "name": "body",
+      "count": 0,
+      "elements": []
+    },
+    {
+      "pattern": "SEQUENTIAL_STRUCTURE",
+      "object_count": 4,
+      "elements": [
+        {
+          "pattern": "PDF_OBJECT",
+          "object_number": 1,
+          "generation": 0,
+          "offset": 9,
+          "size": 48,
+          "content_preview": "<< /Type /Catalog /Pages 2 0 R >>"
+        },
+        {
+          "pattern": "PDF_OBJECT",
+          "object_number": 2,
+          "generation": 0,
+          "offset": 58,
+          "size": 56,
+          "content_preview": "<< /Type /Pages /Kids [3 0 R] /Count 1 >>"
+        },
+        {
+          "pattern": "PDF_OBJECT",
+          "object_number": 3,
+          "generation": 0,
+          "offset": 115,
+          "size": 86,
+          "content_preview": "<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 4 0 R >>"
+        },
+        {
+          "pattern": "PDF_OBJECT",
+          "object_number": 4,
+          "generation": 0,
+          "offset": 202,
+          "size": 94,
+          "content_preview": "<< /Length 44 >>\nstream\nBT\n/F1 12 Tf\n100 700 Td\n(PaniniFS Test) Tj\nET\nendstream"
+        }
+      ],
+      "name": "xref"
+    },
+    {
+      "pattern": "PDF_TRAILER",
+      "offset": 406,
+      "size": 33,
+      "content_preview": "/Size 5 /Root 1 0 R",
+      "name": "trailer"
+    },
+    {
+      "pattern": "EOF_MARKER",
+      "offset": 454,
+      "size": 5,
+      "marker": "%%EOF",
+      "name": "eof"
+    }
+  ]
+}

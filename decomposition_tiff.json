@@ -1,0 +1,189 @@
+{
+  "source_file": "test_sample.tiff",
+  "file_size": 9864,
+  "format": "TIFF",
+  "grammar_version": "1.0",
+  "elements": [
+    {
+      "pattern": "TIFF_HEADER",
+      "offset": 0,
+      "size": 8,
+      "byte_order_marker": "II",
+      "byte_order": "little-endian",
+      "magic": 42,
+      "first_ifd_offset": 9608,
+      "name": "tiff_header"
+    },
+    {
+      "pattern": "IFD_CHAIN",
+      "offset": 9608,
+      "ifd_count": 1,
+      "ifds": [
+        {
+          "pattern": "IFD_STRUCTURE",
+          "index": 0,
+          "offset": 9608,
+          "num_entries": 15,
+          "entries": [
+            {
+              "pattern": "TAG_VALUE_PAIR",
+              "offset": 9610,
+              "tag": 256,
+              "type": 3,
+              "count": 1,
+              "value": 40,
+              "value_location": "inline",
+              "size": 12
+            },
+            {
+              "pattern": "TAG_VALUE_PAIR",
+              "offset": 9622,
+              "tag": 257,
+              "type": 3,
+              "count": 1,
+              "value": 40,
+              "value_location": "inline",
+              "size": 12
+            },
+            {
+              "pattern": "TAG_VALUE_PAIR",
+              "offset": 9634,
+              "tag": 258,
+              "type": 3,
+              "count": 3,
+              "value": "offset_0x00002642",
+              "value_location": "offset",
+              "size": 12
+            },
+            {
+              "pattern": "TAG_VALUE_PAIR",
+              "offset": 9646,
+              "tag": 259,
+              "type": 3,
+              "count": 1,
+              "value": 1,
+              "value_location": "inline",
+              "size": 12
+            },
+            {
+              "pattern": "TAG_VALUE_PAIR",
+              "offset": 9658,
+              "tag": 262,
+              "type": 3,
+              "count": 1,
+              "value": 2,
+              "value_location": "inline",
+              "size": 12
+            },
+            {
+              "pattern": "TAG_VALUE_PAIR",
+              "offset": 9670,
+              "tag": 266,
+              "type": 3,
+              "count": 1,
+              "value": 1,
+              "value_location": "inline",
+              "size": 12
+            },
+            {
+              "pattern": "TAG_VALUE_PAIR",
+              "offset": 9682,
+              "tag": 273,
+              "type": 4,
+              "count": 1,
+              "value": 8,
+              "value_location": "inline",
+              "size": 12
+            },
+            {
+              "pattern": "TAG_VALUE_PAIR",
+              "offset": 9694,
+              "tag": 274,
+              "type": 3,
+              "count": 1,
+              "value": 1,
+              "value_location": "inline",
+              "size": 12
+            },
+            {
+              "pattern": "TAG_VALUE_PAIR",
+              "offset": 9706,
+              "tag": 277,
+              "type": 3,
+              "count": 1,
+              "value": 3,
+              "value_location": "inline",
+              "size": 12
+            },
+            {
+              "pattern": "TAG_VALUE_PAIR",
+              "offset": 9718,
+              "tag": 278,
+              "type": 3,
+              "count": 1,
+              "value": 40,
+              "value_location": "inline",
+              "size": 12
+            },
+            {
+              "pattern": "TAG_VALUE_PAIR",
+              "offset": 9730,
+              "tag": 279,
+              "type": 4,
+              "count": 1,
+              "value": 9600,
+              "value_location": "inline",
+              "size": 12
+            },
+            {
+              "pattern": "TAG_VALUE_PAIR",
+              "offset": 9742,
+              "tag": 284,
+              "type": 3,
+              "count": 1,
+              "value": 1,
+              "value_location": "inline",
+              "size": 12
+            },
+            {
+              "pattern": "TAG_VALUE_PAIR",
+              "offset": 9754,
+              "tag": 297,
+              "type": 3,
+              "count": 2,
+              "value": [
+                0,
+                1
+              ],
+              "value_location": "inline",
+              "size": 12
+            },
+            {
+              "pattern": "TAG_VALUE_PAIR",
+              "offset": 9766,
+              "tag": 318,
+              "type": 5,
+              "count": 2,
+              "value": "offset_0x00002678",
+              "value_location": "offset",
+              "size": 12
+            },
+            {
+              "pattern": "TAG_VALUE_PAIR",
+              "offset": 9778,
+              "tag": 319,
+              "type": 5,
+              "count": 6,
+              "value": "offset_0x00002648",
+              "value_location": "offset",
+              "size": 12
+            }
+          ],
+          "next_ifd_offset": 0,
+          "size": 186
+        }
+      ],
+      "name": "ifd_chain"
+    }
+  ]
+}

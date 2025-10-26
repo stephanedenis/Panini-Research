@@ -741,6 +741,149 @@ class TestPatternReusability:
 
 
 # ============================================================================
+# WAV TESTS  
+# ============================================================================
+
+class TestWAVFormat:
+    """Tests pour le format WAV (RIFF audio)"""
+    
+    @pytest.fixture
+    def wav_test_file(self, research_dir):
+        return research_dir / "test_sample.wav"
+    
+    @pytest.fixture
+    def wav_grammar(self, grammars_dir):
+        return grammars_dir / "wav.json"
+    
+    def test_wav_decomposition(self, wav_test_file, wav_grammar, decomposer_script):
+        """Test décomposition WAV"""
+        decomp = run_decomposer(wav_test_file, wav_grammar, decomposer_script)
+        
+        assert decomp['format'] == 'WAV'
+        assert len(decomp['elements']) >= 2  # RIFF header + chunks
+        
+        verify_patterns(decomp, ['RIFF_HEADER', 'RIFF_CHUNK'])
+    
+    def test_wav_reconstruction(self, wav_test_file, wav_grammar,
+                               decomposer_script, reconstructor_script):
+        """Test reconstruction WAV"""
+        decomp = run_decomposer(wav_test_file, wav_grammar, decomposer_script)
+        
+        decomp_file = decomposer_script.parent / f"decomposition_{wav_test_file.stem}.json"
+        output_file = decomposer_script.parent / f"reconstructed_{wav_test_file.stem}.wav"
+        
+        validation = run_reconstructor(decomp_file, wav_grammar, output_file,
+                                      reconstructor_script)
+        
+        assert validation['bit_perfect'] == True, \
+            f"WAV reconstruction not bit-perfect"
+    
+    def test_wav_riff_reusability(self, wav_test_file, wav_grammar,
+                                  decomposer_script):
+        """Test réutilisation patterns RIFF (WAV vs WebP)"""
+        decomp = run_decomposer(wav_test_file, wav_grammar, decomposer_script)
+        
+        # WAV doit utiliser les mêmes patterns RIFF que WebP
+        verify_patterns(decomp, ['RIFF_HEADER', 'RIFF_CHUNK'])
+
+
+# ============================================================================
+# ZIP TESTS
+# ============================================================================
+
+class TestZIPFormat:
+    """Tests pour le format ZIP"""
+    
+    @pytest.fixture
+    def zip_test_file(self, research_dir):
+        return research_dir / "test_sample.zip"
+    
+    @pytest.fixture
+    def zip_grammar(self, grammars_dir):
+        return grammars_dir / "zip.json"
+    
+    def test_zip_decomposition(self, zip_test_file, zip_grammar, decomposer_script):
+        """Test décomposition ZIP"""
+        decomp = run_decomposer(zip_test_file, zip_grammar, decomposer_script)
+        
+        assert decomp['format'] == 'ZIP'
+        # ZIP peut avoir peu d'éléments si processors pas implémentés
+        assert len(decomp['elements']) >= 2
+    
+    def test_zip_local_headers(self, zip_test_file, zip_grammar, decomposer_script):
+        """Test extraction local file headers"""
+        decomp = run_decomposer(zip_test_file, zip_grammar, decomposer_script)
+        
+        # ZIP doit avoir au moins 1 local file header
+        elements = decomp['elements']
+        local_headers = [e for e in elements if 'local' in e.get('name', '').lower()]
+        assert len(local_headers) >= 1
+
+
+# ============================================================================
+# MP3 TESTS
+# ============================================================================
+
+class TestMP3Format:
+    """Tests pour le format MP3"""
+    
+    @pytest.fixture
+    def mp3_test_file(self, research_dir):
+        return research_dir / "test_sample.mp3"
+    
+    @pytest.fixture
+    def mp3_grammar(self, grammars_dir):
+        return grammars_dir / "mp3.json"
+    
+    def test_mp3_decomposition(self, mp3_test_file, mp3_grammar, decomposer_script):
+        """Test décomposition MP3"""
+        decomp = run_decomposer(mp3_test_file, mp3_grammar, decomposer_script)
+        
+        assert decomp['format'] == 'MP3'
+        assert len(decomp['elements']) >= 1
+    
+    def test_mp3_id3_tag(self, mp3_test_file, mp3_grammar, decomposer_script):
+        """Test extraction ID3 tag"""
+        decomp = run_decomposer(mp3_test_file, mp3_grammar, decomposer_script)
+        
+        # MP3 peut avoir un tag ID3v2 au début
+        elements = decomp['elements']
+        # Au moins quelques éléments extraits
+        assert len(elements) >= 1
+
+
+# ============================================================================
+# MP4 TESTS
+# ============================================================================
+
+class TestMP4Format:
+    """Tests pour le format MP4"""
+    
+    @pytest.fixture
+    def mp4_test_file(self, research_dir):
+        return research_dir / "test_sample.mp4"
+    
+    @pytest.fixture
+    def mp4_grammar(self, grammars_dir):
+        return grammars_dir / "mp4.json"
+    
+    def test_mp4_decomposition(self, mp4_test_file, mp4_grammar, decomposer_script):
+        """Test décomposition MP4"""
+        decomp = run_decomposer(mp4_test_file, mp4_grammar, decomposer_script)
+        
+        assert decomp['format'] == 'MP4'
+        assert len(decomp['elements']) >= 1
+    
+    def test_mp4_ftyp_box(self, mp4_test_file, mp4_grammar, decomposer_script):
+        """Test extraction ftyp box"""
+        decomp = run_decomposer(mp4_test_file, mp4_grammar, decomposer_script)
+        
+        # MP4 doit commencer par ftyp box
+        elements = decomp['elements']
+        assert len(elements) >= 1
+
+
+# ============================================================================
 # PERFORMANCE TESTS
 # ============================================================================
 

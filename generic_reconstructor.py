@@ -410,6 +410,132 @@ class RiffChunkReconstructor(PatternReconstructor):
         return bytes(buffer)
 
 
+class TIFFHeaderReconstructor(PatternReconstructor):
+    """Reconstruct TIFF header."""
+    
+    def reconstruct(self, element: Dict[str, Any]) -> bytes:
+        buffer = bytearray()
+        
+        # Byte order marker (II or MM, 2 bytes)
+        byte_order = element.get('byte_order_marker', 'II')
+        buffer.extend(byte_order.encode('ascii'))
+        
+        # Magic number (42, 2 bytes)
+        magic = element.get('magic', 42)
+        endian = '<' if byte_order == 'II' else '>'
+        buffer.extend(struct.pack(f'{endian}H', magic))
+        
+        # First IFD offset (4 bytes)
+        first_ifd_offset = element.get('first_ifd_offset', 8)
+        buffer.extend(struct.pack(f'{endian}I', first_ifd_offset))
+        
+        return bytes(buffer)
+
+
+class IFDStructureReconstructor(PatternReconstructor):
+    """Reconstruct TIFF IFD (Image File Directory)."""
+    
+    def reconstruct(self, element: Dict[str, Any], byte_order: str = 'II') -> bytes:
+        buffer = bytearray()
+        endian = '<' if byte_order == 'II' else '>'
+        
+        # Number of entries (2 bytes)
+        num_entries = element.get('num_entries', 0)
+        buffer.extend(struct.pack(f'{endian}H', num_entries))
+        
+        # All entries (12 bytes each)
+        entries = element.get('entries', [])
+        for entry in entries:
+            # Tag (2 bytes)
+            tag = entry.get('tag', 0)
+            buffer.extend(struct.pack(f'{endian}H', tag))
+            
+            # Type (2 bytes)
+            field_type = entry.get('type', 0)
+            buffer.extend(struct.pack(f'{endian}H', field_type))
+            
+            # Count (4 bytes)
+            count = entry.get('count', 0)
+            buffer.extend(struct.pack(f'{endian}I', count))
+            
+            # Value or offset (4 bytes)
+            value = entry.get('value')
+            value_location = entry.get('value_location', 'inline')
+            
+            if value_location == 'inline':
+                # Inline value (4 bytes, may be padded)
+                if isinstance(value, int):
+                    buffer.extend(struct.pack(f'{endian}I', value))
+                else:
+                    buffer.extend(b'\x00\x00\x00\x00')
+            else:
+                # Offset to data (parse from "offset_0xXXXXXXXX")
+                if isinstance(value, str) and value.startswith('offset_0x'):
+                    offset_val = int(value[9:], 16)
+                    buffer.extend(struct.pack(f'{endian}I', offset_val))
+                else:
+                    buffer.extend(b'\x00\x00\x00\x00')
+        
+        # Next IFD offset (4 bytes, 0 = end)
+        next_ifd_offset = element.get('next_ifd_offset', 0)
+        buffer.extend(struct.pack(f'{endian}I', next_ifd_offset))
+        
+        return bytes(buffer)
+
+
+class PDFHeaderReconstructor(PatternReconstructor):
+    """Reconstruct PDF header."""
+    
+    def reconstruct(self, element: Dict[str, Any]) -> bytes:
+        version = element.get('version', '1.4')
+        header = f"%PDF-{version}\n"
+        return header.encode('latin1')
+
+
+class PDFObjectReconstructor(PatternReconstructor):
+    """Reconstruct PDF object."""
+    
+    def reconstruct(self, element: Dict[str, Any]) -> bytes:
+        obj_num = element.get('object_number', 0)
+        gen_num = element.get('generation', 0)
+        content = element.get('content_preview', '')
+        
+        obj = f"{obj_num} {gen_num} obj\n{content}\nendobj\n"
+        return obj.encode('latin1')
+
+
+class PDFTrailerReconstructor(PatternReconstructor):
+    """Reconstruct PDF trailer."""
+    
+    def reconstruct(self, element: Dict[str, Any]) -> bytes:
+        content = element.get('content_preview', '')
+        trailer = f"trailer\n<<{content}>>\n"
+        return trailer.encode('latin1')
+
+
+class PDFXrefReconstructor(PatternReconstructor):
+    """Reconstruct PDF xref table."""
+    
+    def reconstruct(self, element: Dict[str, Any]) -> bytes:
+        entries = element.get('entries', [])
+        
+        xref = "xref\n"
+        for entry in entries:
+            offset = entry.get('offset', 0)
+            generation = entry.get('generation', 0)
+            entry_type = entry.get('type', 'n')
+            xref += f"{offset:010d} {generation:05d} {entry_type}\n"
+        
+        return xref.encode('latin1')
+
+
+class PDFEOFReconstructor(PatternReconstructor):
+    """Reconstruct PDF EOF marker."""
+    
+    def reconstruct(self, element: Dict[str, Any]) -> bytes:
+        return b"%%EOF\n"
+
+
 # ============================================================================
 # GENERIC RECONSTRUCTOR ENGINE
 # ============================================================================
@@ -477,6 +603,45 @@ class GenericReconstructor:
         
         elif pattern == 'RIFF_CHUNK':
             reconstructor = RiffChunkReconstructor()
+            return reconstructor.reconstruct(element)
+        
+        elif pattern == 'TIFF_HEADER':
+            reconstructor = TIFFHeaderReconstructor()
+            return reconstructor.reconstruct(element)
+        
+        elif pattern == 'IFD_CHAIN':
+            # Reconstruct all IFDs in chain
+            buffer = bytearray()
+            byte_order = element.get('byte_order', 'II')
+            for ifd in element.get('ifds', []):
+                reconstructor = IFDStructureReconstructor()
+                buffer.extend(reconstructor.reconstruct(ifd, byte_order))
+            return bytes(buffer)
+        
+        elif pattern == 'IFD_STRUCTURE':
+            # Single IFD
+            reconstructor = IFDStructureReconstructor()
+            byte_order = element.get('byte_order', 'II')
+            return reconstructor.reconstruct(element, byte_order)
+        
+        elif pattern == 'PDF_HEADER':
+            reconstructor = PDFHeaderReconstructor()
+            return reconstructor.reconstruct(element)
+        
+        elif pattern == 'PDF_OBJECT':
+            reconstructor = PDFObjectReconstructor()
+            return reconstructor.reconstruct(element)
+        
+        elif pattern == 'PDF_TRAILER':
+            reconstructor = PDFTrailerReconstructor()
+            return reconstructor.reconstruct(element)
+        
+        elif pattern == 'XREF_TABLE':
+            reconstructor = PDFXrefReconstructor()
+            return reconstructor.reconstruct(element)
+        
+        elif pattern == 'EOF_MARKER':
+            reconstructor = PDFEOFReconstructor()
             return reconstructor.reconstruct(element)
         
         elif pattern == 'TERMINATOR':
