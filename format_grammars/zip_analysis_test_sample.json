@@ -1,0 +1,13 @@
+{
+  "format": "ZIP",
+  "size": 128,
+  "local_headers": 1,
+  "central_directory_entries": 1,
+  "patterns_found": [
+    "CENTRAL_DIRECTORY_HEADER",
+    "END_OF_CENTRAL_DIR",
+    "LOCAL_FILE_HEADER",
+    "MAGIC_NUMBER",
+    "SEQUENTIAL_STRUCTURE"
+  ]
+}

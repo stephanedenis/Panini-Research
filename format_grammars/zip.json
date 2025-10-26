@@ -1,0 +1,25 @@
+{
+  "format": "ZIP",
+  "version": "1.0",
+  "description": "ZIP archive (double index: local + central)",
+  "byte_order": "little-endian",
+  "composition": {
+    "root": {
+      "pattern": "SEQUENTIAL",
+      "elements": [
+        {
+          "name": "local_files",
+          "pattern": "SEQUENTIAL_STRUCTURE"
+        },
+        {
+          "name": "central_directory",
+          "pattern": "SEQUENTIAL_STRUCTURE"
+        },
+        {
+          "name": "eocd",
+          "pattern": "END_OF_CENTRAL_DIR"
+        }
+      ]
+    }
+  }
+}
