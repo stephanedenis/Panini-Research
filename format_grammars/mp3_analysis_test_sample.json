@@ -1,0 +1,12 @@
+{
+  "format": "MP3",
+  "size": 154,
+  "frames": 1,
+  "patterns_found": [
+    "FRAME_HEADER",
+    "ID3_TAG",
+    "MAGIC_NUMBER",
+    "MPEG_FRAME",
+    "SEQUENTIAL_STRUCTURE"
+  ]
+}

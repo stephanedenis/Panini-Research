@@ -352,6 +352,88 @@
         "DNG"
       ],
       "size": "variable"
+    },
+    "FMT_CHUNK": {
+      "name": "FMT_CHUNK",
+      "description": "WAV format chunk (audio parameters)",
+      "reusable": false,
+      "formats": [
+        "WAV"
+      ],
+      "size": "16_or_18_bytes"
+    },
+    "DATA_CHUNK": {
+      "name": "DATA_CHUNK",
+      "description": "WAV data chunk (raw PCM audio samples)",
+      "reusable": false,
+      "formats": [
+        "WAV"
+      ],
+      "size": "variable"
+    },
+    "LOCAL_FILE_HEADER": {
+      "name": "LOCAL_FILE_HEADER",
+      "description": "ZIP local file header (PK\\x03\\x04 + metadata + compressed data)",
+      "reusable": false,
+      "formats": [
+        "ZIP",
+        "JAR",
+        "APK"
+      ],
+      "size": "variable"
+    },
+    "CENTRAL_DIRECTORY_HEADER": {
+      "name": "CENTRAL_DIRECTORY_HEADER",
+      "description": "ZIP central directory entry (PK\\x01\\x02 + file metadata)",
+      "reusable": false,
+      "formats": [
+        "ZIP",
+        "JAR",
+        "APK"
+      ],
+      "size": "variable"
+    },
+    "END_OF_CENTRAL_DIR": {
+      "name": "END_OF_CENTRAL_DIR",
+      "description": "ZIP end of central directory (PK\\x05\\x06 + global metadata)",
+      "reusable": false,
+      "formats": [
+        "ZIP",
+        "JAR",
+        "APK"
+      ],
+      "size": "minimum_22_bytes"
+    },
+    "ID3_TAG": {
+      "name": "ID3_TAG",
+      "description": "ID3 metadata tag (v1 or v2)",
+      "reusable": false,
+      "formats": [
+        "MP3"
+      ],
+      "size": "variable"
+    },
+    "MPEG_FRAME": {
+      "name": "MPEG_FRAME",
+      "description": "MPEG audio frame (sync + header + data)",
+      "reusable": true,
+      "formats": [
+        "MP3",
+        "MP4",
+        "MPEG"
+      ],
+      "size": "variable"
+    },
+    "FRAME_HEADER": {
+      "name": "FRAME_HEADER",
+      "description": "Frame header with sync word (0xFFF)",
+      "reusable": true,
+      "formats": [
+        "MP3",
+        "MP4",
+        "AAC"
+      ],
+      "size": "fixed_4_bytes"
     }
   },
   "MAGIC_NUMBER": {

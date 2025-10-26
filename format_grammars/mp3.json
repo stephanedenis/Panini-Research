@@ -1,0 +1,22 @@
+{
+  "format": "MP3",
+  "version": "1.0",
+  "description": "MPEG Audio Layer III",
+  "byte_order": "big-endian",
+  "composition": {
+    "root": {
+      "pattern": "SEQUENTIAL",
+      "elements": [
+        {
+          "name": "id3_tag",
+          "pattern": "ID3_TAG",
+          "optional": true
+        },
+        {
+          "name": "mpeg_frames",
+          "pattern": "SEQUENTIAL_STRUCTURE"
+        }
+      ]
+    }
+  }
+}
