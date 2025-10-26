@@ -1,0 +1,33 @@
+{
+  "format": "PDF",
+  "version": "1.0",
+  "description": "Portable Document Format (text+binary mixed)",
+  "byte_order": "n/a",
+  "composition": {
+    "root": {
+      "pattern": "SEQUENTIAL",
+      "elements": [
+        {
+          "name": "header",
+          "pattern": "PDF_HEADER"
+        },
+        {
+          "name": "body",
+          "pattern": "SEQUENTIAL_STRUCTURE"
+        },
+        {
+          "name": "xref",
+          "pattern": "XREF_TABLE"
+        },
+        {
+          "name": "trailer",
+          "pattern": "PDF_TRAILER"
+        },
+        {
+          "name": "eof",
+          "pattern": "EOF_MARKER"
+        }
+      ]
+    }
+  }
+}

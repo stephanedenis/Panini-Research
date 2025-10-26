@@ -1,0 +1,16 @@
+{
+  "format": "PDF",
+  "size": 460,
+  "objects": 4,
+  "streams": 1,
+  "patterns_found": [
+    "CONTENT_STREAM",
+    "EOF_MARKER",
+    "MAGIC_NUMBER",
+    "PDF_HEADER",
+    "PDF_OBJECT",
+    "PDF_TRAILER",
+    "SEQUENTIAL_STRUCTURE",
+    "XREF_TABLE"
+  ]
+}

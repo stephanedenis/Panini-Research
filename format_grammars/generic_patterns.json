@@ -491,6 +491,61 @@
         "MOV"
       ],
       "size": "variable"
+    },
+    "PDF_HEADER": {
+      "name": "PDF_HEADER",
+      "description": "PDF header (%PDF-version)",
+      "reusable": false,
+      "formats": [
+        "PDF"
+      ],
+      "size": "variable"
+    },
+    "PDF_OBJECT": {
+      "name": "PDF_OBJECT",
+      "description": "PDF indirect object (n m obj ... endobj)",
+      "reusable": false,
+      "formats": [
+        "PDF"
+      ],
+      "size": "variable"
+    },
+    "CONTENT_STREAM": {
+      "name": "CONTENT_STREAM",
+      "description": "PDF content stream (stream ... endstream)",
+      "reusable": false,
+      "formats": [
+        "PDF"
+      ],
+      "size": "variable"
+    },
+    "XREF_TABLE": {
+      "name": "XREF_TABLE",
+      "description": "PDF cross-reference table (object offsets)",
+      "reusable": false,
+      "formats": [
+        "PDF"
+      ],
+      "size": "variable"
+    },
+    "PDF_TRAILER": {
+      "name": "PDF_TRAILER",
+      "description": "PDF trailer dictionary",
+      "reusable": false,
+      "formats": [
+        "PDF"
+      ],
+      "size": "variable"
+    },
+    "EOF_MARKER": {
+      "name": "EOF_MARKER",
+      "description": "End-of-file marker (%%EOF)",
+      "reusable": true,
+      "formats": [
+        "PDF",
+        "PostScript"
+      ],
+      "size": "fixed_5_bytes"
     }
   },
   "MAGIC_NUMBER": {
