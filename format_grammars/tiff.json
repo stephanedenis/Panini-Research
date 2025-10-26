@@ -1,0 +1,22 @@
+{
+  "format": "TIFF",
+  "version": "1.0",
+  "description": "Tagged Image File Format (flexible byte order)",
+  "byte_order": "little-endian",
+  "composition": {
+    "root": {
+      "pattern": "SEQUENTIAL",
+      "elements": [
+        {
+          "name": "tiff_header",
+          "pattern": "TIFF_HEADER"
+        },
+        {
+          "name": "ifd_chain",
+          "pattern": "IFD_CHAIN",
+          "description": "Linked list of Image File Directories"
+        }
+      ]
+    }
+  }
+}

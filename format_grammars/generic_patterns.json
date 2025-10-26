@@ -256,6 +256,102 @@
         "IFF"
       ],
       "size": "1_byte_if_odd"
+    },
+    "TIFF_HEADER": {
+      "name": "TIFF_HEADER",
+      "description": "TIFF file header (byte order + magic + IFD offset)",
+      "structure": [
+        "BYTE_ORDER_MARKER",
+        "MAGIC_NUMBER",
+        "OFFSET_POINTER"
+      ],
+      "reusable": false,
+      "formats": [
+        "TIFF"
+      ],
+      "size": "fixed_8_bytes"
+    },
+    "BYTE_ORDER_MARKER": {
+      "name": "BYTE_ORDER_MARKER",
+      "description": "Byte order marker (II=little, MM=big endian)",
+      "example": "II (Intel), MM (Motorola)",
+      "reusable": true,
+      "formats": [
+        "TIFF",
+        "EXIF",
+        "DNG"
+      ],
+      "size": "fixed_2_bytes"
+    },
+    "OFFSET_POINTER": {
+      "name": "OFFSET_POINTER",
+      "description": "Pointer to data location elsewhere in file",
+      "reusable": true,
+      "formats": [
+        "TIFF",
+        "PDF",
+        "ZIP",
+        "ELF"
+      ],
+      "size": "variable_2_4_8_bytes"
+    },
+    "IFD_STRUCTURE": {
+      "name": "IFD_STRUCTURE",
+      "description": "Image File Directory (count + entries + next pointer)",
+      "structure": [
+        "COUNT",
+        "TAG_VALUE_PAIR_ARRAY",
+        "OFFSET_POINTER"
+      ],
+      "reusable": false,
+      "formats": [
+        "TIFF",
+        "EXIF",
+        "DNG"
+      ],
+      "size": "variable"
+    },
+    "TAG_VALUE_PAIR": {
+      "name": "TAG_VALUE_PAIR",
+      "description": "Tagged field (tag + type + count + value/offset)",
+      "structure": [
+        "TAG_ID",
+        "TYPE_CODE",
+        "COUNT",
+        "VALUE_OR_OFFSET"
+      ],
+      "reusable": true,
+      "formats": [
+        "TIFF",
+        "EXIF",
+        "ID3v2",
+        "PNG_tEXt"
+      ],
+      "size": "fixed_12_bytes"
+    },
+    "STRIP_DATA": {
+      "name": "STRIP_DATA",
+      "description": "Image data organized in strips or tiles",
+      "reusable": false,
+      "formats": [
+        "TIFF"
+      ],
+      "size": "variable"
+    },
+    "IFD_CHAIN": {
+      "name": "IFD_CHAIN",
+      "description": "Linked list of IFDs via offset pointers",
+      "structure": [
+        "IFD_STRUCTURE",
+        "OFFSET_POINTER to next"
+      ],
+      "reusable": true,
+      "formats": [
+        "TIFF",
+        "EXIF",
+        "DNG"
+      ],
+      "size": "variable"
     }
   },
   "MAGIC_NUMBER": {

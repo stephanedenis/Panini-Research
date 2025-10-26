@@ -1,0 +1,200 @@
+{
+  "file": "test_sample.tiff",
+  "size": 9864,
+  "format": "TIFF",
+  "byte_order": "little-endian",
+  "header": {
+    "offset": 0,
+    "byte_order_marker": "II",
+    "byte_order": "little-endian (II)",
+    "magic": 42,
+    "first_ifd_offset": 9608,
+    "size": 8
+  },
+  "ifds": [
+    {
+      "offset": 9608,
+      "num_entries": 15,
+      "entries": [
+        {
+          "offset": 9610,
+          "tag": 256,
+          "tag_name": "ImageWidth",
+          "type": 3,
+          "type_name": "SHORT",
+          "count": 1,
+          "value": 40,
+          "value_location": "inline",
+          "size": 12
+        },
+        {
+          "offset": 9622,
+          "tag": 257,
+          "tag_name": "ImageLength",
+          "type": 3,
+          "type_name": "SHORT",
+          "count": 1,
+          "value": 40,
+          "value_location": "inline",
+          "size": 12
+        },
+        {
+          "offset": 9634,
+          "tag": 258,
+          "tag_name": "BitsPerSample",
+          "type": 3,
+          "type_name": "SHORT",
+          "count": 3,
+          "value": "offset 0x00002642",
+          "value_location": "offset",
+          "size": 12
+        },
+        {
+          "offset": 9646,
+          "tag": 259,
+          "tag_name": "Compression",
+          "type": 3,
+          "type_name": "SHORT",
+          "count": 1,
+          "value": 1,
+          "value_location": "inline",
+          "size": 12
+        },
+        {
+          "offset": 9658,
+          "tag": 262,
+          "tag_name": "PhotometricInterpretation",
+          "type": 3,
+          "type_name": "SHORT",
+          "count": 1,
+          "value": 2,
+          "value_location": "inline",
+          "size": 12
+        },
+        {
+          "offset": 9670,
+          "tag": 266,
+          "tag_name": "Tag266",
+          "type": 3,
+          "type_name": "SHORT",
+          "count": 1,
+          "value": 1,
+          "value_location": "inline",
+          "size": 12
+        },
+        {
+          "offset": 9682,
+          "tag": 273,
+          "tag_name": "StripOffsets",
+          "type": 4,
+          "type_name": "LONG",
+          "count": 1,
+          "value": 8,
+          "value_location": "inline",
+          "size": 12
+        },
+        {
+          "offset": 9694,
+          "tag": 274,
+          "tag_name": "Tag274",
+          "type": 3,
+          "type_name": "SHORT",
+          "count": 1,
+          "value": 1,
+          "value_location": "inline",
+          "size": 12
+        },
+        {
+          "offset": 9706,
+          "tag": 277,
+          "tag_name": "SamplesPerPixel",
+          "type": 3,
+          "type_name": "SHORT",
+          "count": 1,
+          "value": 3,
+          "value_location": "inline",
+          "size": 12
+        },
+        {
+          "offset": 9718,
+          "tag": 278,
+          "tag_name": "RowsPerStrip",
+          "type": 3,
+          "type_name": "SHORT",
+          "count": 1,
+          "value": 40,
+          "value_location": "inline",
+          "size": 12
+        },
+        {
+          "offset": 9730,
+          "tag": 279,
+          "tag_name": "StripByteCounts",
+          "type": 4,
+          "type_name": "LONG",
+          "count": 1,
+          "value": 9600,
+          "value_location": "inline",
+          "size": 12
+        },
+        {
+          "offset": 9742,
+          "tag": 284,
+          "tag_name": "PlanarConfiguration",
+          "type": 3,
+          "type_name": "SHORT",
+          "count": 1,
+          "value": 1,
+          "value_location": "inline",
+          "size": 12
+        },
+        {
+          "offset": 9754,
+          "tag": 297,
+          "tag_name": "Tag297",
+          "type": 3,
+          "type_name": "SHORT",
+          "count": 2,
+          "value": [
+            0,
+            1
+          ],
+          "value_location": "inline",
+          "size": 12
+        },
+        {
+          "offset": 9766,
+          "tag": 318,
+          "tag_name": "Tag318",
+          "type": 5,
+          "type_name": "RATIONAL",
+          "count": 2,
+          "value": "offset 0x00002678",
+          "value_location": "offset",
+          "size": 12
+        },
+        {
+          "offset": 9778,
+          "tag": 319,
+          "tag_name": "Tag319",
+          "type": 5,
+          "type_name": "RATIONAL",
+          "count": 6,
+          "value": "offset 0x00002648",
+          "value_location": "offset",
+          "size": 12
+        }
+      ],
+      "next_ifd_offset": 0,
+      "size": 186
+    }
+  ],
+  "patterns_found": [
+    "BYTE_ORDER_MARKER",
+    "IFD_STRUCTURE",
+    "MAGIC_NUMBER",
+    "OFFSET_POINTER",
+    "TAG_VALUE_PAIR",
+    "TIFF_HEADER"
+  ]
+}
