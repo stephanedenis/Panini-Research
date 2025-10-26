@@ -1,0 +1,27 @@
+{
+  "format": "WAV",
+  "version": "1.0",
+  "description": "Waveform Audio File Format (RIFF-based)",
+  "byte_order": "little-endian",
+  "composition": {
+    "root": {
+      "pattern": "SEQUENTIAL",
+      "elements": [
+        {
+          "name": "riff_header",
+          "pattern": "RIFF_HEADER"
+        },
+        {
+          "name": "chunks",
+          "pattern": "SEQUENTIAL_STRUCTURE",
+          "element": {
+            "pattern": "RIFF_CHUNK"
+          },
+          "terminator": {
+            "type": "eof"
+          }
+        }
+      ]
+    }
+  }
+}

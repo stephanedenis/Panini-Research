@@ -1,0 +1,27 @@
+{
+  "file": "test_sample.wav",
+  "size": 8044,
+  "format": "WAV",
+  "chunks": [
+    {
+      "fourcc": "fmt ",
+      "size": 16,
+      "audio_format": 1,
+      "channels": 1,
+      "sample_rate": 8000,
+      "bits_per_sample": 16
+    },
+    {
+      "fourcc": "data",
+      "size": 8000
+    }
+  ],
+  "patterns_found": [
+    "DATA_CHUNK",
+    "FMT_CHUNK",
+    "MAGIC_NUMBER",
+    "RIFF_CHUNK",
+    "RIFF_FORM_TYPE",
+    "RIFF_HEADER"
+  ]
+}
