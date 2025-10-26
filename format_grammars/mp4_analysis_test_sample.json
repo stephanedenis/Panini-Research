@@ -1,0 +1,22 @@
+{
+  "format": "MP4",
+  "size": 32,
+  "boxes": [
+    {
+      "type": "ftyp",
+      "size": 24
+    },
+    {
+      "type": "mdat",
+      "size": 8
+    }
+  ],
+  "patterns_found": [
+    "BOX_STRUCTURE",
+    "FTYP_BOX",
+    "LENGTH_PREFIXED_DATA",
+    "MAGIC_NUMBER",
+    "MDAT_BOX",
+    "SEQUENTIAL_STRUCTURE"
+  ]
+}

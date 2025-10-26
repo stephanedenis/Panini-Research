@@ -1,0 +1,17 @@
+{
+  "format": "MP4",
+  "version": "1.0",
+  "description": "MPEG-4 Part 14 (ISO Base Media File Format)",
+  "byte_order": "big-endian",
+  "composition": {
+    "root": {
+      "pattern": "SEQUENTIAL",
+      "elements": [
+        {
+          "name": "boxes",
+          "pattern": "SEQUENTIAL_STRUCTURE"
+        }
+      ]
+    }
+  }
+}

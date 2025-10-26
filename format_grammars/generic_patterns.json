@@ -434,6 +434,63 @@
         "AAC"
       ],
       "size": "fixed_4_bytes"
+    },
+    "BOX_STRUCTURE": {
+      "name": "BOX_STRUCTURE",
+      "description": "ISO BMFF box (size + type + data)",
+      "structure": [
+        "LENGTH_PREFIXED_DATA",
+        "FOURCC",
+        "DATA"
+      ],
+      "reusable": true,
+      "formats": [
+        "MP4",
+        "MOV",
+        "3GP",
+        "M4A"
+      ],
+      "size": "variable"
+    },
+    "NESTED_BOX": {
+      "name": "NESTED_BOX",
+      "description": "Box containing child boxes (recursive)",
+      "reusable": true,
+      "formats": [
+        "MP4",
+        "MOV"
+      ],
+      "size": "variable"
+    },
+    "FTYP_BOX": {
+      "name": "FTYP_BOX",
+      "description": "File type box (brand + compatibility)",
+      "reusable": false,
+      "formats": [
+        "MP4",
+        "MOV"
+      ],
+      "size": "variable"
+    },
+    "MOOV_BOX": {
+      "name": "MOOV_BOX",
+      "description": "Movie metadata box (nested structure)",
+      "reusable": false,
+      "formats": [
+        "MP4",
+        "MOV"
+      ],
+      "size": "variable"
+    },
+    "MDAT_BOX": {
+      "name": "MDAT_BOX",
+      "description": "Media data box (audio/video samples)",
+      "reusable": false,
+      "formats": [
+        "MP4",
+        "MOV"
+      ],
+      "size": "variable"
     }
   },
   "MAGIC_NUMBER": {
