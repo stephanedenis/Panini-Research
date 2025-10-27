@@ -1,0 +1,25 @@
+BEGIN:VCARD
+VERSION:3.0
+N:Denis;Stéphane;;;
+FN:Stéphane Denis
+ORG:SDenis Solutions
+TITLE:Développeur
+TEL;TYPE=WORK,VOICE:+1-450-555-1234
+TEL;TYPE=HOME,VOICE:+1-450-555-5678
+TEL;TYPE=CELL:+1-514-555-9999
+EMAIL;TYPE=PREF,INTERNET:stephane@sdenis.com
+EMAIL;TYPE=WORK:stephane.denis@work.com
+ADR;TYPE=WORK:;;915 Rue Saint-Pierre;Saint-Hyacinthe;QC;J2S 7H3;Canada
+URL:https://sdenis.com
+BDAY:1969-05-15
+NOTE:Développeur Python et architecte logiciel
+PHOTO;ENCODING=b;TYPE=JPEG:/9j/4AAQSkZJRgABAQEAYABgAAD/2wBD
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+N:Doe;John;;;
+FN:John Doe
+ORG:Example Corp
+EMAIL:john.doe@example.com
+TEL;TYPE=CELL:+1-555-123-4567
+END:VCARD
