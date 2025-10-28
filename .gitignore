@@ -1,0 +1,93 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+venv/
+env/
+ENV/
+
+# Tests
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.hypothesis/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# Large binary test files (keep references in shared/test_samples/)
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.bmp
+*.tiff
+*.tif
+*.ico
+*.pdf
+*.mp3
+*.mp4
+*.avi
+*.mov
+*.wav
+*.zip
+*.tar
+*.tar.gz
+*.rar
+*.7z
+reconstructed*.*
+test_sample.*
+
+# Temporary files
+*.tmp
+*.bak
+*.log
+*.swp
+*.lock
+
+# Benchmarks (large data files)
+compression_results_*.json
+reconstruction_benchmark_*.json
+validation_results_*.json
+
+# State files
+state_*.json
+checkpoint_*.json
+
+# Git submodules (keep .git)
+# (none currently)
