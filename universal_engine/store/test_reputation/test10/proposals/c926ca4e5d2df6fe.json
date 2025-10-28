@@ -1,0 +1,37 @@
+{
+  "proposal_id": "c926ca4e5d2df6fe",
+  "proposer_id": "proposer@test.com",
+  "proposal_type": "policy_change",
+  "title": "Simple majority test",
+  "description": "Description",
+  "status": "approved",
+  "consensus_model": "simple_majority",
+  "approval_threshold": 0.5,
+  "quorum_required": 10,
+  "created_at": "2025-10-28T20:30:49.160062",
+  "voting_start": "2025-10-28T20:30:49.160062",
+  "voting_end": "2025-10-28T20:30:49.160062",
+  "votes": [
+    "10d0134e12acc937",
+    "03a4ab366ead1e1d",
+    "575d80866a60d5a7",
+    "44851f5d5ae2c3ea",
+    "858f3552d3362357",
+    "8dcc087d07488304",
+    "7ffa0d7ece250fb1",
+    "81a7324de03c6c5f",
+    "33301d49c225eece",
+    "37f8d5a5a0d29191"
+  ],
+  "vote_counts": {
+    "approve": 6,
+    "reject": 4,
+    "abstain": 0
+  },
+  "approved": true,
+  "implemented": false,
+  "implementation_date": null,
+  "tags": [],
+  "attachments": [],
+  "discussion_url": null
+}

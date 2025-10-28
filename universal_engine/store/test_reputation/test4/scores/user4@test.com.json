@@ -1,0 +1,19 @@
+{
+  "user_id": "user4@test.com",
+  "total_score": 30,
+  "level": "newcomer",
+  "contribution_score": 30,
+  "quality_score": 10,
+  "consistency_score": 0,
+  "community_score": 0,
+  "actions_count": 2,
+  "positive_actions": 2,
+  "negative_actions": 0,
+  "first_action": "2025-10-28T20:30:49.070977",
+  "last_action": "2025-10-28T20:30:49.071563",
+  "active_days": 0,
+  "badges": [],
+  "achievements": [],
+  "created_at": "2025-10-28T20:30:49.070991",
+  "updated_at": "2025-10-28T20:30:49.071583"
+}

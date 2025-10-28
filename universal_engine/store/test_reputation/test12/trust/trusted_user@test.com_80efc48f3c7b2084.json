@@ -1,0 +1,17 @@
+{
+  "metric_id": "80efc48f3c7b2084",
+  "subject_id": "trusted_user@test.com",
+  "subject_type": "user",
+  "overall_trust": 0.45,
+  "authenticity": 0.5,
+  "reliability": 0.0,
+  "competence": 0.3,
+  "benevolence": 1.0,
+  "endorsements": [],
+  "validations": [],
+  "reports": [],
+  "sample_size": 1,
+  "confidence": 0.8,
+  "calculated_at": "2025-10-28T20:30:49.230703",
+  "valid_until": null
+}

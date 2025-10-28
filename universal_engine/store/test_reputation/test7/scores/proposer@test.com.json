@@ -1,0 +1,19 @@
+{
+  "user_id": "proposer@test.com",
+  "total_score": 7,
+  "level": "newcomer",
+  "contribution_score": 7,
+  "quality_score": 0,
+  "consistency_score": 0,
+  "community_score": 0,
+  "actions_count": 1,
+  "positive_actions": 1,
+  "negative_actions": 0,
+  "first_action": "2025-10-28T20:30:49.075087",
+  "last_action": "2025-10-28T20:30:49.075298",
+  "active_days": 0,
+  "badges": [],
+  "achievements": [],
+  "created_at": "2025-10-28T20:30:49.075099",
+  "updated_at": "2025-10-28T20:30:49.075316"
+}

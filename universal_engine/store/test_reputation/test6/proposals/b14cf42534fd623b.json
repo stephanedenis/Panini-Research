@@ -1,0 +1,26 @@
+{
+  "proposal_id": "b14cf42534fd623b",
+  "proposer_id": "proposer@test.com",
+  "proposal_type": "policy_change",
+  "title": "Update content validation rules",
+  "description": "We should require peer review for all submissions",
+  "status": "active",
+  "consensus_model": "supermajority",
+  "approval_threshold": 0.66,
+  "quorum_required": 10,
+  "created_at": "2025-10-28T20:30:49.073524",
+  "voting_start": "2025-10-28T20:30:49.073524",
+  "voting_end": "2025-11-04T20:30:49.073524",
+  "votes": [],
+  "vote_counts": {
+    "approve": 0,
+    "reject": 0,
+    "abstain": 0
+  },
+  "approved": null,
+  "implemented": false,
+  "implementation_date": null,
+  "tags": [],
+  "attachments": [],
+  "discussion_url": null
+}

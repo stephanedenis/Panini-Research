@@ -1,0 +1,37 @@
+{
+  "proposal_id": "2bb128381526115a",
+  "proposer_id": "proposer@test.com",
+  "proposal_type": "policy_change",
+  "title": "Supermajority test",
+  "description": "Description",
+  "status": "rejected",
+  "consensus_model": "supermajority",
+  "approval_threshold": 0.66,
+  "quorum_required": 10,
+  "created_at": "2025-10-28T20:30:49.180191",
+  "voting_start": "2025-10-28T20:30:49.180191",
+  "voting_end": "2025-10-28T20:30:49.180191",
+  "votes": [
+    "9749d7c701ef723a",
+    "b35452749f56aa8f",
+    "ccd804417a12ff1a",
+    "6f8f4ee465d024b0",
+    "3484ecdbd9ab9ea5",
+    "c0cfddf594491d7c",
+    "55430815a5cfd695",
+    "8c0103be0cc16456",
+    "6f9cdfebe464d798",
+    "ba62575c8fec4648"
+  ],
+  "vote_counts": {
+    "approve": 6,
+    "reject": 4,
+    "abstain": 0
+  },
+  "approved": false,
+  "implemented": false,
+  "implementation_date": null,
+  "tags": [],
+  "attachments": [],
+  "discussion_url": null
+}

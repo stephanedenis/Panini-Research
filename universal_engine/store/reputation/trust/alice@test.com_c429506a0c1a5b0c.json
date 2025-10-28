@@ -1,0 +1,17 @@
+{
+  "metric_id": "c429506a0c1a5b0c",
+  "subject_id": "alice@test.com",
+  "subject_type": "user",
+  "overall_trust": 0.3772,
+  "authenticity": 0.5,
+  "reliability": 0.0,
+  "competence": 0.0088,
+  "benevolence": 1.0,
+  "endorsements": [],
+  "validations": [],
+  "reports": [],
+  "sample_size": 1,
+  "confidence": 0.8,
+  "calculated_at": "2025-10-28T20:28:46.239970",
+  "valid_until": null
+}

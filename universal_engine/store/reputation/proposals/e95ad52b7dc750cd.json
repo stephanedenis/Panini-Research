@@ -1,0 +1,28 @@
+{
+  "proposal_id": "e95ad52b7dc750cd",
+  "proposer_id": "alice@test.com",
+  "proposal_type": "policy_change",
+  "title": "Add new content validation rules",
+  "description": "We should implement stricter validation for submissions",
+  "status": "active",
+  "consensus_model": "simple_majority",
+  "approval_threshold": 0.5,
+  "quorum_required": 10,
+  "created_at": "2025-10-28T20:28:46.237609",
+  "voting_start": "2025-10-28T20:28:46.237609",
+  "voting_end": "2025-11-04T20:28:46.237609",
+  "votes": [
+    "25202c4e33d56d89"
+  ],
+  "vote_counts": {
+    "approve": 1,
+    "reject": 0,
+    "abstain": 0
+  },
+  "approved": null,
+  "implemented": false,
+  "implementation_date": null,
+  "tags": [],
+  "attachments": [],
+  "discussion_url": null
+}

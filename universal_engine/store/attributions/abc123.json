@@ -1,0 +1,57 @@
+{
+  "object_hash": "abc123",
+  "object_type": "pattern",
+  "title": "Sanskrit Nominal Pattern Extractor",
+  "description": "Automated pattern extraction from corpus",
+  "created_at": "2025-10-28T19:45:01.145200Z",
+  "last_modified": "2025-10-28T19:45:01.146597Z",
+  "credits": [
+    {
+      "author": {
+        "id": "alice",
+        "name": "Alice Johnson",
+        "email": "alice@example.com",
+        "orcid": null,
+        "affiliation": "University of Linguistics",
+        "url": null,
+        "roles": []
+      },
+      "percentage": 60.0,
+      "roles": [
+        "creation",
+        "development"
+      ],
+      "contributions": [
+        "initial_implementation",
+        "algorithm_design"
+      ],
+      "inherited_from": []
+    },
+    {
+      "author": {
+        "id": "bob",
+        "name": "Bob Smith",
+        "email": "bob@example.com",
+        "orcid": null,
+        "affiliation": null,
+        "url": null,
+        "roles": []
+      },
+      "percentage": 40.0,
+      "roles": [
+        "testing",
+        "review"
+      ],
+      "contributions": [
+        "testing",
+        "code_review"
+      ],
+      "inherited_from": []
+    }
+  ],
+  "parent_attributions": [],
+  "citation_metadata": {
+    "year": "2025",
+    "version": "1.0"
+  }
+}

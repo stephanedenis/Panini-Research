@@ -1,0 +1,14 @@
+{
+  "vote_id": "25202c4e33d56d89",
+  "proposal_id": "e95ad52b7dc750cd",
+  "voter_id": "bob@test.com",
+  "vote_type": "approve",
+  "weight": 1.0,
+  "reputation_at_vote": 0,
+  "delegated_to": null,
+  "delegated_from": [],
+  "comment": null,
+  "reasoning": null,
+  "timestamp": "2025-10-28T20:28:46.238502",
+  "signature": null
+}
