@@ -1,0 +1,91 @@
+{
+  "experiment_id": "geometric_parallel_1759003827",
+  "processing_time": 0.4125690460205078,
+  "memory_usage": {
+    "rss": 41.78125,
+    "vms": 217.69140625,
+    "available": 49598.6796875,
+    "percent": 22.8
+  },
+  "cpu_usage": {
+    "percent": 21.4,
+    "cores_used": 8,
+    "load_avg": [
+      3.67138671875,
+      3.640625,
+      3.62646484375
+    ]
+  },
+  "dhatu_activations": {
+    "RELATE": {
+      "total_strength": 0.5221958755616454,
+      "weighted_strength": 0.17406529185388175,
+      "activation_count": 37,
+      "avg_strength": 0.00470446734740221
+    },
+    "MODAL": {
+      "total_strength": 0.24671673929749668,
+      "weighted_strength": 0.08223891309916555,
+      "activation_count": 37,
+      "avg_strength": 0.0022226733270044744
+    },
+    "EXIST": {
+      "total_strength": 6.582408037827081,
+      "weighted_strength": 2.1941360126090266,
+      "activation_count": 37,
+      "avg_strength": 0.05930097331375748
+    },
+    "EVAL": {
+      "total_strength": 0.15001781937774888,
+      "weighted_strength": 0.05000593979258295,
+      "activation_count": 37,
+      "avg_strength": 0.0013515118862860256
+    },
+    "COMM": {
+      "total_strength": 0.04916056584677679,
+      "weighted_strength": 0.01638685528225893,
+      "activation_count": 37,
+      "avg_strength": 0.0004428879806015927
+    },
+    "CAUSE": {
+      "total_strength": 0.17771522473515872,
+      "weighted_strength": 0.05923840824505291,
+      "activation_count": 37,
+      "avg_strength": 0.0016010380606771056
+    },
+    "ITER": {
+      "total_strength": 0.016021057131691024,
+      "weighted_strength": 0.005340352377230341,
+      "activation_count": 37,
+      "avg_strength": 0.00014433384803325247
+    },
+    "DECIDE": {
+      "total_strength": 0.054540959920720306,
+      "weighted_strength": 0.018180319973573434,
+      "activation_count": 37,
+      "avg_strength": 0.0004913599992857685
+    },
+    "FEEL": {
+      "total_strength": 0.023685523946638542,
+      "weighted_strength": 0.007895174648879514,
+      "activation_count": 37,
+      "avg_strength": 0.00021338309861836525
+    }
+  },
+  "geometric_relations": [],
+  "quality_metrics": {
+    "average_quality": 1.3498063959982776e-37,
+    "dhatu_coverage": 0,
+    "processing_efficiency": 3.0833333333333335,
+    "geometric_expressivity": 0.0
+  },
+  "critical_insights": [
+    "🔥 Dhātu dominants: EXIST, RELATE, MODAL",
+    "⚠️ Couverture dhātu faible: 0/9 - Texte possiblement spécialisé"
+  ],
+  "improvement_suggestions": [
+    "📊 Améliorer qualité corpus (score actuel: 0.00) - Filtrer ou enrichir données",
+    "🔍 Améliorer détection patterns pour: RELATE, MODAL, EVAL",
+    "📐 Explorer dimensions supérieures (13D, 17D) pour expressivité accrue"
+  ]
+}

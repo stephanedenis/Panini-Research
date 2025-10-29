@@ -1,0 +1,143 @@
+{
+  "timestamp": "2025-09-28T11:39:01Z",
+  "analysis_type": "Advanced Emotional Antagonism Detection",
+  "detected_antagonisms": [
+    {
+      "pair": [
+        "SEEK",
+        "RAGE"
+      ],
+      "strength": 0.30000000000000004,
+      "neurobiological_conflict": "Activation Approche, exploration, motivation vs Attack, domination, destruction",
+      "phenomenological_evidence": "Opposition motivationnelle",
+      "composability_impact": "MINIMAL - Composition généralement viable",
+      "resolution_mechanisms": [
+        "Coexistence naturelle possible",
+        "Équilibre dynamique"
+      ],
+      "real_world_examples": [
+        "Conflit motivationnel général"
+      ]
+    },
+    {
+      "pair": [
+        "SEEK",
+        "FEAR"
+      ],
+      "strength": 0.7200000000000001,
+      "neurobiological_conflict": "Activation Approche, exploration, motivation vs Évitement, freeze, fuite",
+      "phenomenological_evidence": "Évitement vs approche, retrait vs exploration",
+      "composability_impact": "MODÉRÉ - Nécessite gestion intensités ou alternance",
+      "resolution_mechanisms": [
+        "Alternance temporelle stricte",
+        "Séparation contextuelle",
+        "Gestion intensité différentielle",
+        "Exploration graduelle sécurisée"
+      ],
+      "real_world_examples": [
+        "Phobie sociale empêche exploration relationnelle",
+        "Anxiété performance bloque apprentissage",
+        "Prudence excessive limite découvertes"
+      ]
+    },
+    {
+      "pair": [
+        "RAGE",
+        "CARE"
+      ],
+      "strength": 0.4700000000000001,
+      "neurobiological_conflict": "Activation Attack, domination, destruction vs Protection, nurturing, empathie",
+      "phenomenological_evidence": "Destruction vs construction, agression vs protection",
+      "composability_impact": "LÉGER - Coexistence possible avec précautions",
+      "resolution_mechanisms": [
+        "Coexistence naturelle possible",
+        "Équilibre dynamique"
+      ],
+      "real_world_examples": [
+        "Conflit motivationnel général"
+      ]
+    },
+    {
+      "pair": [
+        "RAGE",
+        "GRIEF"
+      ],
+      "strength": 0.32000000000000006,
+      "neurobiological_conflict": "Activation Attack, domination, destruction vs Détresse séparation, pleurs",
+      "phenomenological_evidence": "Externalisation vs internalisation, action vs passivité",
+      "composability_impact": "MINIMAL - Composition généralement viable",
+      "resolution_mechanisms": [
+        "Coexistence naturelle possible",
+        "Équilibre dynamique"
+      ],
+      "real_world_examples": [
+        "Conflit motivationnel général"
+      ]
+    },
+    {
+      "pair": [
+        "LUST",
+        "GRIEF"
+      ],
+      "strength": 0.55,
+      "neurobiological_conflict": "Dopamine (récompense) vs Cortisol (stress)",
+      "phenomenological_evidence": "Stress vs reproduction, fermeture vs ouverture",
+      "composability_impact": "LÉGER - Coexistence possible avec précautions",
+      "resolution_mechanisms": [
+        "Modulation intensité",
+        "Transition graduelle",
+        "Focus attentionnel sélectif"
+      ],
+      "real_world_examples": [
+        "Deuil conjugal inhibe désir sexuel",
+        "Dépression diminue libido",
+        "Récupération lente après perte"
+      ]
+    },
+    {
+      "pair": [
+        "GRIEF",
+        "PLAY"
+      ],
+      "strength": 0.4700000000000001,
+      "neurobiological_conflict": "Activation Détresse séparation, pleurs vs Jeu social, exploration joyeuse",
+      "phenomenological_evidence": "Douleur vs plaisir, fermeture vs ouverture",
+      "composability_impact": "LÉGER - Coexistence possible avec précautions",
+      "resolution_mechanisms": [
+        "Coexistence naturelle possible",
+        "Équilibre dynamique",
+        "Jeu thérapeutique progressif"
+      ],
+      "real_world_examples": [
+        "Deuil empêche jeu spontané enfant",
+        "Dépression = perte capacité ludique",
+        "Mélancolie créative vs anhédonie"
+      ]
+    }
+  ],
+  "neurobiological_conflicts": [],
+  "phenomenological_conflicts": [],
+  "composability_warnings": [],
+  "resolution_strategies": {
+    "architectural": [
+      "Éviter >2 antagonismes forts par composition",
+      "Privilégier alternance temporelle pour conflits critiques",
+      "Implémenter mécanismes de transition graduée"
+    ],
+    "implementation": [
+      "Système de pondération intensité",
+      "Détection automatique conflits",
+      "Suggestions compositions alternatives"
+    ],
+    "therapeutic": [
+      "Reconnaissance patterns antagonistes personnels",
+      "Techniques gestion émotions conflictuelles",
+      "Développement flexibilité émotionnelle"
+    ]
+  },
+  "classification": {
+    "strong_antagonisms": 1,
+    "moderate_antagonisms": 1,
+    "weak_antagonisms": 4
+  }
+}

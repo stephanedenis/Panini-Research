@@ -1,0 +1,4798 @@
+{
+  "timestamp": "2025-01-21T10:00:00Z",
+  "total_concepts": 154,
+  "conflicts": {
+    "identical_decompositions": 0,
+    "incoherent_definitions": 154,
+    "partial_synonyms": 0,
+    "total": 154
+  },
+  "quality_issues": {
+    "empty_descriptions": 154,
+    "low_validity_concepts": 12,
+    "high_severity_conflicts": 154
+  },
+  "detailed_conflicts": [
+    {
+      "conflict_id": "incoherent_COLÈRE",
+      "concept_1": "COLÈRE",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour COLÈRE"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_EXPLORER",
+      "concept_1": "EXPLORER",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour EXPLORER"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_EXISTENCE",
+      "concept_1": "EXISTENCE",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour EXISTENCE"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_SENTIR",
+      "concept_1": "SENTIR",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour SENTIR"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_GUERRE",
+      "concept_1": "GUERRE",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour GUERRE"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_PARENT",
+      "concept_1": "PARENT",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour PARENT"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_MUSIQUE",
+      "concept_1": "MUSIQUE",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour MUSIQUE"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_AMOUR",
+      "concept_1": "AMOUR",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour AMOUR"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_DÉGOÛT",
+      "concept_1": "DÉGOÛT",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour DÉGOÛT"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_LITTÉRATURE",
+      "concept_1": "LITTÉRATURE",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour LITTÉRATURE"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_LIEU",
+      "concept_1": "LIEU",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour LIEU"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_ART",
+      "concept_1": "ART",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour ART"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_COMMUNICATION",
+      "concept_1": "COMMUNICATION",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour COMMUNICATION"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_PARTAGER",
+      "concept_1": "PARTAGER",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour PARTAGER"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_INVENTER",
+      "concept_1": "INVENTER",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour INVENTER"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_DISTANCE",
+      "concept_1": "DISTANCE",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour DISTANCE"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_ÉTOILE",
+      "concept_1": "ÉTOILE",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour ÉTOILE"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_NATION",
+      "concept_1": "NATION",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour NATION"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_FENÊTRE",
+      "concept_1": "FENÊTRE",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour FENÊTRE"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_FUIR",
+      "concept_1": "FUIR",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour FUIR"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_BUT",
+      "concept_1": "BUT",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour BUT"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_GOUVERNER",
+      "concept_1": "GOUVERNER",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour GOUVERNER"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_EMOTION",
+      "concept_1": "EMOTION",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour EMOTION"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_IMAGINER",
+      "concept_1": "IMAGINER",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour IMAGINER"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_ARCHITECTURE",
+      "concept_1": "ARCHITECTURE",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour ARCHITECTURE"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_ILLUSION",
+      "concept_1": "ILLUSION",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour ILLUSION"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_COGNITION",
+      "concept_1": "COGNITION",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour COGNITION"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_RESSENTIR",
+      "concept_1": "RESSENTIR",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour RESSENTIR"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_REALISER",
+      "concept_1": "REALISER",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour REALISER"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_POSSESSION",
+      "concept_1": "POSSESSION",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour POSSESSION"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_ÉTERNITÉ",
+      "concept_1": "ÉTERNITÉ",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour ÉTERNITÉ"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_NOSTALGIE",
+      "concept_1": "NOSTALGIE",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour NOSTALGIE"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_EUPHORIE",
+      "concept_1": "EUPHORIE",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour EUPHORIE"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_MÉLANCOLIE",
+      "concept_1": "MÉLANCOLIE",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour MÉLANCOLIE"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_DESIRER",
+      "concept_1": "DESIRER",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour DESIRER"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_DANSER",
+      "concept_1": "DANSER",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour DANSER"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_RÉCIT",
+      "concept_1": "RÉCIT",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour RÉCIT"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_COMMANDER",
+      "concept_1": "COMMANDER",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour COMMANDER"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_SOUFFRIR",
+      "concept_1": "SOUFFRIR",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour SOUFFRIR"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_GROUPE",
+      "concept_1": "GROUPE",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour GROUPE"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_JOIE",
+      "concept_1": "JOIE",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour JOIE"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_INSTRUMENT",
+      "concept_1": "INSTRUMENT",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour INSTRUMENT"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_DOMINATION",
+      "concept_1": "DOMINATION",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour DOMINATION"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_SE_SOUVENIR",
+      "concept_1": "SE_SOUVENIR",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour SE_SOUVENIR"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_ARBRE",
+      "concept_1": "ARBRE",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour ARBRE"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_TRISTESSE",
+      "concept_1": "TRISTESSE",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour TRISTESSE"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_POISSON",
+      "concept_1": "POISSON",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour POISSON"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_VIVRE",
+      "concept_1": "VIVRE",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour VIVRE"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_DESTRUCTION",
+      "concept_1": "DESTRUCTION",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour DESTRUCTION"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_AIMER",
+      "concept_1": "AIMER",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour AIMER"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_CONSOLER",
+      "concept_1": "CONSOLER",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour CONSOLER"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_DETRUIRE",
+      "concept_1": "DETRUIRE",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour DETRUIRE"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_SAISIR",
+      "concept_1": "SAISIR",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour SAISIR"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_SAVOIR",
+      "concept_1": "SAVOIR",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour SAVOIR"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_BEAU",
+      "concept_1": "BEAU",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour BEAU"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_LÉGENDE",
+      "concept_1": "LÉGENDE",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour LÉGENDE"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_CONSTRUIRE",
+      "concept_1": "CONSTRUIRE",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour CONSTRUIRE"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_PROXIMITÉ",
+      "concept_1": "PROXIMITÉ",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour PROXIMITÉ"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_OBSERVER",
+      "concept_1": "OBSERVER",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour OBSERVER"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_SOLEIL",
+      "concept_1": "SOLEIL",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour SOLEIL"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_ORGANISER",
+      "concept_1": "ORGANISER",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour ORGANISER"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_FEU",
+      "concept_1": "FEU",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour FEU"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_RACONTER",
+      "concept_1": "RACONTER",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour RACONTER"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_CREATION",
+      "concept_1": "CREATION",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour CREATION"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_PEUR",
+      "concept_1": "PEUR",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour PEUR"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_RACINE",
+      "concept_1": "RACINE",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour RACINE"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_CHERCHER",
+      "concept_1": "CHERCHER",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour CHERCHER"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_EXPLIQUER",
+      "concept_1": "EXPLIQUER",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour EXPLIQUER"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_MORAL",
+      "concept_1": "MORAL",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour MORAL"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_MUR",
+      "concept_1": "MUR",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour MUR"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_INQUIÉTUDE",
+      "concept_1": "INQUIÉTUDE",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour INQUIÉTUDE"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_DURÉE",
+      "concept_1": "DURÉE",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour DURÉE"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_ANIMAL",
+      "concept_1": "ANIMAL",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour ANIMAL"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_GOÛTER",
+      "concept_1": "GOÛTER",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour GOÛTER"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_SATISFACTION",
+      "concept_1": "SATISFACTION",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour SATISFACTION"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_MOUVEMENT",
+      "concept_1": "MOUVEMENT",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour MOUVEMENT"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_LUNE",
+      "concept_1": "LUNE",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour LUNE"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_AFFECTION",
+      "concept_1": "AFFECTION",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour AFFECTION"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_INTIMIDER",
+      "concept_1": "INTIMIDER",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour INTIMIDER"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_PERCEPTION",
+      "concept_1": "PERCEPTION",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour PERCEPTION"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_ACCUMULER",
+      "concept_1": "ACCUMULER",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour ACCUMULER"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_COMPRENDRE",
+      "concept_1": "COMPRENDRE",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour COMPRENDRE"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_APPRENDRE",
+      "concept_1": "APPRENDRE",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour APPRENDRE"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_HAIR",
+      "concept_1": "HAIR",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour HAIR"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_ENSEIGNER",
+      "concept_1": "ENSEIGNER",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour ENSEIGNER"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_PHILOSOPHIE",
+      "concept_1": "PHILOSOPHIE",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour PHILOSOPHIE"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_SURPRISE",
+      "concept_1": "SURPRISE",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour SURPRISE"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_DEMEURER",
+      "concept_1": "DEMEURER",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour DEMEURER"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_PAIX",
+      "concept_1": "PAIX",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour PAIX"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_ARCHITECTURE_SEMANTIQUE",
+      "concept_1": "ARCHITECTURE_SEMANTIQUE",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour ARCHITECTURE_SEMANTIQUE"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_STATISTIQUES_INTEGRATION",
+      "concept_1": "STATISTIQUES_INTEGRATION",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour STATISTIQUES_INTEGRATION"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_DICTIONNAIRE_UNIFIE",
+      "concept_1": "DICTIONNAIRE_UNIFIE",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour DICTIONNAIRE_UNIFIE"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_GUIDE_UTILISATION",
+      "concept_1": "GUIDE_UTILISATION",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour GUIDE_UTILISATION"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_REPRODUCTIBILITE",
+      "concept_1": "REPRODUCTIBILITE",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour REPRODUCTIBILITE"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_TITRE",
+      "concept_1": "TITRE",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour TITRE"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_DESCRIPTION",
+      "concept_1": "DESCRIPTION",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour DESCRIPTION"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_METHODOLOGIE",
+      "concept_1": "METHODOLOGIE",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour METHODOLOGIE"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_ATOMES_UNIVERSELS",
+      "concept_1": "ATOMES_UNIVERSELS",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour ATOMES_UNIVERSELS"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_RECONSTRUCTIONS_VALIDEES",
+      "concept_1": "RECONSTRUCTIONS_VALIDEES",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour RECONSTRUCTIONS_VALIDEES"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_COMPLETUDE_UNIVERSELLE",
+      "concept_1": "COMPLETUDE_UNIVERSELLE",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour COMPLETUDE_UNIVERSELLE"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_IMPLICATIONS_MAJEURES",
+      "concept_1": "IMPLICATIONS_MAJEURES",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour IMPLICATIONS_MAJEURES"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_CONCLUSION",
+      "concept_1": "CONCLUSION",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour CONCLUSION"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_METRIQUES_CONVERGENCE",
+      "concept_1": "METRIQUES_CONVERGENCE",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour METRIQUES_CONVERGENCE"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_DICTIONNAIRE_RECURSIF",
+      "concept_1": "DICTIONNAIRE_RECURSIF",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour DICTIONNAIRE_RECURSIF"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_CONCEPTS_NON_DEFINIS_ANALYSE",
+      "concept_1": "CONCEPTS_NON_DEFINIS_ANALYSE",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour CONCEPTS_NON_DEFINIS_ANALYSE"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_IMPLICATIONS_PANLANG",
+      "concept_1": "IMPLICATIONS_PANLANG",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour IMPLICATIONS_PANLANG"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_VOIR",
+      "concept_1": "VOIR",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour VOIR"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_ENTENDRE",
+      "concept_1": "ENTENDRE",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour ENTENDRE"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_TOUCHER",
+      "concept_1": "TOUCHER",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour TOUCHER"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_MARCHER",
+      "concept_1": "MARCHER",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour MARCHER"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_MANGER",
+      "concept_1": "MANGER",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour MANGER"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_DORMIR",
+      "concept_1": "DORMIR",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour DORMIR"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_FAMILLE",
+      "concept_1": "FAMILLE",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour FAMILLE"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_AMI",
+      "concept_1": "AMI",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour AMI"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_ENNEMI",
+      "concept_1": "ENNEMI",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour ENNEMI"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_COMMUNAUTÉ",
+      "concept_1": "COMMUNAUTÉ",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour COMMUNAUTÉ"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_COOPÉRER",
+      "concept_1": "COOPÉRER",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour COOPÉRER"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_OBÉIR",
+      "concept_1": "OBÉIR",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour OBÉIR"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_VÉRITÉ",
+      "concept_1": "VÉRITÉ",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour VÉRITÉ"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_BEAUTÉ",
+      "concept_1": "BEAUTÉ",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour BEAUTÉ"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_JUSTICE",
+      "concept_1": "JUSTICE",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour JUSTICE"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_LIBERTÉ",
+      "concept_1": "LIBERTÉ",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour LIBERTÉ"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_TEMPS",
+      "concept_1": "TEMPS",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour TEMPS"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_CAUSE",
+      "concept_1": "CAUSE",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour CAUSE"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_NARRATIF_GENERAL",
+      "concept_1": "NARRATIF_GENERAL",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour NARRATIF_GENERAL"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_ACTION_DURATIVE",
+      "concept_1": "ACTION_DURATIVE",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour ACTION_DURATIVE"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_EVALUATION_QUALITATIVE",
+      "concept_1": "EVALUATION_QUALITATIVE",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour EVALUATION_QUALITATIVE"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_CONTEXTE_TEMPOREL",
+      "concept_1": "CONTEXTE_TEMPOREL",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour CONTEXTE_TEMPOREL"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_RELATION_CAUSALE",
+      "concept_1": "RELATION_CAUSALE",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour RELATION_CAUSALE"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_OUVERTURE_CONTE",
+      "concept_1": "OUVERTURE_CONTE",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour OUVERTURE_CONTE"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_CONTEXTE_OUVERTURE",
+      "concept_1": "CONTEXTE_OUVERTURE",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour CONTEXTE_OUVERTURE"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_CONTEXTE_NARRATIF",
+      "concept_1": "CONTEXTE_NARRATIF",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour CONTEXTE_NARRATIF"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_CONTEXTE_ACTION",
+      "concept_1": "CONTEXTE_ACTION",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour CONTEXTE_ACTION"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_CONTEXTE_TRANSFORMATION",
+      "concept_1": "CONTEXTE_TRANSFORMATION",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour CONTEXTE_TRANSFORMATION"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_CONTEXTE_QUALITE",
+      "concept_1": "CONTEXTE_QUALITE",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour CONTEXTE_QUALITE"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_CONTEXTE_JUGEMENT",
+      "concept_1": "CONTEXTE_JUGEMENT",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour CONTEXTE_JUGEMENT"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_CONTEXTE_DIALOGUE",
+      "concept_1": "CONTEXTE_DIALOGUE",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour CONTEXTE_DIALOGUE"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_CONTEXTE_NARRATION",
+      "concept_1": "CONTEXTE_NARRATION",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour CONTEXTE_NARRATION"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_CONTEXTE_SPATIAL",
+      "concept_1": "CONTEXTE_SPATIAL",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour CONTEXTE_SPATIAL"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_TIMESTAMP",
+      "concept_1": "TIMESTAMP",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour TIMESTAMP"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_STATUS",
+      "concept_1": "STATUS",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour STATUS"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_TEST_1_FR",
+      "concept_1": "TEST_1_FR",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour TEST_1_FR"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_TEST_2_EN",
+      "concept_1": "TEST_2_EN",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour TEST_2_EN"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_TEST_3_DE",
+      "concept_1": "TEST_3_DE",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour TEST_3_DE"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_PERFORMANCE",
+      "concept_1": "PERFORMANCE",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour PERFORMANCE"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_QUALITE_RESOLUTION",
+      "concept_1": "QUALITE_RESOLUTION",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour QUALITE_RESOLUTION"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_IMPACT_DICTIONNAIRE",
+      "concept_1": "IMPACT_DICTIONNAIRE",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour IMPACT_DICTIONNAIRE"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_CONCEPTS_INTEGRES",
+      "concept_1": "CONCEPTS_INTEGRES",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour CONCEPTS_INTEGRES"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_INTEGRATION_SUMMARY",
+      "concept_1": "INTEGRATION_SUMMARY",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour INTEGRATION_SUMMARY"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_DETAILED_RESULTS",
+      "concept_1": "DETAILED_RESULTS",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour DETAILED_RESULTS"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_TRIPARTITE_PERFORMANCE",
+      "concept_1": "TRIPARTITE_PERFORMANCE",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour TRIPARTITE_PERFORMANCE"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_DOMAINES",
+      "concept_1": "DOMAINES",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour DOMAINES"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_LANGUES",
+      "concept_1": "LANGUES",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour LANGUES"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    },
+    {
+      "conflict_id": "incoherent_BASE_DONNEES",
+      "concept_1": "BASE_DONNEES",
+      "concept_2": "",
+      "conflict_type": "incoherent_definition",
+      "severity": 0.8,
+      "decomposition_1": [],
+      "decomposition_2": [],
+      "overlap_atoms": [],
+      "semantic_distance": 1.0,
+      "evidence": [
+        "Définition vide pour BASE_DONNEES"
+      ],
+      "suggested_refinements": [
+        "Réviser décomposition atomique",
+        "Ajouter description sémantique riche",
+        "Considérer aspects métaphoriques/culturels"
+      ]
+    }
+  ],
+  "quality_analyses": {
+    "COLÈRE": {
+      "concept_name": "COLÈRE",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.6400000000000001,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "EXPLORER": {
+      "concept_name": "EXPLORER",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.5599999999999999,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "EXISTENCE": {
+      "concept_name": "EXISTENCE",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.8,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "SENTIR": {
+      "concept_name": "SENTIR",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.1904,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [
+        "Validité faible: 0.1904"
+      ],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "GUERRE": {
+      "concept_name": "GUERRE",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.5599999999999999,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "PARENT": {
+      "concept_name": "PARENT",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.68,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "MUSIQUE": {
+      "concept_name": "MUSIQUE",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.3808,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [
+        "Validité faible: 0.3808"
+      ],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "AMOUR": {
+      "concept_name": "AMOUR",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.48960000000000004,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [
+        "Validité faible: 0.48960000000000004"
+      ],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "DÉGOÛT": {
+      "concept_name": "DÉGOÛT",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.1632,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [
+        "Validité faible: 0.1632"
+      ],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "LITTÉRATURE": {
+      "concept_name": "LITTÉRATURE",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.3536,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [
+        "Validité faible: 0.3536"
+      ],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "LIEU": {
+      "concept_name": "LIEU",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.272,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [
+        "Validité faible: 0.272"
+      ],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "ART": {
+      "concept_name": "ART",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.5599999999999999,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "COMMUNICATION": {
+      "concept_name": "COMMUNICATION",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.8,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "PARTAGER": {
+      "concept_name": "PARTAGER",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.5599999999999999,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "INVENTER": {
+      "concept_name": "INVENTER",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.5599999999999999,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "DISTANCE": {
+      "concept_name": "DISTANCE",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.6528,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "ÉTOILE": {
+      "concept_name": "ÉTOILE",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.272,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [
+        "Validité faible: 0.272"
+      ],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "NATION": {
+      "concept_name": "NATION",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.68,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "FENÊTRE": {
+      "concept_name": "FENÊTRE",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.2176,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [
+        "Validité faible: 0.2176"
+      ],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "FUIR": {
+      "concept_name": "FUIR",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.5599999999999999,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "BUT": {
+      "concept_name": "BUT",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.68,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "GOUVERNER": {
+      "concept_name": "GOUVERNER",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.7200000000000001,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "EMOTION": {
+      "concept_name": "EMOTION",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.8,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "IMAGINER": {
+      "concept_name": "IMAGINER",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.2176,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [
+        "Validité faible: 0.2176"
+      ],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "ARCHITECTURE": {
+      "concept_name": "ARCHITECTURE",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.68,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "ILLUSION": {
+      "concept_name": "ILLUSION",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.48960000000000004,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [
+        "Validité faible: 0.48960000000000004"
+      ],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "COGNITION": {
+      "concept_name": "COGNITION",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.8,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "RESSENTIR": {
+      "concept_name": "RESSENTIR",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.5599999999999999,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "REALISER": {
+      "concept_name": "REALISER",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.5599999999999999,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "POSSESSION": {
+      "concept_name": "POSSESSION",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.8,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "ÉTERNITÉ": {
+      "concept_name": "ÉTERNITÉ",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.3264,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [
+        "Validité faible: 0.3264"
+      ],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "NOSTALGIE": {
+      "concept_name": "NOSTALGIE",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.6400000000000001,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "EUPHORIE": {
+      "concept_name": "EUPHORIE",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.6400000000000001,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "MÉLANCOLIE": {
+      "concept_name": "MÉLANCOLIE",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.6400000000000001,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "DESIRER": {
+      "concept_name": "DESIRER",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.5599999999999999,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "DANSER": {
+      "concept_name": "DANSER",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.5599999999999999,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "RÉCIT": {
+      "concept_name": "RÉCIT",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.2176,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [
+        "Validité faible: 0.2176"
+      ],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "COMMANDER": {
+      "concept_name": "COMMANDER",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.5599999999999999,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "SOUFFRIR": {
+      "concept_name": "SOUFFRIR",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.5599999999999999,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "GROUPE": {
+      "concept_name": "GROUPE",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.5168,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "JOIE": {
+      "concept_name": "JOIE",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.6400000000000001,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "INSTRUMENT": {
+      "concept_name": "INSTRUMENT",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.68,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "DOMINATION": {
+      "concept_name": "DOMINATION",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.8,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "SE_SOUVENIR": {
+      "concept_name": "SE_SOUVENIR",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.48960000000000004,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [
+        "Validité faible: 0.48960000000000004"
+      ],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "ARBRE": {
+      "concept_name": "ARBRE",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.2176,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [
+        "Validité faible: 0.2176"
+      ],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "TRISTESSE": {
+      "concept_name": "TRISTESSE",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.6400000000000001,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "POISSON": {
+      "concept_name": "POISSON",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.5168,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "VIVRE": {
+      "concept_name": "VIVRE",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.5599999999999999,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "DESTRUCTION": {
+      "concept_name": "DESTRUCTION",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.8,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "AIMER": {
+      "concept_name": "AIMER",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.7200000000000001,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "CONSOLER": {
+      "concept_name": "CONSOLER",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.5599999999999999,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "DETRUIRE": {
+      "concept_name": "DETRUIRE",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.5599999999999999,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "SAISIR": {
+      "concept_name": "SAISIR",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.3536,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [
+        "Validité faible: 0.3536"
+      ],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "SAVOIR": {
+      "concept_name": "SAVOIR",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.5599999999999999,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "BEAU": {
+      "concept_name": "BEAU",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.1904,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [
+        "Validité faible: 0.1904"
+      ],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "LÉGENDE": {
+      "concept_name": "LÉGENDE",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.3536,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [
+        "Validité faible: 0.3536"
+      ],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "CONSTRUIRE": {
+      "concept_name": "CONSTRUIRE",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.5599999999999999,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "PROXIMITÉ": {
+      "concept_name": "PROXIMITÉ",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.2176,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [
+        "Validité faible: 0.2176"
+      ],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "OBSERVER": {
+      "concept_name": "OBSERVER",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.5712,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "SOLEIL": {
+      "concept_name": "SOLEIL",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.544,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "ORGANISER": {
+      "concept_name": "ORGANISER",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.5599999999999999,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "FEU": {
+      "concept_name": "FEU",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.544,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "RACONTER": {
+      "concept_name": "RACONTER",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.5599999999999999,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "CREATION": {
+      "concept_name": "CREATION",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.8,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "PEUR": {
+      "concept_name": "PEUR",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.6400000000000001,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "RACINE": {
+      "concept_name": "RACINE",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.544,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "CHERCHER": {
+      "concept_name": "CHERCHER",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.5599999999999999,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "EXPLIQUER": {
+      "concept_name": "EXPLIQUER",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.7200000000000001,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "MORAL": {
+      "concept_name": "MORAL",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.6256,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "MUR": {
+      "concept_name": "MUR",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.3536,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [
+        "Validité faible: 0.3536"
+      ],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "INQUIÉTUDE": {
+      "concept_name": "INQUIÉTUDE",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.3264,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [
+        "Validité faible: 0.3264"
+      ],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "DURÉE": {
+      "concept_name": "DURÉE",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.3536,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [
+        "Validité faible: 0.3536"
+      ],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "ANIMAL": {
+      "concept_name": "ANIMAL",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.6528,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "GOÛTER": {
+      "concept_name": "GOÛTER",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.1632,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [
+        "Validité faible: 0.1632"
+      ],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "SATISFACTION": {
+      "concept_name": "SATISFACTION",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.24480000000000002,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [
+        "Validité faible: 0.24480000000000002"
+      ],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "MOUVEMENT": {
+      "concept_name": "MOUVEMENT",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.8,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "LUNE": {
+      "concept_name": "LUNE",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.5168,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "AFFECTION": {
+      "concept_name": "AFFECTION",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.3264,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [
+        "Validité faible: 0.3264"
+      ],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "INTIMIDER": {
+      "concept_name": "INTIMIDER",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.5599999999999999,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "PERCEPTION": {
+      "concept_name": "PERCEPTION",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.8,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "ACCUMULER": {
+      "concept_name": "ACCUMULER",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.5599999999999999,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "COMPRENDRE": {
+      "concept_name": "COMPRENDRE",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.7200000000000001,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "APPRENDRE": {
+      "concept_name": "APPRENDRE",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.5599999999999999,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "HAIR": {
+      "concept_name": "HAIR",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.5599999999999999,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "ENSEIGNER": {
+      "concept_name": "ENSEIGNER",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.7200000000000001,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "PHILOSOPHIE": {
+      "concept_name": "PHILOSOPHIE",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.5599999999999999,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "SURPRISE": {
+      "concept_name": "SURPRISE",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.6400000000000001,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "DEMEURER": {
+      "concept_name": "DEMEURER",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.5599999999999999,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "PAIX": {
+      "concept_name": "PAIX",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.5599999999999999,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "ARCHITECTURE_SEMANTIQUE": {
+      "concept_name": "ARCHITECTURE_SEMANTIQUE",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.4,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [
+        "Validité faible: 0.4"
+      ],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "STATISTIQUES_INTEGRATION": {
+      "concept_name": "STATISTIQUES_INTEGRATION",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.4,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [
+        "Validité faible: 0.4"
+      ],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "DICTIONNAIRE_UNIFIE": {
+      "concept_name": "DICTIONNAIRE_UNIFIE",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.4,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [
+        "Validité faible: 0.4"
+      ],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "GUIDE_UTILISATION": {
+      "concept_name": "GUIDE_UTILISATION",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.4,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [
+        "Validité faible: 0.4"
+      ],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "REPRODUCTIBILITE": {
+      "concept_name": "REPRODUCTIBILITE",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.4,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [
+        "Validité faible: 0.4"
+      ],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "TITRE": {
+      "concept_name": "TITRE",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.4,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [
+        "Validité faible: 0.4"
+      ],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "DESCRIPTION": {
+      "concept_name": "DESCRIPTION",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.4,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [
+        "Validité faible: 0.4"
+      ],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "METHODOLOGIE": {
+      "concept_name": "METHODOLOGIE",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.4,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [
+        "Validité faible: 0.4"
+      ],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "ATOMES_UNIVERSELS": {
+      "concept_name": "ATOMES_UNIVERSELS",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.4,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [
+        "Validité faible: 0.4"
+      ],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "RECONSTRUCTIONS_VALIDEES": {
+      "concept_name": "RECONSTRUCTIONS_VALIDEES",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.4,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [
+        "Validité faible: 0.4"
+      ],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "COMPLETUDE_UNIVERSELLE": {
+      "concept_name": "COMPLETUDE_UNIVERSELLE",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.4,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [
+        "Validité faible: 0.4"
+      ],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "IMPLICATIONS_MAJEURES": {
+      "concept_name": "IMPLICATIONS_MAJEURES",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.4,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [
+        "Validité faible: 0.4"
+      ],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "CONCLUSION": {
+      "concept_name": "CONCLUSION",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.4,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [
+        "Validité faible: 0.4"
+      ],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "METRIQUES_CONVERGENCE": {
+      "concept_name": "METRIQUES_CONVERGENCE",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.4,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [
+        "Validité faible: 0.4"
+      ],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "DICTIONNAIRE_RECURSIF": {
+      "concept_name": "DICTIONNAIRE_RECURSIF",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.4,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [
+        "Validité faible: 0.4"
+      ],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "CONCEPTS_NON_DEFINIS_ANALYSE": {
+      "concept_name": "CONCEPTS_NON_DEFINIS_ANALYSE",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.4,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [
+        "Validité faible: 0.4"
+      ],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "IMPLICATIONS_PANLANG": {
+      "concept_name": "IMPLICATIONS_PANLANG",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.4,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [
+        "Validité faible: 0.4"
+      ],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "VOIR": {
+      "concept_name": "VOIR",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.9,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "ENTENDRE": {
+      "concept_name": "ENTENDRE",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.9,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "TOUCHER": {
+      "concept_name": "TOUCHER",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.95,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "MARCHER": {
+      "concept_name": "MARCHER",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.95,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "MANGER": {
+      "concept_name": "MANGER",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.9,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "DORMIR": {
+      "concept_name": "DORMIR",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.8,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "FAMILLE": {
+      "concept_name": "FAMILLE",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.85,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "AMI": {
+      "concept_name": "AMI",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.9,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "ENNEMI": {
+      "concept_name": "ENNEMI",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.85,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "COMMUNAUTÉ": {
+      "concept_name": "COMMUNAUTÉ",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.8,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "COOPÉRER": {
+      "concept_name": "COOPÉRER",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.9,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "OBÉIR": {
+      "concept_name": "OBÉIR",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.85,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "VÉRITÉ": {
+      "concept_name": "VÉRITÉ",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.8,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "BEAUTÉ": {
+      "concept_name": "BEAUTÉ",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.85,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "JUSTICE": {
+      "concept_name": "JUSTICE",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.8,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "LIBERTÉ": {
+      "concept_name": "LIBERTÉ",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.85,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "TEMPS": {
+      "concept_name": "TEMPS",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.75,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "CAUSE": {
+      "concept_name": "CAUSE",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.8,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "NARRATIF_GENERAL": {
+      "concept_name": "NARRATIF_GENERAL",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.4,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [
+        "Validité faible: 0.4"
+      ],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "ACTION_DURATIVE": {
+      "concept_name": "ACTION_DURATIVE",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.4,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [
+        "Validité faible: 0.4"
+      ],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "EVALUATION_QUALITATIVE": {
+      "concept_name": "EVALUATION_QUALITATIVE",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.4,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [
+        "Validité faible: 0.4"
+      ],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "CONTEXTE_TEMPOREL": {
+      "concept_name": "CONTEXTE_TEMPOREL",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.4,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [
+        "Validité faible: 0.4"
+      ],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "RELATION_CAUSALE": {
+      "concept_name": "RELATION_CAUSALE",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.4,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [
+        "Validité faible: 0.4"
+      ],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "OUVERTURE_CONTE": {
+      "concept_name": "OUVERTURE_CONTE",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.4,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [
+        "Validité faible: 0.4"
+      ],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "CONTEXTE_OUVERTURE": {
+      "concept_name": "CONTEXTE_OUVERTURE",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.4,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [
+        "Validité faible: 0.4"
+      ],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "CONTEXTE_NARRATIF": {
+      "concept_name": "CONTEXTE_NARRATIF",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.4,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [
+        "Validité faible: 0.4"
+      ],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "CONTEXTE_ACTION": {
+      "concept_name": "CONTEXTE_ACTION",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.4,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [
+        "Validité faible: 0.4"
+      ],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "CONTEXTE_TRANSFORMATION": {
+      "concept_name": "CONTEXTE_TRANSFORMATION",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.4,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [
+        "Validité faible: 0.4"
+      ],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "CONTEXTE_QUALITE": {
+      "concept_name": "CONTEXTE_QUALITE",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.4,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [
+        "Validité faible: 0.4"
+      ],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "CONTEXTE_JUGEMENT": {
+      "concept_name": "CONTEXTE_JUGEMENT",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.4,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [
+        "Validité faible: 0.4"
+      ],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "CONTEXTE_DIALOGUE": {
+      "concept_name": "CONTEXTE_DIALOGUE",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.4,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [
+        "Validité faible: 0.4"
+      ],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "CONTEXTE_NARRATION": {
+      "concept_name": "CONTEXTE_NARRATION",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.4,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [
+        "Validité faible: 0.4"
+      ],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "CONTEXTE_SPATIAL": {
+      "concept_name": "CONTEXTE_SPATIAL",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.4,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [
+        "Validité faible: 0.4"
+      ],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "TIMESTAMP": {
+      "concept_name": "TIMESTAMP",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.4,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [
+        "Validité faible: 0.4"
+      ],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "STATUS": {
+      "concept_name": "STATUS",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.4,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [
+        "Validité faible: 0.4"
+      ],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "TEST_1_FR": {
+      "concept_name": "TEST_1_FR",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.4,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [
+        "Validité faible: 0.4"
+      ],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "TEST_2_EN": {
+      "concept_name": "TEST_2_EN",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.4,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [
+        "Validité faible: 0.4"
+      ],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "TEST_3_DE": {
+      "concept_name": "TEST_3_DE",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.4,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [
+        "Validité faible: 0.4"
+      ],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "PERFORMANCE": {
+      "concept_name": "PERFORMANCE",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.4,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [
+        "Validité faible: 0.4"
+      ],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "QUALITE_RESOLUTION": {
+      "concept_name": "QUALITE_RESOLUTION",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.4,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [
+        "Validité faible: 0.4"
+      ],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "IMPACT_DICTIONNAIRE": {
+      "concept_name": "IMPACT_DICTIONNAIRE",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.4,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [
+        "Validité faible: 0.4"
+      ],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "CONCEPTS_INTEGRES": {
+      "concept_name": "CONCEPTS_INTEGRES",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.4,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [
+        "Validité faible: 0.4"
+      ],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "INTEGRATION_SUMMARY": {
+      "concept_name": "INTEGRATION_SUMMARY",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.4,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [
+        "Validité faible: 0.4"
+      ],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "DETAILED_RESULTS": {
+      "concept_name": "DETAILED_RESULTS",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.4,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [
+        "Validité faible: 0.4"
+      ],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "TRIPARTITE_PERFORMANCE": {
+      "concept_name": "TRIPARTITE_PERFORMANCE",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.4,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [
+        "Validité faible: 0.4"
+      ],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "DOMAINES": {
+      "concept_name": "DOMAINES",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.4,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [
+        "Validité faible: 0.4"
+      ],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "LANGUES": {
+      "concept_name": "LANGUES",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.4,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [
+        "Validité faible: 0.4"
+      ],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    },
+    "BASE_DONNEES": {
+      "concept_name": "BASE_DONNEES",
+      "atomic_decomposition": [],
+      "complexity_level": 0,
+      "validity_score": 0.4,
+      "source_type": "inconnu",
+      "description_quality": "empty",
+      "potential_issues": [
+        "Validité faible: 0.4"
+      ],
+      "similar_concepts": [],
+      "contextual_variants": {}
+    }
+  },
+  "recommendations": {
+    "priority_1": [
+      "Résoudre conflits identiques (décompositions exactement égales)",
+      "Corriger définitions incohérentes (AMOUR=DESTRUCTION, etc.)",
+      "Ajouter descriptions pour concepts vides"
+    ],
+    "priority_2": [
+      "Distinguer synonymes partiels avec contexte/connotation",
+      "Réviser concepts Wikipedia faible validité",
+      "Simplifier décompositions sur-complexes"
+    ],
+    "methodology": [
+      "Analyse linguistique différentielle pour synonymes",
+      "Validation experte pour incohérences",
+      "Tests corpus pour vérifier améliorations"
+    ]
+  }
+}

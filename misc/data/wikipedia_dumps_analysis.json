@@ -1,0 +1,49 @@
+{
+  "sources_prioritaires": [
+    {
+      "langue": "fr",
+      "nom": "Français",
+      "taille_mb": 2800,
+      "priorite": 1
+    },
+    {
+      "langue": "en",
+      "nom": "English",
+      "taille_mb": 19000,
+      "priorite": 1
+    },
+    {
+      "langue": "de",
+      "nom": "Deutsch",
+      "taille_mb": 5200,
+      "priorite": 2
+    },
+    {
+      "langue": "sa",
+      "nom": "Sanskrit",
+      "taille_mb": 45,
+      "priorite": 1
+    },
+    {
+      "langue": "hi",
+      "nom": "Hindi",
+      "taille_mb": 520,
+      "priorite": 2
+    }
+  ],
+  "taille_totale_gb": 27.565,
+  "langues_disponibles": [
+    "fr",
+    "en",
+    "de",
+    "sa",
+    "hi"
+  ],
+  "recommandations": [
+    "Commencer par Sanskrit (45 MB) - essentiel pour dhātu",
+    "Français (2.8 GB) - classifications complètes",
+    "Anglais (19 GB) - plus exhaustif mais volumineux",
+    "Télécharger les catégories d'abord (.sql.gz)",
+    "Parser les infoboxes pour primitives structurées"
+  ]
+}

@@ -1,0 +1,1521 @@
+{
+  "timestamp": "2025-09-28T11:35:49Z",
+  "analysis_type": "Systematic Emotional Composability Analysis",
+  "total_combinations_analyzed": 91,
+  "valid_combinations": [
+    {
+      "composition": [
+        "SEEK",
+        "RAGE"
+      ],
+      "coherence_score": 1.0,
+      "synergies": [],
+      "examples": []
+    },
+    {
+      "composition": [
+        "SEEK",
+        "LUST"
+      ],
+      "coherence_score": 1.0,
+      "synergies": [],
+      "examples": []
+    },
+    {
+      "composition": [
+        "SEEK",
+        "CARE"
+      ],
+      "coherence_score": 1.0,
+      "synergies": [],
+      "examples": []
+    },
+    {
+      "composition": [
+        "SEEK",
+        "GRIEF"
+      ],
+      "coherence_score": 1.0,
+      "synergies": [],
+      "examples": [
+        "nostalgie (similarité: 2/3)",
+        "melancholia (similarité: 2/3)"
+      ]
+    },
+    {
+      "composition": [
+        "SEEK",
+        "PLAY"
+      ],
+      "coherence_score": 1.0,
+      "synergies": [],
+      "examples": [
+        "melancholia (similarité: 2/3)",
+        "Curiosité ludique, exploration joyeuse"
+      ]
+    },
+    {
+      "composition": [
+        "RAGE",
+        "FEAR"
+      ],
+      "coherence_score": 1.0,
+      "synergies": [],
+      "examples": [
+        "jalousie (similarité: 2/3)",
+        "Agitation anxieuse, colère défensive"
+      ]
+    },
+    {
+      "composition": [
+        "RAGE",
+        "LUST"
+      ],
+      "coherence_score": 1.0,
+      "synergies": [],
+      "examples": []
+    },
+    {
+      "composition": [
+        "RAGE",
+        "CARE"
+      ],
+      "coherence_score": 1.0,
+      "synergies": [],
+      "examples": [
+        "jalousie (similarité: 2/3)"
+      ]
+    },
+    {
+      "composition": [
+        "RAGE",
+        "GRIEF"
+      ],
+      "coherence_score": 1.0,
+      "synergies": [],
+      "examples": []
+    },
+    {
+      "composition": [
+        "RAGE",
+        "PLAY"
+      ],
+      "coherence_score": 1.0,
+      "synergies": [],
+      "examples": [
+        "schadenfreude (similarité: 2/2)"
+      ]
+    },
+    {
+      "composition": [
+        "FEAR",
+        "LUST"
+      ],
+      "coherence_score": 1.0,
+      "synergies": [],
+      "examples": []
+    },
+    {
+      "composition": [
+        "FEAR",
+        "CARE"
+      ],
+      "coherence_score": 1.0,
+      "synergies": [],
+      "examples": [
+        "jalousie (similarité: 2/3)"
+      ]
+    },
+    {
+      "composition": [
+        "FEAR",
+        "GRIEF"
+      ],
+      "coherence_score": 1.0,
+      "synergies": [],
+      "examples": []
+    },
+    {
+      "composition": [
+        "FEAR",
+        "PLAY"
+      ],
+      "coherence_score": 1.0,
+      "synergies": [],
+      "examples": []
+    },
+    {
+      "composition": [
+        "LUST",
+        "CARE"
+      ],
+      "coherence_score": 1.0,
+      "synergies": [],
+      "examples": []
+    },
+    {
+      "composition": [
+        "LUST",
+        "GRIEF"
+      ],
+      "coherence_score": 0.6,
+      "synergies": [],
+      "examples": []
+    },
+    {
+      "composition": [
+        "LUST",
+        "PLAY"
+      ],
+      "coherence_score": 1.0,
+      "synergies": [],
+      "examples": []
+    },
+    {
+      "composition": [
+        "CARE",
+        "GRIEF"
+      ],
+      "coherence_score": 1.1600000000000001,
+      "synergies": [
+        [
+          "CARE",
+          "GRIEF"
+        ]
+      ],
+      "examples": [
+        "Compassion, empathie pour souffrance"
+      ]
+    },
+    {
+      "composition": [
+        "CARE",
+        "PLAY"
+      ],
+      "coherence_score": 1.0,
+      "synergies": [],
+      "examples": []
+    },
+    {
+      "composition": [
+        "GRIEF",
+        "PLAY"
+      ],
+      "coherence_score": 1.0,
+      "synergies": [],
+      "examples": [
+        "melancholia (similarité: 2/3)"
+      ]
+    },
+    {
+      "composition": [
+        "SEEK",
+        "RAGE",
+        "LUST"
+      ],
+      "coherence_score": 1.0,
+      "synergies": [],
+      "examples": []
+    },
+    {
+      "composition": [
+        "SEEK",
+        "RAGE",
+        "CARE"
+      ],
+      "coherence_score": 1.0,
+      "synergies": [],
+      "examples": [
+        "jalousie (similarité: 2/3)"
+      ]
+    },
+    {
+      "composition": [
+        "SEEK",
+        "RAGE",
+        "GRIEF"
+      ],
+      "coherence_score": 1.0,
+      "synergies": [],
+      "examples": [
+        "nostalgie (similarité: 2/3)",
+        "melancholia (similarité: 2/3)"
+      ]
+    },
+    {
+      "composition": [
+        "SEEK",
+        "RAGE",
+        "PLAY"
+      ],
+      "coherence_score": 1.0,
+      "synergies": [],
+      "examples": [
+        "schadenfreude (similarité: 2/2)",
+        "melancholia (similarité: 2/3)",
+        "Curiosité ludique, exploration joyeuse"
+      ]
+    },
+    {
+      "composition": [
+        "SEEK",
+        "LUST",
+        "CARE"
+      ],
+      "coherence_score": 1.0,
+      "synergies": [],
+      "examples": []
+    },
+    {
+      "composition": [
+        "SEEK",
+        "LUST",
+        "GRIEF"
+      ],
+      "coherence_score": 0.6,
+      "synergies": [],
+      "examples": [
+        "nostalgie (similarité: 2/3)",
+        "melancholia (similarité: 2/3)"
+      ]
+    },
+    {
+      "composition": [
+        "SEEK",
+        "LUST",
+        "PLAY"
+      ],
+      "coherence_score": 1.0,
+      "synergies": [],
+      "examples": [
+        "melancholia (similarité: 2/3)",
+        "Curiosité ludique, exploration joyeuse"
+      ]
+    },
+    {
+      "composition": [
+        "SEEK",
+        "CARE",
+        "GRIEF"
+      ],
+      "coherence_score": 1.1600000000000001,
+      "synergies": [
+        [
+          "CARE",
+          "GRIEF"
+        ]
+      ],
+      "examples": [
+        "nostalgie (similarité: 2/3)",
+        "melancholia (similarité: 2/3)",
+        "Compassion, empathie pour souffrance"
+      ]
+    },
+    {
+      "composition": [
+        "SEEK",
+        "CARE",
+        "PLAY"
+      ],
+      "coherence_score": 1.0,
+      "synergies": [],
+      "examples": [
+        "melancholia (similarité: 2/3)",
+        "Curiosité ludique, exploration joyeuse"
+      ]
+    },
+    {
+      "composition": [
+        "SEEK",
+        "GRIEF",
+        "PLAY"
+      ],
+      "coherence_score": 1.0,
+      "synergies": [],
+      "examples": [
+        "nostalgie (similarité: 2/3)",
+        "melancholia (similarité: 3/3)",
+        "Curiosité ludique, exploration joyeuse"
+      ]
+    },
+    {
+      "composition": [
+        "RAGE",
+        "FEAR",
+        "LUST"
+      ],
+      "coherence_score": 1.0,
+      "synergies": [],
+      "examples": [
+        "jalousie (similarité: 2/3)",
+        "Agitation anxieuse, colère défensive"
+      ]
+    },
+    {
+      "composition": [
+        "RAGE",
+        "FEAR",
+        "CARE"
+      ],
+      "coherence_score": 1.0,
+      "synergies": [],
+      "examples": [
+        "jalousie (similarité: 3/3)",
+        "Agitation anxieuse, colère défensive"
+      ]
+    },
+    {
+      "composition": [
+        "RAGE",
+        "FEAR",
+        "GRIEF"
+      ],
+      "coherence_score": 1.0,
+      "synergies": [],
+      "examples": [
+        "jalousie (similarité: 2/3)",
+        "Agitation anxieuse, colère défensive"
+      ]
+    },
+    {
+      "composition": [
+        "RAGE",
+        "FEAR",
+        "PLAY"
+      ],
+      "coherence_score": 1.0,
+      "synergies": [],
+      "examples": [
+        "jalousie (similarité: 2/3)",
+        "schadenfreude (similarité: 2/2)",
+        "Agitation anxieuse, colère défensive"
+      ]
+    },
+    {
+      "composition": [
+        "RAGE",
+        "LUST",
+        "CARE"
+      ],
+      "coherence_score": 1.0,
+      "synergies": [],
+      "examples": [
+        "jalousie (similarité: 2/3)"
+      ]
+    },
+    {
+      "composition": [
+        "RAGE",
+        "LUST",
+        "GRIEF"
+      ],
+      "coherence_score": 0.6,
+      "synergies": [],
+      "examples": []
+    },
+    {
+      "composition": [
+        "RAGE",
+        "LUST",
+        "PLAY"
+      ],
+      "coherence_score": 1.0,
+      "synergies": [],
+      "examples": [
+        "schadenfreude (similarité: 2/2)"
+      ]
+    },
+    {
+      "composition": [
+        "RAGE",
+        "CARE",
+        "GRIEF"
+      ],
+      "coherence_score": 1.1600000000000001,
+      "synergies": [
+        [
+          "CARE",
+          "GRIEF"
+        ]
+      ],
+      "examples": [
+        "jalousie (similarité: 2/3)",
+        "Compassion, empathie pour souffrance"
+      ]
+    },
+    {
+      "composition": [
+        "RAGE",
+        "CARE",
+        "PLAY"
+      ],
+      "coherence_score": 1.0,
+      "synergies": [],
+      "examples": [
+        "jalousie (similarité: 2/3)",
+        "schadenfreude (similarité: 2/2)"
+      ]
+    },
+    {
+      "composition": [
+        "RAGE",
+        "GRIEF",
+        "PLAY"
+      ],
+      "coherence_score": 1.0,
+      "synergies": [],
+      "examples": [
+        "schadenfreude (similarité: 2/2)",
+        "melancholia (similarité: 2/3)"
+      ]
+    },
+    {
+      "composition": [
+        "FEAR",
+        "LUST",
+        "CARE"
+      ],
+      "coherence_score": 1.0,
+      "synergies": [],
+      "examples": [
+        "jalousie (similarité: 2/3)"
+      ]
+    },
+    {
+      "composition": [
+        "FEAR",
+        "LUST",
+        "GRIEF"
+      ],
+      "coherence_score": 0.6,
+      "synergies": [],
+      "examples": []
+    },
+    {
+      "composition": [
+        "FEAR",
+        "LUST",
+        "PLAY"
+      ],
+      "coherence_score": 1.0,
+      "synergies": [],
+      "examples": []
+    },
+    {
+      "composition": [
+        "FEAR",
+        "CARE",
+        "GRIEF"
+      ],
+      "coherence_score": 1.1600000000000001,
+      "synergies": [
+        [
+          "CARE",
+          "GRIEF"
+        ]
+      ],
+      "examples": [
+        "jalousie (similarité: 2/3)",
+        "Compassion, empathie pour souffrance"
+      ]
+    },
+    {
+      "composition": [
+        "FEAR",
+        "CARE",
+        "PLAY"
+      ],
+      "coherence_score": 1.0,
+      "synergies": [],
+      "examples": [
+        "jalousie (similarité: 2/3)"
+      ]
+    },
+    {
+      "composition": [
+        "FEAR",
+        "GRIEF",
+        "PLAY"
+      ],
+      "coherence_score": 1.0,
+      "synergies": [],
+      "examples": [
+        "melancholia (similarité: 2/3)"
+      ]
+    },
+    {
+      "composition": [
+        "LUST",
+        "CARE",
+        "GRIEF"
+      ],
+      "coherence_score": 0.6960000000000001,
+      "synergies": [
+        [
+          "CARE",
+          "GRIEF"
+        ]
+      ],
+      "examples": [
+        "Compassion, empathie pour souffrance"
+      ]
+    },
+    {
+      "composition": [
+        "LUST",
+        "CARE",
+        "PLAY"
+      ],
+      "coherence_score": 1.0,
+      "synergies": [],
+      "examples": []
+    },
+    {
+      "composition": [
+        "LUST",
+        "GRIEF",
+        "PLAY"
+      ],
+      "coherence_score": 0.6,
+      "synergies": [],
+      "examples": [
+        "melancholia (similarité: 2/3)"
+      ]
+    },
+    {
+      "composition": [
+        "CARE",
+        "GRIEF",
+        "PLAY"
+      ],
+      "coherence_score": 1.1600000000000001,
+      "synergies": [
+        [
+          "CARE",
+          "GRIEF"
+        ]
+      ],
+      "examples": [
+        "melancholia (similarité: 2/3)",
+        "Compassion, empathie pour souffrance"
+      ]
+    },
+    {
+      "composition": [
+        "SEEK",
+        "RAGE",
+        "LUST",
+        "CARE"
+      ],
+      "coherence_score": 1.0,
+      "synergies": [],
+      "examples": [
+        "jalousie (similarité: 2/3)"
+      ]
+    },
+    {
+      "composition": [
+        "SEEK",
+        "RAGE",
+        "LUST",
+        "GRIEF"
+      ],
+      "coherence_score": 0.6,
+      "synergies": [],
+      "examples": [
+        "nostalgie (similarité: 2/3)",
+        "melancholia (similarité: 2/3)"
+      ]
+    },
+    {
+      "composition": [
+        "SEEK",
+        "RAGE",
+        "LUST",
+        "PLAY"
+      ],
+      "coherence_score": 1.0,
+      "synergies": [],
+      "examples": [
+        "schadenfreude (similarité: 2/2)",
+        "melancholia (similarité: 2/3)",
+        "Curiosité ludique, exploration joyeuse"
+      ]
+    },
+    {
+      "composition": [
+        "SEEK",
+        "RAGE",
+        "CARE",
+        "GRIEF"
+      ],
+      "coherence_score": 1.1600000000000001,
+      "synergies": [
+        [
+          "CARE",
+          "GRIEF"
+        ]
+      ],
+      "examples": [
+        "jalousie (similarité: 2/3)",
+        "nostalgie (similarité: 2/3)",
+        "melancholia (similarité: 2/3)",
+        "Compassion, empathie pour souffrance"
+      ]
+    },
+    {
+      "composition": [
+        "SEEK",
+        "RAGE",
+        "CARE",
+        "PLAY"
+      ],
+      "coherence_score": 1.0,
+      "synergies": [],
+      "examples": [
+        "jalousie (similarité: 2/3)",
+        "schadenfreude (similarité: 2/2)",
+        "melancholia (similarité: 2/3)",
+        "Curiosité ludique, exploration joyeuse"
+      ]
+    },
+    {
+      "composition": [
+        "SEEK",
+        "RAGE",
+        "GRIEF",
+        "PLAY"
+      ],
+      "coherence_score": 1.0,
+      "synergies": [],
+      "examples": [
+        "nostalgie (similarité: 2/3)",
+        "schadenfreude (similarité: 2/2)",
+        "melancholia (similarité: 3/3)",
+        "Curiosité ludique, exploration joyeuse"
+      ]
+    },
+    {
+      "composition": [
+        "SEEK",
+        "FEAR",
+        "CARE",
+        "GRIEF"
+      ],
+      "coherence_score": 0.6380000000000001,
+      "synergies": [
+        [
+          "CARE",
+          "GRIEF"
+        ]
+      ],
+      "examples": [
+        "jalousie (similarité: 2/3)",
+        "nostalgie (similarité: 2/3)",
+        "melancholia (similarité: 2/3)",
+        "Compassion, empathie pour souffrance"
+      ]
+    },
+    {
+      "composition": [
+        "SEEK",
+        "LUST",
+        "CARE",
+        "GRIEF"
+      ],
+      "coherence_score": 0.6960000000000001,
+      "synergies": [
+        [
+          "CARE",
+          "GRIEF"
+        ]
+      ],
+      "examples": [
+        "nostalgie (similarité: 2/3)",
+        "melancholia (similarité: 2/3)",
+        "Compassion, empathie pour souffrance"
+      ]
+    },
+    {
+      "composition": [
+        "SEEK",
+        "LUST",
+        "CARE",
+        "PLAY"
+      ],
+      "coherence_score": 1.0,
+      "synergies": [],
+      "examples": [
+        "melancholia (similarité: 2/3)",
+        "Curiosité ludique, exploration joyeuse"
+      ]
+    },
+    {
+      "composition": [
+        "SEEK",
+        "LUST",
+        "GRIEF",
+        "PLAY"
+      ],
+      "coherence_score": 0.6,
+      "synergies": [],
+      "examples": [
+        "nostalgie (similarité: 2/3)",
+        "melancholia (similarité: 3/3)",
+        "Curiosité ludique, exploration joyeuse"
+      ]
+    },
+    {
+      "composition": [
+        "SEEK",
+        "CARE",
+        "GRIEF",
+        "PLAY"
+      ],
+      "coherence_score": 1.1600000000000001,
+      "synergies": [
+        [
+          "CARE",
+          "GRIEF"
+        ]
+      ],
+      "examples": [
+        "nostalgie (similarité: 2/3)",
+        "melancholia (similarité: 3/3)",
+        "Compassion, empathie pour souffrance",
+        "Curiosité ludique, exploration joyeuse"
+      ]
+    },
+    {
+      "composition": [
+        "RAGE",
+        "FEAR",
+        "LUST",
+        "CARE"
+      ],
+      "coherence_score": 1.0,
+      "synergies": [],
+      "examples": [
+        "jalousie (similarité: 3/3)",
+        "Agitation anxieuse, colère défensive"
+      ]
+    },
+    {
+      "composition": [
+        "RAGE",
+        "FEAR",
+        "LUST",
+        "GRIEF"
+      ],
+      "coherence_score": 0.6,
+      "synergies": [],
+      "examples": [
+        "jalousie (similarité: 2/3)",
+        "Agitation anxieuse, colère défensive"
+      ]
+    },
+    {
+      "composition": [
+        "RAGE",
+        "FEAR",
+        "LUST",
+        "PLAY"
+      ],
+      "coherence_score": 1.0,
+      "synergies": [],
+      "examples": [
+        "jalousie (similarité: 2/3)",
+        "schadenfreude (similarité: 2/2)",
+        "Agitation anxieuse, colère défensive"
+      ]
+    },
+    {
+      "composition": [
+        "RAGE",
+        "FEAR",
+        "CARE",
+        "GRIEF"
+      ],
+      "coherence_score": 1.1600000000000001,
+      "synergies": [
+        [
+          "CARE",
+          "GRIEF"
+        ]
+      ],
+      "examples": [
+        "jalousie (similarité: 3/3)",
+        "Agitation anxieuse, colère défensive",
+        "Compassion, empathie pour souffrance"
+      ]
+    },
+    {
+      "composition": [
+        "RAGE",
+        "FEAR",
+        "CARE",
+        "PLAY"
+      ],
+      "coherence_score": 1.0,
+      "synergies": [],
+      "examples": [
+        "jalousie (similarité: 3/3)",
+        "schadenfreude (similarité: 2/2)",
+        "Agitation anxieuse, colère défensive"
+      ]
+    },
+    {
+      "composition": [
+        "RAGE",
+        "FEAR",
+        "GRIEF",
+        "PLAY"
+      ],
+      "coherence_score": 1.0,
+      "synergies": [],
+      "examples": [
+        "jalousie (similarité: 2/3)",
+        "schadenfreude (similarité: 2/2)",
+        "melancholia (similarité: 2/3)",
+        "Agitation anxieuse, colère défensive"
+      ]
+    },
+    {
+      "composition": [
+        "RAGE",
+        "LUST",
+        "CARE",
+        "GRIEF"
+      ],
+      "coherence_score": 0.6960000000000001,
+      "synergies": [
+        [
+          "CARE",
+          "GRIEF"
+        ]
+      ],
+      "examples": [
+        "jalousie (similarité: 2/3)",
+        "Compassion, empathie pour souffrance"
+      ]
+    },
+    {
+      "composition": [
+        "RAGE",
+        "LUST",
+        "CARE",
+        "PLAY"
+      ],
+      "coherence_score": 1.0,
+      "synergies": [],
+      "examples": [
+        "jalousie (similarité: 2/3)",
+        "schadenfreude (similarité: 2/2)"
+      ]
+    },
+    {
+      "composition": [
+        "RAGE",
+        "LUST",
+        "GRIEF",
+        "PLAY"
+      ],
+      "coherence_score": 0.6,
+      "synergies": [],
+      "examples": [
+        "schadenfreude (similarité: 2/2)",
+        "melancholia (similarité: 2/3)"
+      ]
+    },
+    {
+      "composition": [
+        "RAGE",
+        "CARE",
+        "GRIEF",
+        "PLAY"
+      ],
+      "coherence_score": 1.1600000000000001,
+      "synergies": [
+        [
+          "CARE",
+          "GRIEF"
+        ]
+      ],
+      "examples": [
+        "jalousie (similarité: 2/3)",
+        "schadenfreude (similarité: 2/2)",
+        "melancholia (similarité: 2/3)",
+        "Compassion, empathie pour souffrance"
+      ]
+    },
+    {
+      "composition": [
+        "FEAR",
+        "LUST",
+        "CARE",
+        "GRIEF"
+      ],
+      "coherence_score": 0.6960000000000001,
+      "synergies": [
+        [
+          "CARE",
+          "GRIEF"
+        ]
+      ],
+      "examples": [
+        "jalousie (similarité: 2/3)",
+        "Compassion, empathie pour souffrance"
+      ]
+    },
+    {
+      "composition": [
+        "FEAR",
+        "LUST",
+        "CARE",
+        "PLAY"
+      ],
+      "coherence_score": 1.0,
+      "synergies": [],
+      "examples": [
+        "jalousie (similarité: 2/3)"
+      ]
+    },
+    {
+      "composition": [
+        "FEAR",
+        "LUST",
+        "GRIEF",
+        "PLAY"
+      ],
+      "coherence_score": 0.6,
+      "synergies": [],
+      "examples": [
+        "melancholia (similarité: 2/3)"
+      ]
+    },
+    {
+      "composition": [
+        "FEAR",
+        "CARE",
+        "GRIEF",
+        "PLAY"
+      ],
+      "coherence_score": 1.1600000000000001,
+      "synergies": [
+        [
+          "CARE",
+          "GRIEF"
+        ]
+      ],
+      "examples": [
+        "jalousie (similarité: 2/3)",
+        "melancholia (similarité: 2/3)",
+        "Compassion, empathie pour souffrance"
+      ]
+    },
+    {
+      "composition": [
+        "LUST",
+        "CARE",
+        "GRIEF",
+        "PLAY"
+      ],
+      "coherence_score": 0.6960000000000001,
+      "synergies": [
+        [
+          "CARE",
+          "GRIEF"
+        ]
+      ],
+      "examples": [
+        "melancholia (similarité: 2/3)",
+        "Compassion, empathie pour souffrance"
+      ]
+    }
+  ],
+  "questionable_combinations": [
+    {
+      "composition": [
+        "SEEK",
+        "FEAR"
+      ],
+      "coherence_score": 0.55,
+      "conflicts": [
+        [
+          "SEEK",
+          "FEAR"
+        ]
+      ],
+      "alternatives": []
+    },
+    {
+      "composition": [
+        "SEEK",
+        "RAGE",
+        "FEAR"
+      ],
+      "coherence_score": 0.55,
+      "conflicts": [
+        [
+          "SEEK",
+          "FEAR"
+        ]
+      ],
+      "alternatives": [
+        [
+          "RAGE",
+          "FEAR"
+        ],
+        [
+          "SEEK",
+          "RAGE"
+        ]
+      ]
+    },
+    {
+      "composition": [
+        "SEEK",
+        "FEAR",
+        "LUST"
+      ],
+      "coherence_score": 0.55,
+      "conflicts": [
+        [
+          "SEEK",
+          "FEAR"
+        ]
+      ],
+      "alternatives": [
+        [
+          "FEAR",
+          "LUST"
+        ],
+        [
+          "SEEK",
+          "LUST"
+        ]
+      ]
+    },
+    {
+      "composition": [
+        "SEEK",
+        "FEAR",
+        "CARE"
+      ],
+      "coherence_score": 0.55,
+      "conflicts": [
+        [
+          "SEEK",
+          "FEAR"
+        ]
+      ],
+      "alternatives": [
+        [
+          "FEAR",
+          "CARE"
+        ],
+        [
+          "SEEK",
+          "CARE"
+        ]
+      ]
+    },
+    {
+      "composition": [
+        "SEEK",
+        "FEAR",
+        "GRIEF"
+      ],
+      "coherence_score": 0.55,
+      "conflicts": [
+        [
+          "SEEK",
+          "FEAR"
+        ]
+      ],
+      "alternatives": [
+        [
+          "FEAR",
+          "GRIEF"
+        ],
+        [
+          "SEEK",
+          "GRIEF"
+        ]
+      ]
+    },
+    {
+      "composition": [
+        "SEEK",
+        "FEAR",
+        "PLAY"
+      ],
+      "coherence_score": 0.55,
+      "conflicts": [
+        [
+          "SEEK",
+          "FEAR"
+        ]
+      ],
+      "alternatives": [
+        [
+          "FEAR",
+          "PLAY"
+        ],
+        [
+          "SEEK",
+          "PLAY"
+        ]
+      ]
+    },
+    {
+      "composition": [
+        "SEEK",
+        "RAGE",
+        "FEAR",
+        "LUST"
+      ],
+      "coherence_score": 0.55,
+      "conflicts": [
+        [
+          "SEEK",
+          "FEAR"
+        ]
+      ],
+      "alternatives": [
+        [
+          "RAGE",
+          "FEAR",
+          "LUST"
+        ],
+        [
+          "SEEK",
+          "RAGE",
+          "LUST"
+        ]
+      ]
+    },
+    {
+      "composition": [
+        "SEEK",
+        "RAGE",
+        "FEAR",
+        "CARE"
+      ],
+      "coherence_score": 0.55,
+      "conflicts": [
+        [
+          "SEEK",
+          "FEAR"
+        ]
+      ],
+      "alternatives": [
+        [
+          "RAGE",
+          "FEAR",
+          "CARE"
+        ],
+        [
+          "SEEK",
+          "RAGE",
+          "CARE"
+        ]
+      ]
+    },
+    {
+      "composition": [
+        "SEEK",
+        "RAGE",
+        "FEAR",
+        "GRIEF"
+      ],
+      "coherence_score": 0.55,
+      "conflicts": [
+        [
+          "SEEK",
+          "FEAR"
+        ]
+      ],
+      "alternatives": [
+        [
+          "RAGE",
+          "FEAR",
+          "GRIEF"
+        ],
+        [
+          "SEEK",
+          "RAGE",
+          "GRIEF"
+        ]
+      ]
+    },
+    {
+      "composition": [
+        "SEEK",
+        "RAGE",
+        "FEAR",
+        "PLAY"
+      ],
+      "coherence_score": 0.55,
+      "conflicts": [
+        [
+          "SEEK",
+          "FEAR"
+        ]
+      ],
+      "alternatives": [
+        [
+          "RAGE",
+          "FEAR",
+          "PLAY"
+        ],
+        [
+          "SEEK",
+          "RAGE",
+          "PLAY"
+        ]
+      ]
+    },
+    {
+      "composition": [
+        "SEEK",
+        "FEAR",
+        "LUST",
+        "CARE"
+      ],
+      "coherence_score": 0.55,
+      "conflicts": [
+        [
+          "SEEK",
+          "FEAR"
+        ]
+      ],
+      "alternatives": [
+        [
+          "FEAR",
+          "LUST",
+          "CARE"
+        ],
+        [
+          "SEEK",
+          "LUST",
+          "CARE"
+        ]
+      ]
+    },
+    {
+      "composition": [
+        "SEEK",
+        "FEAR",
+        "LUST",
+        "PLAY"
+      ],
+      "coherence_score": 0.55,
+      "conflicts": [
+        [
+          "SEEK",
+          "FEAR"
+        ]
+      ],
+      "alternatives": [
+        [
+          "FEAR",
+          "LUST",
+          "PLAY"
+        ],
+        [
+          "SEEK",
+          "LUST",
+          "PLAY"
+        ]
+      ]
+    },
+    {
+      "composition": [
+        "SEEK",
+        "FEAR",
+        "CARE",
+        "PLAY"
+      ],
+      "coherence_score": 0.55,
+      "conflicts": [
+        [
+          "SEEK",
+          "FEAR"
+        ]
+      ],
+      "alternatives": [
+        [
+          "FEAR",
+          "CARE",
+          "PLAY"
+        ],
+        [
+          "SEEK",
+          "CARE",
+          "PLAY"
+        ]
+      ]
+    },
+    {
+      "composition": [
+        "SEEK",
+        "FEAR",
+        "GRIEF",
+        "PLAY"
+      ],
+      "coherence_score": 0.55,
+      "conflicts": [
+        [
+          "SEEK",
+          "FEAR"
+        ]
+      ],
+      "alternatives": [
+        [
+          "FEAR",
+          "GRIEF",
+          "PLAY"
+        ],
+        [
+          "SEEK",
+          "GRIEF",
+          "PLAY"
+        ]
+      ]
+    }
+  ],
+  "invalid_combinations": [
+    {
+      "composition": [
+        "SEEK",
+        "FEAR",
+        "LUST",
+        "GRIEF"
+      ],
+      "coherence_score": 0.165,
+      "conflicts": [
+        [
+          "SEEK",
+          "FEAR"
+        ],
+        [
+          "LUST",
+          "GRIEF"
+        ]
+      ],
+      "constraints_violated": [
+        "Trop de conflits simultanés"
+      ]
+    }
+  ],
+  "antagonism_patterns": [
+    {
+      "pair": [
+        "FEAR",
+        "SEEK"
+      ],
+      "frequency": 15,
+      "interaction_type": "inhibitory",
+      "strength": 0.9,
+      "neurobiological_basis": "Amygdale (FEAR) inhibe VTA/dopamine (SEEK) - mécanisme survie"
+    },
+    {
+      "pair": [
+        "GRIEF",
+        "LUST"
+      ],
+      "frequency": 1,
+      "interaction_type": "inhibitory",
+      "strength": 0.8,
+      "neurobiological_basis": "Stress cortisol (GRIEF) inhibe hormones sexuelles"
+    }
+  ],
+  "synergy_patterns": [
+    {
+      "pair": [
+        "CARE",
+        "GRIEF"
+      ],
+      "frequency": 16,
+      "interaction_type": "synergistic",
+      "strength": 0.8,
+      "benefits": [
+        "Deuil amoureux",
+        "Compassion",
+        "Empathie pour souffrance"
+      ]
+    }
+  ],
+  "composability_matrix": {
+    "SEEK": {
+      "SEEK": 1.0,
+      "RAGE": 0.5,
+      "FEAR": 0.01999999999999999,
+      "LUST": 0.5,
+      "CARE": 0.5,
+      "GRIEF": 0.5,
+      "PLAY": 0.5
+    },
+    "RAGE": {
+      "SEEK": 0.5,
+      "RAGE": 1.0,
+      "FEAR": 0.5,
+      "LUST": 0.5,
+      "CARE": 0.5,
+      "GRIEF": 0.5,
+      "PLAY": 0.5
+    },
+    "FEAR": {
+      "SEEK": 0.01999999999999999,
+      "RAGE": 0.5,
+      "FEAR": 1.0,
+      "LUST": 0.5,
+      "CARE": 0.5,
+      "GRIEF": 0.5,
+      "PLAY": 0.5
+    },
+    "LUST": {
+      "SEEK": 0.5,
+      "RAGE": 0.5,
+      "FEAR": 0.5,
+      "LUST": 1.0,
+      "CARE": 0.5,
+      "GRIEF": 0.03999999999999998,
+      "PLAY": 0.5
+    },
+    "CARE": {
+      "SEEK": 0.5,
+      "RAGE": 0.5,
+      "FEAR": 0.5,
+      "LUST": 0.5,
+      "CARE": 1.0,
+      "GRIEF": 0.94,
+      "PLAY": 0.5
+    },
+    "GRIEF": {
+      "SEEK": 0.5,
+      "RAGE": 0.5,
+      "FEAR": 0.5,
+      "LUST": 0.03999999999999998,
+      "CARE": 0.94,
+      "GRIEF": 1.0,
+      "PLAY": 0.26
+    },
+    "PLAY": {
+      "SEEK": 0.5,
+      "RAGE": 0.5,
+      "FEAR": 0.5,
+      "LUST": 0.5,
+      "CARE": 0.5,
+      "GRIEF": 0.26,
+      "PLAY": 1.0
+    }
+  },
+  "recommendations": [
+    "✅ Excellente composabilité générale (>70% combinaisons valides)",
+    "🚫 Éviter FEAR+SEEK (antagonisme fort)",
+    "🚫 Éviter GRIEF+LUST (antagonisme fort)",
+    "✨ Favoriser CARE+GRIEF (synergie documentée)"
+  ]
+}
