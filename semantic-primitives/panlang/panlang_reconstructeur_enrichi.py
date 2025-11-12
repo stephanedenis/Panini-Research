@@ -260,8 +260,10 @@ class ReconstructeurEnrichi:
         
         return {
             "texte": texte,
+            "concepts": [c["concept"] for c in concepts_trouves],
             "concepts_trouves": len(concepts_trouves),
-            "primitives_utilisees": len(primitives_utilisees),
+            "primitives_utilisees": list(primitives_utilisees),
+            "nb_primitives": len(primitives_utilisees),
             "details": concepts_trouves
         }
 

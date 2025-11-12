@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PanLang - Analyseur Semantique NSM-Greimas</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        header {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        h1 {
+            color: #667eea;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            color: #666;
+            font-size: 1.1em;
+        }
+        
+        .input-section {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            margin-bottom: 30px;
+        }
+        
+        textarea {
+            width: 100%;
+            min-height: 120px;
+            padding: 15px;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            font-size: 1.1em;
+            font-family: inherit;
+            resize: vertical;
+            transition: border-color 0.3s;
+        }
+        
+        textarea:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        
+        .button-group {
+            margin-top: 20px;
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        
+        button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 10px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+        
+        button:active {
+            transform: translateY(0);
+        }
+        
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .result-card {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .result-card h2 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+        
+        .concept-tree {
+            font-family: 'Courier New', monospace;
+            background: #f5f5f5;
+            padding: 15px;
+            border-radius: 10px;
+            overflow-x: auto;
+            line-height: 1.6;
+        }
+        
+        .primitive {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+        
+        .molecule {
+            color: #3498db;
+            font-weight: bold;
+        }
+        
+        .composed {
+            color: #2ecc71;
+            font-weight: bold;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin: 15px 0;
+        }
+        
+        .stat-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            display: block;
+        }
+        
+        .stat-label {
+            font-size: 0.9em;
+            opacity: 0.9;
+            margin-top: 5px;
+        }
+        
+        .isotopies-list {
+            list-style: none;
+        }
+        
+        .isotopies-list li {
+            padding: 10px;
+            margin: 5px 0;
+            background: #f8f9fa;
+            border-left: 4px solid #667eea;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .frequency-bar {
+            height: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 10px;
+            min-width: 30px;
+            display: inline-block;
+        }
+        
+        .carre-semiotique {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+            height: 400px;
+            margin: 20px auto;
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 40px;
+        }
+        
+        .carre-node {
+            position: absolute;
+            background: white;
+            border: 3px solid #667eea;
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 0.9em;
+            text-align: center;
+            padding: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .carre-node.s1 { top: 20px; left: 20px; background: #e74c3c; color: white; }
+        .carre-node.s2 { top: 20px; right: 20px; background: #3498db; color: white; }
+        .carre-node.non-s1 { bottom: 20px; right: 20px; background: #95a5a6; color: white; }
+        .carre-node.non-s2 { bottom: 20px; left: 20px; background: #34495e; color: white; }
+        
+        .carre-line {
+            position: absolute;
+            background: #667eea;
+            height: 2px;
+        }
+        
+        .examples-box {
+            background: #f0f4ff;
+            border: 2px dashed #667eea;
+            border-radius: 10px;
+            padding: 15px;
+            margin-top: 15px;
+        }
+        
+        .examples-box h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+        
+        .example-phrase {
+            background: white;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        
+        .example-phrase:hover {
+            background: #e8f0ff;
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 40px;
+            font-size: 1.2em;
+            color: #667eea;
+        }
+        
+        .hidden {
+            display: none;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        
+        .analyzing {
+            animation: pulse 1.5s infinite;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🌐 PanLang - Analyseur Sémantique</h1>
+            <p class="subtitle">Natural Semantic Metalanguage (NSM) + Sémiotique Greimas</p>
+            <p class="subtitle">147 concepts | 61 primitives | 100% fidélité</p>
+        </header>
+        
+        <div class="input-section">
+            <h2 style="color: #667eea; margin-bottom: 15px;">📝 Entrez votre texte</h2>
+            <textarea id="textInput" placeholder="Exemple: Je veux enseigner à mon ami. Elle ressent de la jalousie.&#10;&#10;Essayez des phrases de Camus, Hugo, Proust, ou Saint-Exupéry..."></textarea>
+            
+            <div class="button-group">
+                <button onclick="analyserTexte()">🔍 Analyser</button>
+                <button onclick="chargerExemple('camus')">📖 Exemple Camus</button>
+                <button onclick="chargerExemple('hugo')">📖 Exemple Hugo</button>
+                <button onclick="chargerExemple('proust')">📖 Exemple Proust</button>
+                <button onclick="chargerExemple('exupery')">📖 Exemple Saint-Exupéry</button>
+                <button onclick="effacer()">🗑️ Effacer</button>
+            </div>
+            
+            <div class="examples-box" id="examplesBox">
+                <h3>💡 Exemples de concepts testés</h3>
+                <div class="example-phrase" onclick="chargerPhrase(this)">ENSEIGNER = FAIRE + QUELQU'UN + SAVOIR + QUELQUE_CHOSE</div>
+                <div class="example-phrase" onclick="chargerPhrase(this)">JALOUSIE = SENTIR + MAUVAIS + QUELQU'UN + AVOIR + VOULOIR</div>
+                <div class="example-phrase" onclick="chargerPhrase(this)">COOPÉRER = FAIRE + VOULOIR + LE_MEME</div>
+                <div class="example-phrase" onclick="chargerPhrase(this)">EXPÉRIMENTER = FAIRE + VOULOIR + SAVOIR + SI + ARRIVER</div>
+            </div>
+        </div>
+        
+        <div id="loadingSection" class="loading hidden">
+            <p class="analyzing">⏳ Analyse sémantique en cours...</p>
+        </div>
+        
+        <div id="resultsSection" class="hidden">
+            <div class="results-grid">
+                <div class="result-card">
+                    <h2>📊 Statistiques</h2>
+                    <div class="stats-grid">
+                        <div class="stat-box">
+                            <span class="stat-number" id="statConcepts">0</span>
+                            <span class="stat-label">Concepts</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-number" id="statPrimitives">0</span>
+                            <span class="stat-label">Primitives</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-number" id="statMots">0</span>
+                            <span class="stat-label">Mots</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="result-card">
+                    <h2>🌳 Décomposition Arborescente</h2>
+                    <div class="concept-tree" id="treeView"></div>
+                </div>
+                
+                <div class="result-card">
+                    <h2>🔤 Primitives Utilisées</h2>
+                    <ul class="isotopies-list" id="primitivesList"></ul>
+                </div>
+                
+                <div class="result-card">
+                    <h2>🎯 Isotopies (Thèmes Récurrents)</h2>
+                    <ul class="isotopies-list" id="isotopiesList"></ul>
+                </div>
+            </div>
+            
+            <div class="result-card">
+                <h2>⚖️ Carré Sémiotique (Exemple: BON/MAUVAIS)</h2>
+                <div class="carre-semiotique">
+                    <div class="carre-node s1">BON</div>
+                    <div class="carre-node s2">MAUVAIS</div>
+                    <div class="carre-node non-s2">PAS<br>MAUVAIS</div>
+                    <div class="carre-node non-s1">PAS<br>BON</div>
+                </div>
+                <p style="text-align: center; color: #666; margin-top: 20px;">
+                    <strong>Oppositions:</strong> CONTRAIRE (horizontal) | CONTRADICTION (diagonal) | SUBCONTRAIRE (bas)
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Base de données NSM (version simplifiée pour le frontend)
+        const NSM_PRIMITIVES = {
+            'JE': 'SUBSTANTIF', 'TOI': 'SUBSTANTIF', 'QUELQU\\'UN': 'SUBSTANTIF',
+            'PENSER': 'MENTAL', 'SAVOIR': 'MENTAL', 'VOULOIR': 'MENTAL', 'SENTIR': 'MENTAL',
+            'FAIRE': 'ACTION', 'ARRIVER': 'ACTION', 'BOUGER': 'ACTION',
+            'BON': 'ATTRIBUT', 'MAUVAIS': 'ATTRIBUT', 'GRAND': 'ATTRIBUT', 'PETIT': 'ATTRIBUT',
+            'AVOIR': 'EXISTENCE', 'ETRE': 'EXISTENCE', 'VIVRE': 'EXISTENCE', 'MOURIR': 'EXISTENCE',
+            'PAS': 'LOGIQUE', 'SI': 'LOGIQUE', 'PARCE_QUE': 'LOGIQUE',
+            'TOUT': 'QUANTIFICATEUR', 'BEAUCOUP': 'QUANTIFICATEUR', 'DEUX': 'QUANTIFICATEUR',
+            'QUAND': 'TEMPS', 'APRES': 'TEMPS', 'LONGTEMPS': 'TEMPS',
+            'DANS': 'AUGMENTEUR', 'PRES': 'AUGMENTEUR', 'LOIN': 'AUGMENTEUR',
+            'DIRE': 'PAROLE', 'MOT': 'PAROLE', 'VRAI': 'PAROLE',
+            'VOIR': 'MENTAL', 'TRES': 'INTENSIFICATEUR', 'AUTRE': 'ATTRIBUT',
+            'CE': 'DETERMINANT', 'UN': 'DETERMINANT', 'LE_MEME': 'DETERMINANT',
+            'GENS': 'SUBSTANTIF', 'CORPS': 'SUBSTANTIF', 'ENDROIT': 'SUBSTANTIF'
+        };
+        
+        const NSM_MOLECULES = {
+            'ENSEIGNER': ['FAIRE', 'QUELQU\\'UN', 'SAVOIR', 'QUELQUE_CHOSE'],
+            'APPRENDRE': ['VOULOIR', 'SAVOIR', 'QUELQUE_CHOSE'],
+            'AIMER': ['SENTIR', 'BON', 'PARCE_QUE', 'QUELQU\\'UN'],
+            'JALOUSIE': ['SENTIR', 'MAUVAIS', 'QUELQU\\'UN', 'AVOIR', 'VOULOIR'],
+            'DONNER': ['FAIRE', 'QUELQU\\'UN', 'AVOIR', 'QUELQUE_CHOSE'],
+            'PROTEGER': ['FAIRE', 'PAS', 'ARRIVER', 'MAUVAIS', 'QUELQU\\'UN'],
+            'COOPERER': ['FAIRE', 'VOULOIR', 'LE_MEME'],
+            'EXPERIMENTER': ['FAIRE', 'VOULOIR', 'SAVOIR', 'SI', 'ARRIVER']
+        };
+        
+        const EXEMPLES = {
+            'camus': "Aujourd'hui, maman est morte. Je ne sais pas exactement quand c'est arrive. Je pensais que c'etait dimanche.",
+            'hugo': "Jean Valjean etait un homme bon. Il voulait proteger Cosette. L'amour peut tout transformer.",
+            'proust': "Longtemps, je me suis couche de bonne heure. Je pensais souvent a mon enfance. Le temps semblait revenir en arriere.",
+            'exupery': "Le petit prince aimait beaucoup sa rose. Elle etait unique pour lui. On ne voit bien qu'avec le coeur."
+        };
+        
+        function analyserTexte() {
+            const texte = document.getElementById('textInput').value.trim();
+            if (!texte) {
+                alert('Veuillez entrer un texte à analyser.');
+                return;
+            }
+            
+            // Afficher section chargement
+            document.getElementById('loadingSection').classList.remove('hidden');
+            document.getElementById('resultsSection').classList.add('hidden');
+            
+            // Simulation analyse (en production, appel API Python)
+            setTimeout(() => {
+                const resultats = analyserTexteFrontend(texte);
+                afficherResultats(resultats);
+            }, 800);
+        }
+        
+        function analyserTexteFrontend(texte) {
+            const mots = texte.toUpperCase().replace(/[',\.!?]/g, ' ').split(/\s+/).filter(m => m.length > 0);
+            const conceptsTrouves = [];
+            const primitivesUtilisees = new Set();
+            const isotopies = {};
+            
+            // Analyse simple
+            mots.forEach(mot => {
+                // Check primitive
+                if (NSM_PRIMITIVES[mot]) {
+                    conceptsTrouves.push({type: 'primitive', nom: mot, categorie: NSM_PRIMITIVES[mot]});
+                    primitivesUtilisees.add(mot);
+                    isotopies[mot] = (isotopies[mot] || 0) + 1;
+                }
+                
+                // Check molecule
+                if (NSM_MOLECULES[mot]) {
+                    conceptsTrouves.push({type: 'molecule', nom: mot, composition: NSM_MOLECULES[mot]});
+                    NSM_MOLECULES[mot].forEach(p => {
+                        primitivesUtilisees.add(p);
+                        isotopies[p] = (isotopies[p] || 0) + 1;
+                    });
+                }
+            });
+            
+            return {
+                texte,
+                mots: mots.length,
+                concepts: conceptsTrouves,
+                primitives: Array.from(primitivesUtilisees),
+                isotopies
+            };
+        }
+        
+        function afficherResultats(resultats) {
+            // Masquer chargement, afficher résultats
+            document.getElementById('loadingSection').classList.add('hidden');
+            document.getElementById('resultsSection').classList.remove('hidden');
+            
+            // Stats
+            document.getElementById('statConcepts').textContent = resultats.concepts.length;
+            document.getElementById('statPrimitives').textContent = resultats.primitives.length;
+            document.getElementById('statMots').textContent = resultats.mots;
+            
+            // Arbre décomposition
+            let treeHTML = '';
+            resultats.concepts.forEach(c => {
+                if (c.type === 'primitive') {
+                    treeHTML += `<div class="primitive">■ ${c.nom} (${c.categorie})</div>`;
+                } else if (c.type === 'molecule') {
+                    treeHTML += `<div class="molecule">▶ ${c.nom}</div>`;
+                    c.composition.forEach(p => {
+                        treeHTML += `<div class="primitive" style="margin-left: 20px;">├─ ${p}</div>`;
+                    });
+                }
+            });
+            document.getElementById('treeView').innerHTML = treeHTML || '<p>Aucun concept détecté</p>';
+            
+            // Primitives
+            let primHTML = '';
+            resultats.primitives.forEach(p => {
+                primHTML += `<li><strong>${p}</strong> <span class="frequency-bar" style="width: 40px;"></span></li>`;
+            });
+            document.getElementById('primitivesList').innerHTML = primHTML;
+            
+            // Isotopies
+            const isotopiesTriees = Object.entries(resultats.isotopies).sort((a,b) => b[1] - a[1]);
+            let isoHTML = '';
+            const maxFreq = Math.max(...Object.values(resultats.isotopies));
+            isotopiesTriees.slice(0, 10).forEach(([concept, freq]) => {
+                const width = (freq / maxFreq) * 200;
+                isoHTML += `<li><strong>${concept}</strong> <span class="frequency-bar" style="width: ${width}px;"></span> ${freq}x</li>`;
+            });
+            document.getElementById('isotopiesList').innerHTML = isoHTML;
+        }
+        
+        function chargerExemple(type) {
+            document.getElementById('textInput').value = EXEMPLES[type];
+        }
+        
+        function chargerPhrase(elem) {
+            document.getElementById('textInput').value = elem.textContent;
+        }
+        
+        function effacer() {
+            document.getElementById('textInput').value = '';
+            document.getElementById('resultsSection').classList.add('hidden');
+        }
+    </script>
+</body>
+</html>

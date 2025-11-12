@@ -166,8 +166,9 @@ class ReconstructeurGreimasNSM(ReconstructeurEnrichi):
         """Initialise les carres semiotiques pour primitives NSM"""
         carres = {}
         
-        # Oppositions principales
+        # Oppositions principales (20 carres semiotiques)
         paires_contraires = [
+            # Attributs de base (7 originaux)
             ("BON", "MAUVAIS"),
             ("GRAND", "PETIT"),
             ("BEAUCOUP", "PEU"),
@@ -175,6 +176,29 @@ class ReconstructeurGreimasNSM(ReconstructeurEnrichi):
             ("AU_DESSUS", "EN_DESSOUS"),
             ("PRES", "LOIN"),
             ("VIVRE", "MOURIR"),
+            
+            # Temporels (3 nouveaux)
+            ("MAINTENANT", "JAMAIS"),
+            ("TOUJOURS", "PARFOIS"),
+            ("LONGTEMPS", "PEU_DE_TEMPS"),
+            
+            # Spatiaux (2 nouveaux)
+            ("DEDANS", "DEHORS"),
+            ("ICI", "LA_BAS"),
+            
+            # Modaux (3 nouveaux)
+            ("POSSIBLE", "IMPOSSIBLE"),
+            ("NECESSAIRE", "CONTINGENT"),
+            ("PERMIS", "INTERDIT"),
+            
+            # Emotionnels (3 nouveaux)
+            ("JOIE", "TRISTESSE"),
+            ("AMOUR", "HAINE"),
+            ("CONFIANCE", "MEFIANCE"),
+            
+            # Cognitifs (2 nouveaux)
+            ("VRAI", "FAUX"),
+            ("CERTAIN", "DOUTEUX"),
         ]
         
         for s1, s2 in paires_contraires:
