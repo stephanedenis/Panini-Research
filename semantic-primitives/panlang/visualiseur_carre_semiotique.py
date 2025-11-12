@@ -1,0 +1,343 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Visualiseur Carre Semiotique
+Generation de representations visuelles ASCII et HTML des carres semiotiques
+"""
+
+from greimas_nsm_extension import CarreSemiotique, ReconstructeurGreimasNSM
+from typing import List, Tuple
+
+
+class VisualiseurCarreSemiotique:
+    """Generateur de visualisations pour carres semiotiques"""
+    
+    def __init__(self):
+        self.reconstructeur = ReconstructeurGreimasNSM()
+    
+    def generer_ascii(self, carre: CarreSemiotique, largeur: int = 70) -> str:
+        """
+        Genere une representation ASCII d'un carre semiotique
+        
+        Args:
+            carre: Le carre a visualiser
+            largeur: Largeur de la representation
+        
+        Returns:
+            String ASCII art du carre
+        """
+        # Calculer espacements
+        espace_h = largeur - len(carre.s1) - len(carre.s2) - 20
+        espace_v = 3
+        
+        lignes = []
+        
+        # Ligne superieure (S1 <-> S2)
+        ligne_sup = "{}  {}  {}".format(
+            carre.s1.ljust(15),
+            "<-- contraire -->".center(espace_h),
+            carre.s2.rjust(15)
+        )
+        lignes.append(ligne_sup)
+        
+        # Fleches verticales
+        for _ in range(espace_v):
+            lignes.append("{}{}{}".format(
+                "|".center(15),
+                " " * espace_h,
+                "|".center(15)
+            ))
+        
+        # Labels contradiction
+        lignes.append("{}{}{}".format(
+            "contradiction".center(15),
+            " " * espace_h,
+            "contradiction".center(15)
+        ))
+        
+        # Fleches verticales suite
+        for _ in range(espace_v):
+            lignes.append("{}{}{}".format(
+                "|".center(15),
+                " " * espace_h,
+                "|".center(15)
+            ))
+        
+        # Ligne inferieure (non-S2 <-> non-S1)
+        ligne_inf = "{}  {}  {}".format(
+            carre.non_s2.ljust(15),
+            "<- subcontraire ->".center(espace_h),
+            carre.non_s1.rjust(15)
+        )
+        lignes.append(ligne_inf)
+        
+        return "\n".join(lignes)
+    
+    def generer_html(self, carre: CarreSemiotique) -> str:
+        """
+        Genere une representation HTML d'un carre semiotique
+        
+        Returns:
+            String HTML avec styles CSS
+        """
+        html = """
+<div class="carre-semiotique" style="
+    width: 600px; 
+    height: 400px; 
+    position: relative;
+    border: 2px solid #333;
+    margin: 20px;
+    padding: 20px;
+    background: #f9f9f9;
+">
+    <!-- S1 -->
+    <div style="
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        padding: 10px 20px;
+        background: #4CAF50;
+        color: white;
+        border-radius: 5px;
+        font-weight: bold;
+    ">{s1}</div>
+    
+    <!-- S2 -->
+    <div style="
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        padding: 10px 20px;
+        background: #F44336;
+        color: white;
+        border-radius: 5px;
+        font-weight: bold;
+    ">{s2}</div>
+    
+    <!-- non-S2 -->
+    <div style="
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+        padding: 10px 20px;
+        background: #FFB74D;
+        color: white;
+        border-radius: 5px;
+        font-weight: bold;
+    ">{non_s2}</div>
+    
+    <!-- non-S1 -->
+    <div style="
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        padding: 10px 20px;
+        background: #64B5F6;
+        color: white;
+        border-radius: 5px;
+        font-weight: bold;
+    ">{non_s1}</div>
+    
+    <!-- Fleche contraire (horizontale haut) -->
+    <div style="
+        position: absolute;
+        top: 45px;
+        left: 150px;
+        right: 150px;
+        height: 2px;
+        background: #333;
+    "></div>
+    <div style="
+        position: absolute;
+        top: 25px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 12px;
+        background: #f9f9f9;
+        padding: 0 5px;
+    ">contraire</div>
+    
+    <!-- Fleche subcontraire (horizontale bas) -->
+    <div style="
+        position: absolute;
+        bottom: 45px;
+        left: 150px;
+        right: 150px;
+        height: 2px;
+        background: #333;
+    "></div>
+    <div style="
+        position: absolute;
+        bottom: 25px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 12px;
+        background: #f9f9f9;
+        padding: 0 5px;
+    ">subcontraire</div>
+    
+    <!-- Fleche contradiction (verticale gauche) -->
+    <div style="
+        position: absolute;
+        top: 90px;
+        bottom: 90px;
+        left: 65px;
+        width: 2px;
+        background: #333;
+    "></div>
+    <div style="
+        position: absolute;
+        top: 50%;
+        left: 15px;
+        transform: translateY(-50%) rotate(-90deg);
+        font-size: 12px;
+        background: #f9f9f9;
+        padding: 0 5px;
+        white-space: nowrap;
+    ">contradiction</div>
+    
+    <!-- Fleche contradiction (verticale droite) -->
+    <div style="
+        position: absolute;
+        top: 90px;
+        bottom: 90px;
+        right: 65px;
+        width: 2px;
+        background: #333;
+    "></div>
+    <div style="
+        position: absolute;
+        top: 50%;
+        right: 15px;
+        transform: translateY(-50%) rotate(90deg);
+        font-size: 12px;
+        background: #f9f9f9;
+        padding: 0 5px;
+        white-space: nowrap;
+    ">contradiction</div>
+</div>
+        """.format(
+            s1=carre.s1,
+            s2=carre.s2,
+            non_s1=carre.non_s1,
+            non_s2=carre.non_s2
+        )
+        
+        return html
+    
+    def generer_page_complete(self, 
+                             carres: List[Tuple[str, CarreSemiotique]]) -> str:
+        """
+        Genere une page HTML complete avec plusieurs carres
+        
+        Args:
+            carres: Liste de tuples (titre, carre)
+        
+        Returns:
+            Page HTML complete
+        """
+        html_carres = ""
+        for titre, carre in carres:
+            html_carres += "<h2>{}</h2>\n".format(titre)
+            html_carres += self.generer_html(carre)
+        
+        page = """
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carres Semiotiques - Visualisation NSM-Greimas</title>
+    <style>
+        body {{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #fff;
+        }}
+        h1 {{
+            color: #333;
+            border-bottom: 3px solid #4CAF50;
+            padding-bottom: 10px;
+        }}
+        h2 {{
+            color: #555;
+            margin-top: 40px;
+        }}
+        .info {{
+            background: #e3f2fd;
+            padding: 15px;
+            border-left: 4px solid #2196F3;
+            margin: 20px 0;
+        }}
+    </style>
+</head>
+<body>
+    <h1>🔍 Carres Semiotiques - Integration Greimas-NSM</h1>
+    
+    <div class="info">
+        <strong>Systeme:</strong> Natural Semantic Metalanguage enrichi<br>
+        <strong>Theorie:</strong> Greimas/Hebert - Carre semiotique<br>
+        <strong>Date:</strong> 12 novembre 2025
+    </div>
+    
+    {carres_html}
+    
+    <hr style="margin-top: 40px;">
+    <p style="text-align: center; color: #888;">
+        Genere par VisualiseurCarreSemiotique - Projet Panini Research
+    </p>
+</body>
+</html>
+        """.format(carres_html=html_carres)
+        
+        return page
+
+
+def demo_visualiseur():
+    """Demonstration du visualiseur"""
+    print("="*70)
+    print("DEMONSTRATION VISUALISEUR CARRE SEMIOTIQUE")
+    print("="*70)
+    
+    visualiseur = VisualiseurCarreSemiotique()
+    reconstructeur = visualiseur.reconstructeur
+    
+    # Test 1: Visualisation ASCII
+    print("\n[TEST 1] Visualisation ASCII")
+    print("-"*70)
+    carre_bon_mauvais = reconstructeur.carres["BON_MAUVAIS"]
+    ascii_art = visualiseur.generer_ascii(carre_bon_mauvais)
+    print(ascii_art)
+    
+    # Test 2: Generation HTML pour plusieurs carres
+    print("\n[TEST 2] Generation page HTML")
+    print("-"*70)
+    
+    carres_a_visualiser = [
+        ("Qualite: BON vs MAUVAIS", reconstructeur.carres["BON_MAUVAIS"]),
+        ("Taille: GRAND vs PETIT", reconstructeur.carres["GRAND_PETIT"]),
+        ("Vie: VIVRE vs MOURIR", reconstructeur.carres["VIVRE_MOURIR"]),
+        ("Proximite: PRES vs LOIN", reconstructeur.carres["PRES_LOIN"]),
+    ]
+    
+    page_html = visualiseur.generer_page_complete(carres_a_visualiser)
+    
+    # Sauvegarder
+    fichier_sortie = "carres_semiotiques_nsm.html"
+    with open(fichier_sortie, 'w', encoding='utf-8') as f:
+        f.write(page_html)
+    
+    print("Page HTML generee: {}".format(fichier_sortie))
+    print("Nombre de carres: {}".format(len(carres_a_visualiser)))
+    print("Taille: {} octets".format(len(page_html)))
+    
+    print("\n" + "="*70)
+    print("DEMONSTRATION TERMINEE")
+    print("Ouvrir {} dans un navigateur pour visualiser".format(fichier_sortie))
+    print("="*70)
+
+
+if __name__ == "__main__":
+    demo_visualiseur()
