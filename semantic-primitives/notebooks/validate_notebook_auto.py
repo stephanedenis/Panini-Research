@@ -17,7 +17,7 @@ print("=" * 70)
 
 # Configuration
 REPO_URL = "https://github.com/stephanedenis/Panini-Research.git"
-NOTEBOOK_PATH = "research/semantic-primitives/notebooks/NSM_SentenceBERT_Local.ipynb"
+NOTEBOOK_PATH = "semantic-primitives/notebooks/NSM_SentenceBERT_Local.ipynb"
 
 # Créer environnement temporaire (simule /content de Colab)
 temp_dir = tempfile.mkdtemp(prefix="colab_sim_")
@@ -43,7 +43,7 @@ try:
     print("\n2️⃣ Vérification fichier donnees_nsm.py...")
     donnees_path = os.path.join(
         repo_dir, 
-        "research/semantic-primitives/notebooks/donnees_nsm.py"
+        "semantic-primitives/notebooks/donnees_nsm.py"
     )
     
     if not os.path.exists(donnees_path):
@@ -58,7 +58,7 @@ try:
     print("\n3️⃣ Test import module...")
     
     # Ajouter au path comme dans Colab
-    notebooks_dir = os.path.join(repo_dir, "research/semantic-primitives/notebooks")
+    notebooks_dir = os.path.join(repo_dir, "semantic-primitives/notebooks")
     if notebooks_dir not in sys.path:
         sys.path.insert(0, notebooks_dir)
     
@@ -162,7 +162,7 @@ try:
     
     import urllib.request
     
-    url = "https://raw.githubusercontent.com/stephanedenis/Panini-Research/main/research/semantic-primitives/notebooks/donnees_nsm.py"
+    url = "https://raw.githubusercontent.com/stephanedenis/Panini-Research/main/semantic-primitives/notebooks/donnees_nsm.py"
     temp_file = os.path.join(temp_dir, "donnees_nsm_downloaded.py")
     
     try:
