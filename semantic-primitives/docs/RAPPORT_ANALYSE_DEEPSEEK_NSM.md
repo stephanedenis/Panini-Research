@@ -2,7 +2,26 @@
 
 **Date** : 12 novembre 2025  
 **Expérience** : Convergence entre apprentissage profond et sémantique symbolique  
-**Hypothèse** : Les représentations implicites (DeepSeek) et explicites (NSM-Greimas) capturent la même réalité sémantique
+**Hypothèse** : Les représentations implicites (DeepSeek) et explicites (NSM-Greimas) capturent la même réal### Court Terme (1 mois)
+
+**Publication préliminaire** :
+- **Titre** : *"Partial Convergence Between Neural Language Models and Universal Semantic Metalanguage"*
+- **Venue** : Workshop NeurIPS (Interpolate), ACL (RepL4NLP)
+- **Contribution** : Méthodologie analyse convergence, premiers résultats empiriques
+
+**Code open-source** :
+- Publier `deepseek_analyzer.py` sur GitHub
+- Notebook interactif (Colab) pour reproduction
+- Dataset annoté NSM (1000 phrases)
+
+**Infrastructure disponible** ⭐️ :
+- **Colab Pro** : GPU A100/V100, 52 GB RAM, 24h runtime
+  - Encodage batch 1000+ phrases (minutes vs heures)
+  - Fine-tuning modèles NSM-hybrides
+  - Visualisations 3D interactives Plotly
+- **Google One** : Stockage datasets, embeddings, backups
+- **Notebook prioritaire** : `DeepSeek_NSM_Real_API.ipynb` (API réelle + GPU)
+- **Timeline** : Setup cette semaine, expériences corpus 1000p semaine prochaineque
 
 ---
 
