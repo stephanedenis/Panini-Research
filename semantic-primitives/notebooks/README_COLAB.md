@@ -365,6 +365,26 @@ Avant de lancer le notebook, vérifier :
 
 ---
 
+## 🖥️ FAQ : Modèle Local vs API ?
+
+**Q : Peut-on exécuter DeepSeek en local sur Colab ?**
+
+**R : Oui (V2-Lite), mais API recommandée pour qualité/coût**
+
+| Critère | API V3 ✅ | Local V2-Lite ⚠️ |
+|---------|-----------|------------------|
+| Setup | 30 sec | 1h |
+| Qualité | 685B params | 16B params |
+| Vitesse | 15 min | 30 min+ |
+| Coût | $0.03/run | $0 (setup 1h) |
+| RAM | 2 GB | 32 GB |
+
+**Recommandation** : **API pour résultats publiables**
+
+📄 **Analyse complète** : Voir [`DEEPSEEK_LOCAL_VS_API.md`](../docs/DEEPSEEK_LOCAL_VS_API.md)
+
+---
+
 ## 🎓 Ressources Supplémentaires
 
 **Documentation** :
@@ -372,6 +392,7 @@ Avant de lancer le notebook, vérifier :
 - Colab Pro : https://colab.research.google.com/signup
 - NSM Theory : Wierzbicka (1996) "Semantics: Primes and Universals"
 - Greimas : "Sémantique structurale" (1966)
+- **Comparaison Local/API** : [`DEEPSEEK_LOCAL_VS_API.md`](../docs/DEEPSEEK_LOCAL_VS_API.md)
 
 **Support** :
 - Issues GitHub : https://github.com/stephanedenis/Panini-Research/issues
