@@ -125,6 +125,7 @@ COULEURS_CATEGORIES = {
     "RELATIONS": "#74B9FF",      # Bleu
     "LOGIQUE": "#FAB1A0",        # Orange
     "AUGMENTEURS": "#FDCB6E",    # Orange clair
+    "TEMPS": "#E17055",          # Orange foncé
 }
 
 # Carrés sémiotiques Greimas (20 carrés)
