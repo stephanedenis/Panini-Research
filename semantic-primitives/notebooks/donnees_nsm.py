@@ -125,6 +125,7 @@ COULEURS_CATEGORIES = {
     "RELATIONS": "#74B9FF",      # Bleu
     "LOGIQUE": "#FAB1A0",        # Orange
     "AUGMENTEURS": "#FDCB6E",    # Orange clair
+    "INTENSIFICATEURS": "#F8A5C2", # Rose clair
     "TEMPS": "#E17055",          # Orange foncé
 }
 
