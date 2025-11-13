@@ -128,127 +128,128 @@ COULEURS_CATEGORIES = {
     "TEMPS": "#E17055",          # Orange foncé
 }
 
-# Carrés sémiotiques Greimas (20 carrés)
+# Carrés sémiotiques Greimas (version simplifiée avec primitives NSM existantes)
+# Note: Les carrés utilisent uniquement les primitives disponibles dans NSM_PRIMITIVES
 CARRES_SEMIOTIQUES = {
-    "VIE_MORT": {
-        "S1": "VIVRE",      # Position S1
-        "S2": "MOURIR",     # Position S2 (contraire)
-        "non_S1": "NE_PAS_VIVRE",  # ~S1 (contradictoire)
-        "non_S2": "NE_PAS_MOURIR", # ~S2 (contradictoire)
-    },
-    "SAVOIR_IGNORER": {
-        "S1": "SAVOIR",
-        "S2": "IGNORER",
-        "non_S1": "NE_PAS_SAVOIR",
-        "non_S2": "NE_PAS_IGNORER",
-    },
-    "VOULOIR_REFUSER": {
-        "S1": "VOULOIR",
-        "S2": "REFUSER",
-        "non_S1": "NE_PAS_VOULOIR",
-        "non_S2": "NE_PAS_REFUSER",
-    },
-    "FAIRE_SUBIR": {
-        "S1": "FAIRE",
-        "S2": "SUBIR",
-        "non_S1": "NE_PAS_FAIRE",
-        "non_S2": "NE_PAS_SUBIR",
-    },
-    "ETRE_PARAITRE": {
-        "S1": "ETRE",
-        "S2": "PARAITRE",
-        "non_S1": "NE_PAS_ETRE",
-        "non_S2": "NE_PAS_PARAITRE",
+    "SAVOIR_PENSER": {
+        "S1": "SAVOIR",     # Position S1
+        "S2": "PENSER",     # Position S2 (contraire)
+        "non_S1": "PAS",    # ~S1 (contradictoire - négation)
+        "non_S2": "VOULOIR", # ~S2 (contradictoire - volonté vs pensée)
     },
     "BON_MAUVAIS": {
         "S1": "BON",
         "S2": "MAUVAIS",
-        "non_S1": "PAS_BON",
-        "non_S2": "PAS_MAUVAIS",
+        "non_S1": "PAS",
+        "non_S2": "TOUT",
     },
     "GRAND_PETIT": {
         "S1": "GRAND",
         "S2": "PETIT",
-        "non_S1": "PAS_GRAND",
-        "non_S2": "PAS_PETIT",
+        "non_S1": "BEAUCOUP",
+        "non_S2": "UN",
     },
-    "VOIR_CACHER": {
+    "VOIR_SENTIR": {
         "S1": "VOIR",
-        "S2": "CACHER",
-        "non_S1": "NE_PAS_VOIR",
-        "non_S2": "NE_PAS_CACHER",
+        "S2": "SENTIR",
+        "non_S1": "PENSER",
+        "non_S2": "SAVOIR",
     },
-    "PENSER_OUBLIER": {
-        "S1": "PENSER",
-        "S2": "OUBLIER",
-        "non_S1": "NE_PAS_PENSER",
-        "non_S2": "NE_PAS_OUBLIER",
-    },
-    "SENTIR_IGNORER": {
-        "S1": "SENTIR",
-        "S2": "IGNORER",
-        "non_S1": "NE_PAS_SENTIR",
-        "non_S2": "NE_PAS_IGNORER",
-    },
-    "DIRE_TAIRE": {
+    "DIRE_VRAI": {
         "S1": "DIRE",
-        "S2": "TAIRE",
-        "non_S1": "NE_PAS_DIRE",
-        "non_S2": "NE_PAS_TAIRE",
+        "S2": "VRAI",
+        "non_S1": "MOT",
+        "non_S2": "PAS",
     },
-    "VRAI_FAUX": {
-        "S1": "VRAI",
-        "S2": "FAUX",
-        "non_S1": "PAS_VRAI",
-        "non_S2": "PAS_FAUX",
-    },
-    "AVOIR_MANQUER": {
+    "AVOIR_ETRE": {
         "S1": "AVOIR",
-        "S2": "MANQUER",
-        "non_S1": "NE_PAS_AVOIR",
-        "non_S2": "NE_PAS_MANQUER",
+        "S2": "ETRE",
+        "non_S1": "FAIRE",
+        "non_S2": "VIVRE",
     },
-    "BOUGER_RESTER": {
+    "BOUGER_ARRIVER": {
         "S1": "BOUGER",
-        "S2": "RESTER",
-        "non_S1": "NE_PAS_BOUGER",
-        "non_S2": "NE_PAS_RESTER",
+        "S2": "ARRIVER",
+        "non_S1": "FAIRE",
+        "non_S2": "ETRE",
     },
     "PRES_LOIN": {
         "S1": "PRES",
         "S2": "LOIN",
-        "non_S1": "PAS_PRES",
-        "non_S2": "PAS_LOIN",
+        "non_S1": "COTE",
+        "non_S2": "ENDROIT",
     },
     "DESSUS_DESSOUS": {
         "S1": "AU_DESSUS",
         "S2": "EN_DESSOUS",
-        "non_S1": "PAS_AU_DESSUS",
-        "non_S2": "PAS_EN_DESSOUS",
+        "non_S1": "COTE",
+        "non_S2": "PARTIE",
     },
     "MAINTENANT_AVANT": {
         "S1": "MAINTENANT",
         "S2": "AVANT",
-        "non_S1": "PAS_MAINTENANT",
-        "non_S2": "PAS_AVANT",
+        "non_S1": "MOMENT",
+        "non_S2": "APRES",
     },
     "UN_BEAUCOUP": {
         "S1": "UN",
         "S2": "BEAUCOUP",
-        "non_S1": "PAS_UN",
-        "non_S2": "PAS_BEAUCOUP",
+        "non_S1": "DEUX",
+        "non_S2": "TOUT",
     },
     "MEME_AUTRE": {
         "S1": "LE_MEME",
         "S2": "UN_AUTRE",
-        "non_S1": "PAS_LE_MEME",
-        "non_S2": "PAS_UN_AUTRE",
+        "non_S1": "CE",
+        "non_S2": "QUELQUE_CHOSE",
     },
     "TOUT_PARTIE": {
         "S1": "TOUT",
         "S2": "PARTIE",
-        "non_S1": "PAS_TOUT",
-        "non_S2": "PAS_PARTIE",
+        "non_S1": "BEAUCOUP",
+        "non_S2": "UN",
+    },
+    "VOULOIR_SENTIR": {
+        "S1": "VOULOIR",
+        "S2": "SENTIR",
+        "non_S1": "PENSER",
+        "non_S2": "SAVOIR",
+    },
+    "FAIRE_ARRIVER": {
+        "S1": "FAIRE",
+        "S2": "ARRIVER",
+        "non_S1": "BOUGER",
+        "non_S2": "ETRE",
+    },
+    "VIVRE_ETRE": {
+        "S1": "VIVRE",
+        "S2": "ETRE",
+        "non_S1": "FAIRE",
+        "non_S2": "AVOIR",
+    },
+    "TOUCHER_VOIR": {
+        "S1": "TOUCHER",
+        "S2": "VOIR",
+        "non_S1": "SENTIR",
+        "non_S2": "PENSER",
+    },
+    "JE_TOI": {
+        "S1": "JE",
+        "S2": "TOI",
+        "non_S1": "QUELQU_UN",
+        "non_S2": "QUELQUE_CHOSE",
+    },
+    "ENDROIT_MOMENT": {
+        "S1": "ENDROIT",
+        "S2": "MOMENT",
+        "non_S1": "COTE",
+        "non_S2": "MAINTENANT",
+    },
+    "POUVOIR_PEUT_ETRE": {
+        "S1": "POUVOIR",
+        "S2": "PEUT_ETRE",
+        "non_S1": "SI",
+        "non_S2": "PARCE_QUE",
     },
 }
 
